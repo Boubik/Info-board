@@ -15,5 +15,7 @@ info board for my school
 ## **How to use News**
 
 create file in aktuality (.md)
+
 name of file will be used as head line
+
 \*\***for bold text**\*\*
