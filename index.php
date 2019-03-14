@@ -31,20 +31,18 @@ foreach($fileList as $file){
         }
     }
     if($delete == TRUE){
-        echo "Delete: ".$file;
         unlink($file);
-    }
-    while(($line = fgets($handle)) !== false){
-        $i = 0;
-        str_replace('**', "<b>", $line, $count);
-        while($i != $count){
-            $line = preg_replace('/\*\*/', "<b>", $line, 1);
-            $line = preg_replace('/\*\*/', "</b>", $line, 1);
-            $i+=2;
+    }else{
+        while(($line = fgets($handle)) !== false){
+            $i = 0;
+            str_replace('**', "<b>", $line, $count);
+            while($i != $count){
+                $line = preg_replace('/\*\*/', "<b>", $line, 1);
+                $line = preg_replace('/\*\*/', "</b>", $line, 1);
+                $i+=2;
+            }
+            echo $line."<br>";
         }
-        //$line = str_replace("**", "<b>", $line);
-        //if()
-        echo $line."<br>";
     }
     fclose($handle);
 }
