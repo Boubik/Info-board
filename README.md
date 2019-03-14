@@ -8,8 +8,12 @@ info board for my school
 [ ] - schedule
 [ ] - school cantine menu
 
-\*\***for bold text**\*\*
-
 ## **Changelog**
 
 - [changelog.md](changelog.md)
+
+## **How to use News**
+
+create file in aktuality (.md)
+name of file will be used as head line
+\*\***for bold text**\*\*
