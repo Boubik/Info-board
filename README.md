@@ -14,6 +14,8 @@ info board for my school
 
 ## **How to use News**
 
+form input in /insert.php
+
 create file in aktuality (.md)
 
 name of file will be used as head line

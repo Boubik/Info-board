@@ -11,9 +11,10 @@
 <body>
 
 <?php
+
 include "functions.php";
 
-news();
+get_news();
 
 ?>
 
