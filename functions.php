@@ -49,6 +49,10 @@ function news(){
 
 }
 
+/**
+ * form for news 
+ * it will take input and save it in folder aktuality
+ */
 function get_news(){
     $nadpis = "";
     $text = "";
