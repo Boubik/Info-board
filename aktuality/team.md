@@ -1,4 +1,6 @@
 2020-03-20
-**Jakub Hájek**
-**Vašek Hodboď**
-**Jan Chlouba**
+<ul>
+<li>**Jakub H&aacute;jek**</span></li>
+<li>**Va&scaron;ek Hodboď**</li>
+<li>**Jan Chlouba**</span></li>
+</ul>
