@@ -46,7 +46,7 @@ foreach($fileList as $file){
     if($delete == TRUE){
         unlink($file);
     }else{
-        echo "<h1>".substr(str_replace(".md", "", $file), 10)."</h1><br>";
+        echo "<h1>".substr(str_replace(".md", "", $file), 10)."</h1>";
         while(($line = fgets($handle)) !== false){
             $i = 0;
             str_replace('**', "<b>", $line, $count);
