@@ -38,6 +38,9 @@ if(isset($_POST["submit"]) and isset($_POST["Nadpis"]) and isset($_POST["text"])
     $nadpis = $_POST["Nadpis"];
     $text = $_POST["text"];
     $date = $_POST["date"];
+    //$nadpis = htmlspecialchars($_POST["Nadpis"], ENT_QUOTES, 'UTF-8');
+    //$text = htmlspecialchars($_POST["text"], ENT_QUOTES, 'UTF-8');
+    //$date = htmlspecialchars($_POST["date"], ENT_QUOTES, 'UTF-8');
     
     if($nadpis != "" and $text != "" and $date != ""){
         //echo "<h1>".$nadpis."</h1>";
