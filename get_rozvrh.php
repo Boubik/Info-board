@@ -22,7 +22,7 @@ do{
     }else{
         $den = (date("w")-1);
     }
-    
+
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
