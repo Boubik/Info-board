@@ -19,6 +19,8 @@
 
 <?php
 
+date_default_timezone_set("Europe/Prague");
+
 $fileList = glob('aktuality/*.md');
 foreach($fileList as $file){
     $handle = fopen($file, "r");
