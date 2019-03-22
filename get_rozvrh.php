@@ -1,11 +1,12 @@
 <?php
 
 ini_set('max_execution_time', 0);
+date_default_timezone_set("Europe/Prague");
 $configs = include('config.php');
 $login = $configs["username"];
 $password = $configs["password"];
 $url = $configs["servername"];
-$sleep = $configs["sleep"];
+$sleep = $configs["sleep"]*60;
 $max_hodin = $configs["max_hodin"];
 $auto_restart = $configs["auto_restart"];
 
@@ -16,12 +17,11 @@ $url .= "/if/2/timetable/actual/classes";
 
 do{
     $rozvrh = "";
-    if((date("w")) > 5){
+    if((date("w")) > 5 or (date("w")) == 0){
         $den = 0;
     }else{
         $den = (date("w")-1);
     }
-    echo $den+1;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -67,12 +67,14 @@ do{
                         if($TimetableCell->Atoms->TimetableAtom->Group->Abbrev == "celá"){
                             $rozvrh .= "<td>\n";
                             $rozvrh .= "<div class=\"predmet\">".$TimetableCell->Atoms->TimetableAtom->Subject->Abbrev."</div\n<br>";
+                            $rozvrh .= "<div class=\"trida\">".$TimetableAtom->Room->Abbrev."</div\n<br>";
                             $rozvrh .= "<div class=\"ucitel\">".$TimetableCell->Atoms->TimetableAtom->Teacher->Abbrev."</div\n<br>";
                             $rozvrh .= "</td>\n";
                         }else{
                             $rozvrh .= "<td>\n";
                             foreach($TimetableCell->Atoms->TimetableAtom as $TimetableAtom){
                                 $rozvrh .= "<div class=\"skupina\">".$TimetableAtom->Group->Abbrev."</div\n<br>";
+                                $rozvrh .= "<div class=\"trida\">".$TimetableAtom->Room->Abbrev."</div\n<br>";
                                 $rozvrh .= "<div class=\"predmet\">".$TimetableAtom->Subject->Abbrev."</div\n<br>";
                                 $rozvrh .= "<div class=\"ucitel\">".$TimetableAtom->Teacher->Abbrev."</div\n<br>";
                                 $rozvrh .= "<div style=\"border-style: none;\"></div>";                                                             //"dělá" enter v tb
@@ -94,7 +96,7 @@ do{
         }
         $rozvrh .= "</tbody>\n</table>";
 
-        save_to_file($rozvrh);
+        save_to_file($rozvrh, $den);
     }
 
 
@@ -114,8 +116,9 @@ function to_xml($result){
     return $result;
 }
 
-function save_to_file($rozvrh){
+function save_to_file($rozvrh, $den){
 $fw = fopen("rozvrh.txt", "w");
 fwrite($fw, $rozvrh);
 fclose($fw);
+echo date("H:i")." day: ".($den+1)."\n\n";
 }

@@ -12,7 +12,7 @@
 <body>
 
 <?php
-$fr = @fopen("rozvrh.txt", "r") or die("Rozvrh není načtený");
+$fr = @fopen("rozvrh.txt", "r") or die("Rozvrh nelze načíst");
 
 while (($line = fgets($fr)) !== false) {
     echo $line;
