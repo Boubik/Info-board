@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link href="styles/index.css" rel="stylesheet" type="text/css">
+    <link href="styles/news_cantine.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="images/logo.ico">
     <title>Info</title>
     <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=logspdcwzv4eydmuk9f8sxe6bjh4sfxny0uxkbr9btixvcxm"></script>

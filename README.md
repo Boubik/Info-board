@@ -5,7 +5,7 @@ info board for my school
 ## **Features**
 
 - [x] school news
-- [ ] schedule
+- [x] school schedule
 - [ ] school cantine menu
 
 ## **Changelog**

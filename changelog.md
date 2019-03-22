@@ -1,5 +1,9 @@
 # **Change log**
 
+## v0.3
+
+- add school schedule with automatic refresh (run php get_rozvrh.php)
+
 ## v0.2
 
 - add form page to save news
