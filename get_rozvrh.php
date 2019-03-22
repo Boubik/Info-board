@@ -16,6 +16,12 @@ $url .= "/if/2/timetable/actual/classes";
 
 do{
     $rozvrh = "";
+    if((date("w")) > 5){
+        $den = 0;
+    }else{
+        $den = (date("w")-1);
+    }
+    echo $den+1;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -52,7 +58,7 @@ do{
                 $i = 0;
                 //vypsání jedné třídy
                 foreach($Timetable->Cells->TimetableCell as $TimetableCell){
-                    if($TimetableCell->DayIndex == (date("w")-1)){
+                    if($TimetableCell->DayIndex == $den){
                         while(($TimetableCell->HourIndex-3) != $i and $i < $max_hodin+1){
                             $rozvrh .= "<td class=\"prazdnej\">\n</td>\n";
                             $i++;
