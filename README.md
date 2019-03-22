@@ -22,10 +22,10 @@ if enable it will automatically restart itself and check for new every 30 min by
 
 ## **How to use News**
 
-form input in /insert.php
+form input in insert.php
 
-create file in aktuality (.md)
+will create file in aktuality (.md)
 
-name of file will be used as head line
+name of file will be used as head line (1)
 
 \*\***for bold text**\*\*
