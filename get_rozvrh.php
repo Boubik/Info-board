@@ -22,6 +22,7 @@ do{
     }else{
         $den = (date("w")-1);
     }
+    
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -31,6 +32,7 @@ do{
     curl_setopt($ch, CURLINFO_HEADER_OUT, true);
     $result = curl_exec($ch);
     $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);   //get status code
+    curl_close($ch);
 
     $result = to_xml($result);
     //echo $result;
@@ -98,9 +100,6 @@ do{
 
         save_to_file($rozvrh, $den);
     }
-
-
-    curl_close($ch);
 
     if($auto_restart == TRUE){
         sleep($sleep);
