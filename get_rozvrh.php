@@ -5,8 +5,8 @@ date_default_timezone_set("Europe/Prague");
 $configs = include('config.php');
 $login = $configs["username"];
 $password = $configs["password"];
-$url = $configs["servername"];
-$sleep = $configs["sleep"]*60;
+$url = $configs["rozvrh_url"];
+$sleep = $configs["sleep_s"]*60;
 $max_hodin = $configs["max_hodin"];
 $auto_restart = $configs["auto_restart"];
 
@@ -116,8 +116,8 @@ function to_xml($result){
 }
 
 function save_to_file($rozvrh, $den){
-$fw = fopen("rozvrh.txt", "w");
-fwrite($fw, $rozvrh);
-fclose($fw);
-echo date("H:i")." day: ".($den+1)."\n\n";
+    $fw = fopen("rozvrh.txt", "w");
+    fwrite($fw, $rozvrh);
+    fclose($fw);
+    echo date("H:i")." day: ".($den+1)."\n\n";
 }
