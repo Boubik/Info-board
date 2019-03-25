@@ -68,26 +68,34 @@ do{
                         $i++;
                         if($TimetableCell->Atoms->TimetableAtom->Group->Abbrev == "celá"){
                             $rozvrh .= "<td>\n";
+                            $rozvrh .= "<div class=\"cell\">\n";
+                            $rozvrh .= "<div class=\"ucebna\">".$TimetableAtom->Room->Abbrev."</div\n<br>";
                             $rozvrh .= "<div class=\"predmet\">".$TimetableCell->Atoms->TimetableAtom->Subject->Abbrev."</div\n<br>";
-                            $rozvrh .= "<div class=\"trida\">".$TimetableAtom->Room->Abbrev."</div\n<br>";
                             $rozvrh .= "<div class=\"ucitel\">".$TimetableCell->Atoms->TimetableAtom->Teacher->Abbrev."</div\n<br>";
+                            $rozvrh .= "</div>\n";
                             $rozvrh .= "</td>\n";
                         }else{
                             $rozvrh .= "<td>\n";
+                            $rozvrh .= "<div class=\"cell\">\n";
+                            $k = 0;
                             foreach($TimetableCell->Atoms->TimetableAtom as $TimetableAtom){
+                                $rozvrh .= "<div class=\"incell$k\">\n";
+                                $rozvrh .= "<div class=\"ucebna\">".$TimetableAtom->Room->Abbrev."</div\n<br>";
                                 $rozvrh .= "<div class=\"skupina\">".$TimetableAtom->Group->Abbrev."</div\n<br>";
-                                $rozvrh .= "<div class=\"trida\">".$TimetableAtom->Room->Abbrev."</div\n<br>";
                                 $rozvrh .= "<div class=\"predmet\">".$TimetableAtom->Subject->Abbrev."</div\n<br>";
                                 $rozvrh .= "<div class=\"ucitel\">".$TimetableAtom->Teacher->Abbrev."</div\n<br>";
-                                $rozvrh .= "<div style=\"border-style: none;\"></div>";                                                             //"dělá" enter v tb
+                                $rozvrh .= "</div>\n";
+                                //$rozvrh .= "<div style=\"border-style: none;\"></div>";                                                             //"dělá" enter v tb
+                                $k++;
                             }
+                            $rozvrh .= "</div>\n";
                             $rozvrh .= "</td>\n";
                         }
                     }
                 }
                 //doplnění na konci
                 while($i != $max_hodin+1){
-                    $rozvrh .= "<td>\n</td>\n";
+                    $rozvrh .= "<td class=\"prazdnej\">\n</td>\n";
                     $i++;
                 }
             }
@@ -98,7 +106,7 @@ do{
         }
         $rozvrh .= "</tbody>\n</table>";
 
-        save_to_file($rozvrh, $den);
+        save_to_file($rozvrh, $den, $status_code);
     }
 
     if($auto_restart == TRUE){
@@ -115,9 +123,9 @@ function to_xml($result){
     return $result;
 }
 
-function save_to_file($rozvrh, $den){
+function save_to_file($rozvrh, $den, $status_code){
     $fw = fopen("rozvrh.txt", "w");
     fwrite($fw, $rozvrh);
     fclose($fw);
-    echo date("H:i")." day: ".($den+1)."\n\n";
+    echo date("H:i")." day: ".($den+1)." status cod: $status_code\n\n";
 }

@@ -1,0 +1,90 @@
+table{
+    background-color: rgb(239, 180, 70);
+}
+
+.prazdnej{
+    background-color: rgb(212, 179, 118);
+}
+
+.trida{
+    text-align: center;
+    background-color: rgb(237, 174, 55);
+}
+
+.ucebna{
+    text-align: right;
+    font-size: 10px;
+}
+
+.cell .predmet{
+    position: absolute;
+    text-align: center;
+    bottom: 50%;
+    left: 40%;
+}
+
+.incell0 .predmet{
+    position: absolute;
+    text-align: center;
+    bottom: 50%;
+    left: 23%;
+}
+
+.incell1 .predmet{
+    position: absolute;
+    text-align: center;
+    bottom: 50%;
+    left: 23%;
+}
+
+.cell .ucitel {
+    position: absolute;
+    text-align: center;
+    font-size: 10px;
+    bottom: 0;
+    left: 42%;
+}
+
+.incell0 .ucitel {
+    position: absolute;
+    text-align: center;
+    font-size: 10px;
+    bottom: 0;
+    left: 33%;
+}
+
+.incell1 .ucitel {
+    position: absolute;
+    text-align: center;
+    font-size: 10px;
+    bottom: 0;
+    left: 33%;
+}
+
+.skupina{
+    margin-top: -13px;
+    font-size: 10px;
+}
+
+.cell{
+    position: relative;
+    height: 88px;
+    width: 100%;
+}
+
+.incell0{
+    position: absolute;
+    left: 0;
+    width: 48%;
+    height: 88px;
+}
+
+.incell1{
+    position: absolute;
+    border-style: solid;
+    padding-left: 2px;
+    border-width: 0px 0px 0px 2px;
+    right: 0;
+    width: 48%;
+    height: 88px;
+}
