@@ -69,7 +69,7 @@ do{
                         if($TimetableCell->Atoms->TimetableAtom->Group->Abbrev == "celá"){
                             $rozvrh .= "<td>\n";
                             $rozvrh .= "<div class=\"cell\">\n";
-                            $rozvrh .= "<div class=\"ucebna\">".$TimetableAtom->Room->Abbrev."</div\n<br>";
+                            $rozvrh .= "<div class=\"ucebna\">".$TimetableCell->Atoms->TimetableAtom->Room->Abbrev."</div\n<br>";
                             $rozvrh .= "<div class=\"predmet\">".$TimetableCell->Atoms->TimetableAtom->Subject->Abbrev."</div\n<br>";
                             $rozvrh .= "<div class=\"ucitel\">".$TimetableCell->Atoms->TimetableAtom->Teacher->Abbrev."</div\n<br>";
                             $rozvrh .= "</div>\n";
