@@ -127,5 +127,5 @@ function save_to_file($rozvrh, $den, $status_code){
     $fw = fopen("rozvrh.txt", "w");
     fwrite($fw, $rozvrh);
     fclose($fw);
-    echo date("H:i")." day: ".($den+1)." status cod: $status_code\n\n";
+    echo date("H:i")." day: ".($den+1)." status code: $status_code\n\n";
 }
