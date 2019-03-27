@@ -12,6 +12,9 @@ $auto_restart = $configs["auto_restart"];
 
 $tr = FALSE;
 
+$th_width = 8.333333333;
+$hodina_cislo = array("7:00 - 7:45", "8:05 - 8:50", "9:00 - 9:45", "10:05 - 10:50", "11:00 - 11:45", "11:55 - 12:40", "12:45 - 13:30", "13:35 - 14:20", "14:20 - 15:10", "15:15 - 16:00", "16:05 - 16:50");
+
 $url .= "/if/2/timetable/actual/classes";
 //echo $url . "<br>";
 
@@ -41,11 +44,11 @@ do{
         $xml = new SimpleXMLElement($result);
         //echo $status_code . "<br>";
 
-        $rozvrh .= "<table class=\"table\" style=\"width:100%\" border=\"1\">\n<tbody>\n<tr>";                    //tabble
+        $rozvrh .= "<table class=\"table\" style=\"width:100%\" border=\"1\">\n<tbody>\n<tr>";
         $i = 0;
-        $rozvrh .= "<th>\nTřída</th>\n";
+        $rozvrh .= "<th style=\"width:$th_width%\";>\nTřída</th>\n";
         while($i != $max_hodin+1){
-            $rozvrh .= "<th class=\"hodina\">\n$i</th>\n";
+            $rozvrh .= "<th class=\"hodina\" style=\"width:$th_width%\";>\n$i<div class=\"hodina_cislo\">".$hodina_cislo[$i]."</div></th>\n";
             $i++;
         }
         $rozvrh .= "</tr>";
@@ -61,7 +64,7 @@ do{
                 //vypsání jedné třídy
                 foreach($Timetable->Cells->TimetableCell as $TimetableCell){
                     if($TimetableCell->DayIndex == $den){
-                        while(($TimetableCell->HourIndex-3) != $i and $i < $max_hodin+1){
+                        while(($TimetableCell->HourIndex-2) != $i and $i < $max_hodin+1){
                             $rozvrh .= "<td class=\"prazdnej\">\n</td>\n";
                             $i++;
                         }
@@ -78,18 +81,26 @@ do{
                             $rozvrh .= "<td>\n";
                             $rozvrh .= "<div class=\"cell\">\n";
                             $k = 0;
-                            foreach($TimetableCell->Atoms->TimetableAtom as $TimetableAtom){
-                                $rozvrh .= "<div class=\"incell$k\">\n";
-                                $rozvrh .= "<div class=\"ucebna\">".$TimetableAtom->Room->Abbrev."</div\n<br>";
-                                $rozvrh .= "<div class=\"skupina\">".$TimetableAtom->Group->Abbrev."</div\n<br>";
-                                $rozvrh .= "<div class=\"predmet\">".$TimetableAtom->Subject->Abbrev."</div\n<br>";
-                                $rozvrh .= "<div class=\"ucitel\">".$TimetableAtom->Teacher->Abbrev."</div\n<br>";
+                            if(isset($TimetableAtom[2])){
+                                foreach($TimetableCell->Atoms->TimetableAtom as $TimetableAtom){
+                                    $rozvrh .= "<div class=\"incell$k\">\n";
+                                    $rozvrh .= "<div class=\"ucebna\">".$TimetableAtom->Room->Abbrev."</div\n<br>";
+                                    $rozvrh .= "<div class=\"skupina\">".$TimetableAtom->Group->Abbrev."</div\n<br>";
+                                    $rozvrh .= "<div class=\"predmet\">".$TimetableAtom->Subject->Abbrev."</div\n<br>";
+                                    $rozvrh .= "<div class=\"ucitel\">".$TimetableAtom->Teacher->Abbrev."</div\n<br>";
+                                    $rozvrh .= "</div>\n";
+                                    $k++;
+                                }
                                 $rozvrh .= "</div>\n";
-                                //$rozvrh .= "<div style=\"border-style: none;\"></div>";                                                             //"dělá" enter v tb
-                                $k++;
+                                $rozvrh .= "</td>\n";
+                            }else{
+                                $rozvrh .= "<div class=\"ucebna\">".$TimetableCell->Atoms->TimetableAtom->Room->Abbrev."</div\n<br>";
+                                $rozvrh .= "<div class=\"skupina\">".$TimetableCell->Atoms->TimetableAtom->Group->Abbrev."</div\n<br>";
+                                $rozvrh .= "<div class=\"predmet\">".$TimetableCell->Atoms->TimetableAtom->Subject->Abbrev."</div\n<br>";
+                                $rozvrh .= "<div class=\"ucitel\">".$TimetableCell->Atoms->TimetableAtom->Teacher->Abbrev."</div\n<br>";
+                                $rozvrh .= "</div>\n";
+                                $rozvrh .= "</td>\n";
                             }
-                            $rozvrh .= "</div>\n";
-                            $rozvrh .= "</td>\n";
                         }
                     }
                 }
@@ -116,7 +127,6 @@ do{
 
 
 function to_xml($result){
-    //$lmao = explode("<BakalariDataInterface xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">", $result);
     $lmao = explode('<TargetType>Classes</TargetType>', $result);
     $lmao = explode('</BakalariDataInterface>', $lmao[1]);
     $result = "<?xml version='1.0' encoding='UTF-8'?>".$lmao[0];
@@ -127,5 +137,5 @@ function save_to_file($rozvrh, $den, $status_code){
     $fw = fopen("rozvrh.txt", "w");
     fwrite($fw, $rozvrh);
     fclose($fw);
-    echo date("H:i")." day: ".($den+1)." status code: $status_code\n\n";
+    echo date("H:i")." Day:".($den+1)." Status code:$status_code \n\n";
 }

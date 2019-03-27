@@ -1,5 +1,9 @@
 # **Change log**
 
+## v0.3.2
+
+- new ui
+
 ## v0.3.1
 
 - developer ui for school schedule
