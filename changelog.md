@@ -1,5 +1,9 @@
 # **Change log**
 
+## v0.3.3
+
+- automatic table size
+
 ## v0.3.2
 
 - new ui
