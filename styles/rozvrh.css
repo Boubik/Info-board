@@ -87,7 +87,7 @@ table{
     display: inline-block;
     float: right;
     color: #66a3ff;
-    font-size: 1.2em;
+    font-size: .9em;
 }
 
 .hodina {
@@ -144,7 +144,7 @@ table{
 .incell1 .ucitel {
     position: absolute;
     text-align: center;
-    font-size: 1em;
+    font-size: 0.9em;
     bottom: 0;
 }
 
