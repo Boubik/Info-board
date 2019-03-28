@@ -26,6 +26,8 @@ do{
         $den = (date("w")-1);
     }
 
+    $den = 4;
+
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -48,15 +50,18 @@ do{
         //rozdělí na třídy
         foreach($xml->Timetable as $Timetable){
             $trida = $Timetable->Entity->Abbrev;
-            foreach($Timetable->Cells->TimetableCell as $TimetableCell){
-                if($TimetableCell->DayIndex == $den){
-                    if(($TimetableCell->HourIndex-2) > $max_hodin){
-                        $max_hodin = $TimetableCell->HourIndex-2;
+            if("V" != substr($trida, 0, 1) and "M" != substr($trida, 1, 1)){
+                if(!(isset($Timetable->Cells->TimetableCell->HourIndex)) and ($Timetable->Cells->TimetableCell->DayIndex == $den or !(isset($Timetable->Cells->TimetableCell->DayIndex )))){
+                    $skip[] = $trida;
+                }else{
+                    foreach($Timetable->Cells->TimetableCell as $TimetableCell){
+                        if($TimetableCell->DayIndex == $den){
+                            if(($TimetableCell->HourIndex-2) > $max_hodin){
+                                $max_hodin = $TimetableCell->HourIndex-2;
+                            }
+                        }
                     }
                 }
-            }
-            if(!(isset($Timetable->Cells->TimetableCell->HourIndex)) and ($Timetable->Cells->TimetableCell->DayIndex == $den or !(isset($Timetable->Cells->TimetableCell->DayIndex )))){
-                $skip[] = $trida;
             }
         }
 
