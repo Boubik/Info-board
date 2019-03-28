@@ -87,6 +87,7 @@ table{
     display: inline-block;
     float: right;
     color: #66a3ff;
+    font-size: 1.2em;
 }
 
 .hodina {
@@ -149,7 +150,7 @@ table{
 
 .skupina{
     display: inline-block;
-    font-size: .9em;
+    font-size: .8em;
 }
 
 .cell{
