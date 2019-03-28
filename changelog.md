@@ -1,5 +1,9 @@
 # **Change log**
 
+## v0.3.4
+
+- if class dosnt have any hours it will be skiped
+
 ## v0.3.3
 
 - automatic table size
