@@ -58,10 +58,10 @@ do{
             }
         }
 
-        $rozvrh = "<table class=\"table\" style=\"width:100%\" border=\"1\">\n<tbody>\n<tr>";
-        $th_width = 100/($max_hodin+2);
+        $rozvrh = "<table class=\"table\" style=\"width:100%\"\">\n<tbody>\n<tr>";
+        $th_width = (100/($max_hodin+2)) + (1.5/($max_hodin+2));
         $i = 0;
-        $rozvrh .= "<th style=\"width:$th_width%\";>\nTřída</th>\n";
+        $rozvrh .= "<th class=\"trida_main\"style=\"width:".($th_width/1.5)."%\";>\nTřída</th>\n";
         while($i != $max_hodin+1){
             $rozvrh .= "<th class=\"hodina\" style=\"width:$th_width%\";>\n$i<div class=\"hodina_cislo\">".$hodina_str[$i]."</div></th>\n";
             $i++;

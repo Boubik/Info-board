@@ -51,12 +51,20 @@ header {
     float: right;
 }
 
+th{
+    border: 2px solid black;
+}
+
+td{
+    border: 2px solid black;
+}
+
 table{
     position: absolute;
     height: 93%;
     top: 7%;
     border-collapse: collapse;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 .prazdnej{
@@ -64,13 +72,13 @@ table{
 }
 
 .trida_main {
-    background-color: #ccffcc;
+    font-size: 1.5em;
 }
 
 .trida{
     text-align: center;
     width: 100px;
-    font-size: 1.5em;
+    font-size: 1.7em;
     background-color: #ccffcc;
     font-family: RobotoCondensed-Bold;
 }
@@ -96,8 +104,9 @@ table{
 }
 
 .predmet {
-    font-size: 1.3em;
+    font-size: 1.5em;
     top: 40%;
+    font-family: RobotoCondensed-Bold;
 }
 
 .incell0 .predmet{
@@ -116,7 +125,7 @@ table{
 .cell .ucitel {
     position: absolute;
     text-align: center;
-    font-size: .9em;
+    font-size: 1em;
     bottom: 0;
     width: 100%;
     margin: auto;
@@ -134,7 +143,7 @@ table{
 .incell1 .ucitel {
     position: absolute;
     text-align: center;
-    font-size: .9em;
+    font-size: 1em;
     bottom: 0;
 }
 

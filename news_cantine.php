@@ -22,7 +22,7 @@
 
 date_default_timezone_set("Europe/Prague");
 news();
-cantina();
+//cantina();
 
 
 function cantina(){

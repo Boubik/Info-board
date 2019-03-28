@@ -1,5 +1,9 @@
 # **Change log**
 
+## v0.3.5
+
+- bug fix
+
 ## v0.3.4
 
 - if class dosnt have any hours it will be skiped
