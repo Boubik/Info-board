@@ -1,5 +1,10 @@
 # **Change log**
 
+## v0.4
+
+- will skip class that doesn’t have any hours
+- bug fix
+
 ## v0.3.5
 
 - bug fix
