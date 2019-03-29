@@ -29,6 +29,7 @@ header {
     margin-left: 5%;
     width: 40%;
     height: 100%;
+    display: inline-block;
 }
 
 .logo img {
@@ -43,12 +44,34 @@ header {
     height: 100%;
 }
 
-.school_name {
+.page_name {
     display: inline-block;
     position: relative;
     width: 90%;
-    margin-top: 10px;
+    font-size: 2em;
+    font-family: RobotoCondensed-Bold;
     float: right;
+    margin-top: 2%;
+}
+
+.header_right {
+    display: inline-block;
+    width: 55%;
+}
+
+#clock, #cur_date {
+    display: inline-block;
+    float: right;
+    font-size: 2em;
+    font-family: RobotoCondensed-Bold;
+}
+
+#cur_date {
+    margin-right: 100px;
+}
+
+#clock {
+    margin-right: 20px;
 }
 
 th{

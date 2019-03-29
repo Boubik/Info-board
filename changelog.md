@@ -1,5 +1,9 @@
 # **Change log**
 
+## v0.4.2
+
+- bug fix
+
 ## v0.4.1
 
 - bug fix

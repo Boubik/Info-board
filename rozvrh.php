@@ -13,14 +13,14 @@
     <header>
         <div class="header_left">
             <div class="logo"><img src="images/logo.png" alt="logo"></div>
-            <div class="school_name">Vyšší odborná škola, Střední průmyslová škola a Střední odborná škola služeb a cestovního ruchu, Varnsdorf, Bratislavská 2166, příspěvková organizace</div>
+            <div class="page_name">Rozvrh</div>
         </div><div class="header_right">
-            <div id="cur_date">
+        <div id="cur_date">
                 <?php
                     echo date("d.m. Y");
                 ?>
             </div>
-
+            <div id="clock"></div>
         </div>
     </header>
 
@@ -31,5 +31,30 @@ while (($line = fgets($fr)) !== false) {
     echo $line;
 }
 ?>
+
+<script>
+function getDateTime() {
+        var time = new Date(); 
+        var hour = time.getHours();
+        var minute = time.getMinutes();
+        var second = time.getSeconds(); 
+          
+        if(hour.toString().length == 1) {
+             hour = '0'+hour;
+        }
+        if(minute.toString().length == 1) {
+             minute = '0'+minute;
+        }
+        if(second.toString().length == 1) {
+             second = '0'+second;
+        }   
+        var displayTime = hour+':'+minute+':'+second;   
+         return displayTime;
+    }
+    setInterval(function(){
+        currentTime = getDateTime();
+        document.getElementById("clock").innerHTML = currentTime;
+    }, 1000);
+</script>
 
 </body>
