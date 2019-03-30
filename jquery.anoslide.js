@@ -417,7 +417,7 @@
 				{
 					i.size = {
 						width: 	image.width,
-						height: image.height
+						//height: image.height
 					}
 				}
 			})
@@ -456,7 +456,7 @@
 					size: 
 					{
 						width:	0,
-						height: 0
+						//height: 0
 					}
 				});
 				

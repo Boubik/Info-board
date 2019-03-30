@@ -12,7 +12,7 @@
         <div class="main">
             <div class="content">
                 <div class="carousel">
-                    <ul>
+                    <ul style="height: 100%">
                         <li>
                             <div class="content1">Loading...</div>
                         </li>

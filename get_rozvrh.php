@@ -13,6 +13,7 @@ $auto_restart = $configs["auto_restart"];
 $tr = FALSE;
 $th_width = 8.333333333;
 $hodina_str = array("7:00 - 7:45", "8:05 - 8:50", "9:00 - 9:45", "10:05 - 10:50", "11:00 - 11:45", "11:55 - 12:40", "12:45 - 13:30", "13:35 - 14:20", "14:20 - 15:10", "15:15 - 16:00", "16:05 - 16:50");
+$str_cislo = array("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "eighteen", "nineteen");
 $skip = array();
 
 $url .= "/if/2/timetable/actual/classes";
@@ -37,10 +38,16 @@ do{
     $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);   //get status code
     curl_close($ch);
 
-    //echo $result;
-
+    $result = "";
+    $fr = fopen("rozvrh.xml", "r");
+    
+    while (($line = fgets($fr)) !== false) {
+        $result .= $line;
+    }
+    fclose($fr);
+    $status_code = 200;
     if ($status_code == 200) {
-        $result = to_xml($result);
+        //$result = to_xml($result);
         $xml = new SimpleXMLElement($result);
         //echo $status_code . "<br>";
 
@@ -85,13 +92,13 @@ do{
                 foreach($Timetable->Cells->TimetableCell as $TimetableCell){
                     if($TimetableCell->DayIndex == $den){
                         while(($TimetableCell->HourIndex-2) != $i and $i < $max_hodin+1){
-                            $rozvrh .= "<td class=\"prazdnej\">\n</td>\n";
+                            $rozvrh .= "<td class=\"prazdnej ".$str_cislo[$i]."\">\n</td>\n";
                             $i++;
                         }
                         $i++;
                         if($TimetableCell->Atoms->TimetableAtom->Group->Abbrev == "celá"){
                             $rozvrh .= "<td>\n";
-                            $rozvrh .= "<div class=\"cell\">\n";
+                            $rozvrh .= "<div class=\"cell ".$str_cislo[$i-1]."\">\n";
                             $rozvrh .= "<div class=\"ucebna\">".$TimetableCell->Atoms->TimetableAtom->Room->Abbrev."</div\n<br>";
                             $rozvrh .= "<div class=\"predmet\">".$TimetableCell->Atoms->TimetableAtom->Subject->Abbrev."</div\n<br>";
                             $rozvrh .= "<div class=\"ucitel\">".$TimetableCell->Atoms->TimetableAtom->Teacher->Abbrev."</div\n<br>";
@@ -99,7 +106,7 @@ do{
                             $rozvrh .= "</td>\n";
                         }else{
                             $rozvrh .= "<td>\n";
-                            $rozvrh .= "<div class=\"cell\">\n";
+                            $rozvrh .= "<div class=\"cell ".$str_cislo[$i-1]."\">\n";
                             $k = 0;
                             if(@count($TimetableCell->Atoms->children()) != 1){
                                 foreach($TimetableCell->Atoms->TimetableAtom as $TimetableAtom){
@@ -127,7 +134,7 @@ do{
             }
             //doplnění na konci
             while($i != $max_hodin+1){
-                $rozvrh .= "<td class=\"prazdnej\">\n</td>\n";
+                $rozvrh .= "<td class=\"prazdnej ".$str_cislo[$i]."\">\n</td>\n";
                 $i++;
             }
 
