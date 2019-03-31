@@ -6,7 +6,10 @@
     <link href="styles/rozvrh.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="images/logo.ico">
     <title>Rozvrh</title>
-    <script>//setTimeout(function(){document.location='news_cantine.php';}, 30000);</script>
+    <script>
+    //setTimeout(function(){document.location='news_cantine.php';}, 30000);
+    setTimeout(function(){document.location='rozvrh.php';}, 600000);
+    </script>
 </head>
 
 <body>
