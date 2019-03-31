@@ -38,16 +38,8 @@ do{
     $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);   //get status code
     curl_close($ch);
 
-    $result = "";
-    $fr = fopen("rozvrh.xml", "r");
-    
-    while (($line = fgets($fr)) !== false) {
-        $result .= $line;
-    }
-    fclose($fr);
-    $status_code = 200;
     if ($status_code == 200) {
-        //$result = to_xml($result);
+        $result = to_xml($result);
         $xml = new SimpleXMLElement($result);
         //echo $status_code . "<br>";
 
@@ -75,7 +67,7 @@ do{
         $i = 0;
         $rozvrh .= "<th class=\"trida_main\"style=\"width:".($th_width/1.5)."%\";>\nTřída</th>\n";
         while($i != $max_hodin+1){
-            $rozvrh .= "<th class=\"hodina\" style=\"width:$th_width%\";>\n$i<div class=\"hodina_cislo\">".$hodina_str[$i]."</div></th>\n";
+            $rozvrh .= "<th class=\"hodina ".$str_cislo[$i]."\" style=\"width:$th_width%\";>\n$i<div class=\"hodina_cislo\">".$hodina_str[$i]."</div></th>\n";
             $i++;
         }
         $rozvrh .= "</tr>";
