@@ -14,7 +14,7 @@ $tr = false;
 $th_width = 8.333333333;
 $hodina_str = array("7:00 - 7:45", "8:05 - 8:50", "9:00 - 9:45", "10:05 - 10:50", "11:00 - 11:45", "11:55 - 12:40", "12:45 - 13:30", "13:35 - 14:20", "14:20 - 15:10", "15:15 - 16:00", "16:05 - 16:50");
 $str_cislo = array("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "eighteen", "nineteen");
-$skip = array();
+$stay = array("4ITE","4G","3ITE");
 
 $url .= "/if/2/timetable/actual/classes";
 //echo $url . "<br>";
@@ -47,7 +47,7 @@ do {
         //rozdělí na třídy
         foreach ($xml->Timetable as $Timetable) {
             $trida = $Timetable->Entity->Abbrev;
-            if ("V" != substr($trida, 0, 1) and "M" != substr($trida, 1, 1)) {
+            if ((in_array($trida, $stay))) {
                 if (!(isset($Timetable->Cells->TimetableCell->HourIndex)) and ($Timetable->Cells->TimetableCell->DayIndex == $den or !(isset($Timetable->Cells->TimetableCell->DayIndex)))) {
                     $skip[] = $trida;
                 } else {
@@ -75,7 +75,7 @@ do {
         //rozdělí na třídy
         foreach ($xml->Timetable as $Timetable) {
             $trida = $Timetable->Entity->Abbrev;
-            if ("V" != substr($trida, 0, 1) and "M" != substr($trida, 1, 1) and !(in_array($trida, $skip))) {
+            if ((in_array($trida, $stay))) {
                 $rozvrh .= "<tr>\n";
                 $tr = true;
                 $rozvrh .= "<td class=\"trida\">\n" . $trida . "</td>\n";
