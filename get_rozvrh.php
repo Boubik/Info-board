@@ -14,7 +14,7 @@ $tr = false;
 $th_width = 8.333333333;
 $hodina_str = array("7:00 - 7:45", "8:05 - 8:50", "9:00 - 9:45", "10:05 - 10:50", "11:00 - 11:45", "11:55 - 12:40", "12:45 - 13:30", "13:35 - 14:20", "14:20 - 15:10", "15:15 - 16:00", "16:05 - 16:50");
 $str_cislo = array("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "eighteen", "nineteen");
-$stay = array("4ITE","4G","3ITE");
+$stay = array();
 
 $url .= "/if/2/timetable/actual/classes";
 //echo $url . "<br>";
@@ -25,6 +25,18 @@ do {
         $den = 0;
     } else {
         $den = (date("w") - 1);
+    }
+
+    if(isset($_GET["tridy"])){
+        $fw = fopen("tridy.txt", "w");
+        fwrite($fw, $_GET["tridy"]);
+        fclose($fw);
+        $stay = explode(",",$_GET["tridy"]);
+    }else{
+        $fr = fopen("tridy.txt", "r");
+        $line = fgets($fr);
+        fclose($fr);
+        $stay = explode(",",$line);
     }
 
     $ch = curl_init();
@@ -41,8 +53,6 @@ do {
     if ($status_code == 200) {
         $result = to_xml($result);
         $xml = new SimpleXMLElement($result);
-        //echo $status_code . "<br>";
-
 
         //rozdělí na třídy
         foreach ($xml->Timetable as $Timetable) {
@@ -142,8 +152,10 @@ do {
         }
         $rozvrh .= "</tbody>\n</table>";
 
-        save_to_file($rozvrh, $den, $status_code);
+        save_to_file($rozvrh);
     }
+
+    echo date("H:i") . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n\n";
 
     if ($auto_restart == true) {
         sleep($sleep);
@@ -159,11 +171,9 @@ function to_xml($result)
     return $result;
 }
 
-function save_to_file($rozvrh, $den, $status_code)
+function save_to_file($rozvrh)
 {
     $fw = fopen("rozvrh.txt", "w");
     fwrite($fw, $rozvrh);
     fclose($fw);
-    echo date("H:i") . " Day:" . ($den + 1) . " Status code:$status_code \n\n";
 }
-
