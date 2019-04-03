@@ -53,7 +53,7 @@ do {
     if ($status_code == 200) {
         $result = to_xml($result);
         $xml = new SimpleXMLElement($result);
-        //komentář
+        
         //rozdělí na třídy
         foreach ($xml->Timetable as $Timetable) {
             $trida = $Timetable->Entity->Abbrev;
