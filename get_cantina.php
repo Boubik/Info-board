@@ -27,7 +27,6 @@
             //preg_match('/<div id=\"jidelnicky_jidelnicek_obalka\">(.*?)<\/div>/s', $result, $jidelnicek);
             //echo $jidelnicek[0];
             echo $result;
-            echo "lmao";
             $wait == true;
         }
     }
