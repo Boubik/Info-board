@@ -1,5 +1,12 @@
 <?php
 return array(
+    //db
+    'servername' => '127.0.0.1',                                                // servername
+    'usr_db' => 'root',                                                         // user name
+    'passwd_db' => '',                                                          // password
+    'dbname' => 'tabule',                                                       // dbname
+
+
     //rozvrh
     'rozvrh_url' => 'https://marvdf.bakalari.cz:444/bakaweb',                   // address for baklaře
     'username' => '',                                                       // user name

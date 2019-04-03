@@ -22,41 +22,120 @@
 <body>
 
 <?php
+$configs = include('config.php');
+$servername = $configs["servername"];
+$username = $configs["usr_db"];
+$password = $configs["passwd_db"];
+$dbname = $configs["dbname"];
 
-$nadpis = "";
-$text = "";
-$date = "";
+try {
+    $conn = new PDO("mysql:host=".$servername.";dbname=".$dbname.";charset=utf8", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch(PDOException $e){
+    echo "Something goes worn give us time to fix it";
+}
 
-echo '<form method="POST" action="">Do kdy
-<input type="date" name="date"  value="'.$date.'">Nadpis
-<input type="text" name="Nadpis"  value="'.$nadpis.'">Text
-<textarea name="text" id="mytextarea"></textarea>
-<input type="submit" name="submit"  value="save">
-</form>';
+$character = $conn->prepare("SET character SET UTF8");
+$character->execute();
 
-if(isset($_POST["submit"]) and isset($_POST["Nadpis"]) and isset($_POST["text"]) and isset($_POST["date"])){
-    $nadpis = $_POST["Nadpis"];
-    $text = $_POST["text"];
-    $date = $_POST["date"];
-    //$nadpis = htmlspecialchars($_POST["Nadpis"], ENT_QUOTES, 'UTF-8');
-    //$text = htmlspecialchars($_POST["text"], ENT_QUOTES, 'UTF-8');
-    //$date = htmlspecialchars($_POST["date"], ENT_QUOTES, 'UTF-8');
-    
-    if($nadpis != "" and $text != "" and $date != ""){
-        //echo "<h1>".$nadpis."</h1>";
-        $myfile = fopen("aktuality/".$nadpis.".md", "w");
-        //echo $date."<br>";
-        fwrite($myfile, $date."\n");
-        $text = preg_replace('/<p>/', "", $text);
-        $text = preg_replace('/<\/p>/', "", $text);
-        $text = preg_replace('/<strong>/', "<b>", $text);
-        $text = preg_replace('/<\/strong>/', "</b>", $text);
-        //echo $text."<br>";
-        fwrite($myfile, $text);
-        fclose($myfile);
-        echo "<br>vše bylo uloženo";
-    }else{
-        echo "vyplň vše";
+session_start();
+if(!(isset($_SESSION["login"]))){
+    $_SESSION["login"] = false;
+}
+
+if(isset($_POST["usr"]) and isset($_POST["pass"]) and registred($conn, $_POST["usr"], $_POST["pass"])){
+    $_SESSION["login"] = true;
+}
+
+if(isset($_SESSION["usr"]) and isset($_SESSION["pass"])){
+    lastlogin($conn, $_SESSION["usr"], $_SESSION["pass"]);
+}
+
+if($_SESSION["login"]){
+    $nadpis = "";
+    $text = "";
+    $date = "";
+
+    echo '<form method="POST" action="">Do kdy
+    <input type="date" name="date"  value="'.$date.'">Nadpis
+    <input type="text" name="Nadpis"  value="'.$nadpis.'">Text
+    <textarea name="text" id="mytextarea"></textarea>
+    <input type="submit" name="submit"  value="save">
+    </form>';
+
+    if(isset($_POST["submit"]) and isset($_POST["Nadpis"]) and isset($_POST["text"]) and isset($_POST["date"])){
+        $nadpis = $_POST["Nadpis"];
+        $text = $_POST["text"];
+        $date = $_POST["date"];
+        //$nadpis = htmlspecialchars($_POST["Nadpis"], ENT_QUOTES, 'UTF-8');
+        //$text = htmlspecialchars($_POST["text"], ENT_QUOTES, 'UTF-8');
+        //$date = htmlspecialchars($_POST["date"], ENT_QUOTES, 'UTF-8');
+        
+        if($nadpis != "" and $text != "" and $date != ""){
+            //echo "<h1>".$nadpis."</h1>";
+            $myfile = fopen("aktuality/".$nadpis.".md", "w");
+            //echo $date."<br>";
+            fwrite($myfile, $date."\n");
+            $text = preg_replace('/<p>/', "", $text);
+            $text = preg_replace('/<\/p>/', "", $text);
+            $text = preg_replace('/<strong>/', "<b>", $text);
+            $text = preg_replace('/<\/strong>/', "</b>", $text);
+            //echo $text."<br>";
+            fwrite($myfile, $text);
+            fclose($myfile);
+            echo "<br>vše bylo uloženo";
+        }else{
+            echo "vyplň vše";
+        }
+    }
+}else{
+    echo '<form method="POST" action="">Jméno
+    <input type="username" name="usr">Heslo
+    <input type="password" name="pass">
+    <input type="submit" name="submit"  value="Přihlásit se">
+    </form>';
+}
+
+
+
+function registred($conn, $usr, $pass){
+    $hash = hash("sha512", $pass);
+
+    $sql = "SELECT * FROM `users` WHERE `active` = true";
+    $query = $conn->prepare($sql);
+    $numrows = $query->execute();
+    if ($numrows > 0) {
+        while($row = $query->fetch()){
+            if($hash == $row["pass"] and $usr == $row["usr"]){
+                logedind($conn, $usr, $hash);
+                $_SESSION["login"] = true;
+                $_SESSION["usr"] = $usr;
+                $_SESSION["pass"] = $hash;
+            }
+        }
+    }
+}
+
+
+function logedind($conn, $usr, $hash){
+    $sql = "UPDATE `users` SET `lastlogin`= CURDATE() WHERE `usr`= '".$usr."' and `pass`= '".$hash."'";
+    $query = $conn->prepare($sql);
+    $query->execute();
+}
+
+function lastlogin($conn, $usr, $hash){
+
+    $sql = "SELECT * FROM `users` WHERE `lastlogin` < NOW() - INTERVAL 1 WEEK";
+    $query = $conn->prepare($sql);
+    $numrows = $query->execute();
+    if ($numrows > 0) {
+        while($row = $query->fetch()){
+            if($hash == $row["pass"] and $usr == $row["usr"]){
+                $_SESSION["login"] = false;
+            }
+        }
     }
 }
 
