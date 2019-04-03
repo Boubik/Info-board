@@ -27,16 +27,11 @@ do {
         $den = (date("w") - 1);
     }
 
-    if(isset($_GET["tridy"])){
-        $fw = fopen("tridy.txt", "w");
-        fwrite($fw, $_GET["tridy"]);
-        fclose($fw);
-        $stay = explode(",",$_GET["tridy"]);
+    if(isset($configs["tridy"]) and $configs["tridy"] != ""){
+        $stay = $configs["tridy"];
+        $stay = explode(",", $stay);
     }else{
-        $fr = fopen("tridy.txt", "r");
-        $line = fgets($fr);
-        fclose($fr);
-        $stay = explode(",",$line);
+        $stay = "all";
     }
 
     $ch = curl_init();
@@ -53,11 +48,11 @@ do {
     if ($status_code == 200) {
         $result = to_xml($result);
         $xml = new SimpleXMLElement($result);
-        
+
         //rozdělí na třídy
         foreach ($xml->Timetable as $Timetable) {
             $trida = $Timetable->Entity->Abbrev;
-            if ((in_array($trida, $stay))) {
+            if ((@in_array($trida, $stay)) or $stay == "all") {
                 if (!(isset($Timetable->Cells->TimetableCell->HourIndex)) and ($Timetable->Cells->TimetableCell->DayIndex == $den or !(isset($Timetable->Cells->TimetableCell->DayIndex)))) {
                     $skip[] = $trida;
                 } else {
@@ -85,7 +80,7 @@ do {
         //rozdělí na třídy
         foreach ($xml->Timetable as $Timetable) {
             $trida = $Timetable->Entity->Abbrev;
-            if ((in_array($trida, $stay))) {
+            if ((@in_array($trida, $stay)) or $stay == "all") {
                 $rozvrh .= "<tr>\n";
                 $tr = true;
                 $rozvrh .= "<td class=\"trida\">\n" . $trida . "</td>\n";
