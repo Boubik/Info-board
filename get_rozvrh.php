@@ -76,6 +76,7 @@ do {
             $i++;
         }
         $rozvrh .= "</tr>";
+        
 
         //rozdělí na třídy
         foreach ($xml->Timetable as $Timetable) {

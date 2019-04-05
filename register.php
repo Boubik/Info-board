@@ -25,7 +25,7 @@ if(isset($_POST['submit']) and isset($_POST['usr']) and isset($_POST['pass'])){
     $usr = $_POST['usr'];
     $pass = $_POST['pass'];
     
-    $hash = hash("sha512", $pass);
+    $hash = hash("sha3-512", $pass);
 
     $sql = "INSERT INTO users (`usr`, `pass`, `created`, `lastlogin`, `active`) VALUES ('".$usr."','".$hash."', CURDATE(), CURDATE(), false)";
     $query= $conn->prepare($sql);

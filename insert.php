@@ -101,7 +101,7 @@ if($_SESSION["login"]){
 
 
 function registred($conn, $usr, $pass){
-    $hash = hash("sha512", $pass);
+    $hash = hash("sha3-512", $pass);
 
     $sql = "SELECT * FROM `users` WHERE `active` = true";
     $query = $conn->prepare($sql);
