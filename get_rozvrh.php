@@ -17,7 +17,6 @@ $str_cislo = array("zero", "one", "two", "three", "four", "five", "six", "seven"
 $stay = array();
 
 $url .= "/if/2/timetable/actual/classes";
-//echo $url . "<br>";
 
 do {
     $rozvrh = "";
