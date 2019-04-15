@@ -38,7 +38,8 @@
         foreach ($xml->jidlo as $jidlo) {
             $jidelak[strval($jidlo->datum)][strval($jidlo->druh)] = strval($jidlo->nazev);
         }
-        //var_dump($jidelak);
+
+        echo "<div class=\"cantina\">";
         foreach($jidelak as $den){
             $datum = array_search ($den, $jidelak);
             echo "<div class=\"den\"><div class=\"datum\">".$datum."</div>";
@@ -50,6 +51,7 @@
             }
             echo "</div><br>";
         }
+        echo "</div>";
     }
 
     function news()
