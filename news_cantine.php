@@ -23,16 +23,32 @@
     <?php
 
     date_default_timezone_set("Europe/Prague");
+    cantina();
     news();
     //cantina();
 
 
     function cantina()
     {
-        $fr = @fopen("cantina.txt", "r") or die("Jídelníček nelze načíst");
-
-        while (($line = fgets($fr)) !== false) {
-            echo $line;
+        $xml = @simplexml_load_file("jidelnicek.xml");
+        if (!$xml) {
+            die("Nejsou data z jidelnicek.xml");
+        }
+        $jidelak = array();
+        foreach ($xml->jidlo as $jidlo) {
+            $jidelak[strval($jidlo->datum)][strval($jidlo->druh)] = strval($jidlo->nazev);
+        }
+        //var_dump($jidelak);
+        foreach($jidelak as $den){
+            $datum = array_search ($den, $jidelak);
+            echo "<div class=\"den\"><div class=\"datum\">".$datum."</div>";
+            foreach($den as $jidlo){
+                $key = array_search ($jidlo, $den);
+                if(substr($key,0,4) != "bal."){
+                    echo "<div class=\"jidlo\">".$key."</div> <div class=\"jidlo_popis\">".$jidlo."</div>";
+                }
+            }
+            echo "</div><br>";
         }
     }
 
