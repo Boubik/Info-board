@@ -1,0 +1,169 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    font-family: RobotoCondensed-Regular;
+    font-size: 16px;
+}
+
+body {
+    background-color: rgba(0,0,0,.1)
+}
+
+@font-face {
+    font-family: RobotoCondensed-Regular;
+    src: url("../fonts/RobotoCondensed-Regular.ttf");
+}
+
+@font-face {
+    font-family: RobotoCondensed-Bold;
+    src: url("../fonts/RobotoCondensed-Bold.ttf");
+}
+
+@font-face {
+    font-family: RobotoCondensed-light;
+    src: url("../fonts/RobotoCondensed-Light.ttf");
+}
+
+.login_container {
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-family: RobotoCondensed-Regular;
+    text-align: center;
+    border-radius: 5%;
+    border: 3px solid rgba(0,0,0,.3);
+    background-color: white;
+}
+
+.logo img {
+    margin-top: 20px;
+    width: 25%;
+}
+
+.username {
+    margin-top: 15px;
+}
+
+.login_container input {
+    margin-top: 20px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px groove rgba(0,0,0,.3);
+    padding-left: 5px;
+}
+
+.submit_login input {
+    cursor: pointer;
+}
+
+header {
+    width: 100%;
+    height: 7%;
+    background-color: white;
+    border-bottom: rgba(0, 0, 0, .3) .5px solid;
+
+}
+
+.header_left {
+    margin-left: 2%;
+    width: 40%;
+    height: 100%;
+    display: inline-block;
+}
+
+.logo_insert img {
+    width: 60%;
+    margin-top: 10px;
+}
+
+.logo_insert {
+    position: relative;
+    display: inline-block;
+    width: 7%;
+    height: 100%;
+    float: left;
+    margin-top: 4px;
+    margin-left: 10px;
+}
+
+.page_name {
+    display: inline-block;
+    position: relative;
+    font-size: 1.1em;
+    font-family: RobotoCondensed-light;
+    float: left;
+    margin-left: -10px;
+    margin-top: 14px;
+}
+
+.header_right {
+    display: inline-block;
+    width: 55%;
+}
+
+.container {
+    position: absolute;
+    width: 80%;
+    background-color: white;
+    height: 93%;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+span{
+    display: inline-block;
+    margin-right: 3px; 
+    
+}
+
+.datum, .nadpis {
+    width: 194px;
+    margin-bottom: 10px;
+}
+
+.nadpis {
+
+}
+
+.main {
+    margin-left: 10%;
+    margin-top: 50px;
+}
+
+.submit_insert {
+    margin-top: 5px;
+    padding: 10px 20px;
+    font-family: RobotoCondensed-Bold;
+    border-radius: 5px;
+    font-size: 1.1em;
+
+
+}
+
+.msg {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    margin: 20px 0px;
+    text-align: center;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+

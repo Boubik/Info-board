@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link href="styles/index.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="images/logo.ico">
+    <link rel="stylesheet" href="styles/insert.css">
     <title>Insert news</title>
     <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=logspdcwzv4eydmuk9f8sxe6bjh4sfxny0uxkbr9btixvcxm"></script>
     <script>
@@ -58,11 +59,29 @@ if($_SESSION["login"]){
     $text = "";
     $date = "";
 
-    echo '<form method="POST" action="">Do kdy
-    <input type="date" name="date"  value="'.$date.'">Nadpis
-    <input type="text" name="Nadpis"  value="'.$nadpis.'">Text
-    <textarea name="text" id="mytextarea"></textarea>
-    <input type="submit" name="submit"  value="save">
+    echo '
+    <header>
+        <div class="header_left">
+            <div class="logo_insert"><img src="images/logo.png" alt="logo"></div>
+            <div class="page_name">Insert</div>
+
+        </div><div class="header_right">
+            
+        </div>
+    </header>
+    <form method="POST" class="container" action="">
+    <div class="main">
+    <span class="datum_container">
+        <p>Do kdy</p>
+        <input type="date" name="date" class="datum"  value="'.$date.'">
+    </span>
+    <span class="nadpis_container"><p>Nadpis</p>
+        <input type="text" name="Nadpis" class="nadpis"  value="'.$nadpis.'">
+    </span>
+    <textarea name="text" class="text" id="mytextarea">
+    </textarea>
+    <input type="submit" name="submit" class="submit_insert"  value="save">
+    </div>
     </form>';
 
     if(isset($_POST["submit"]) and isset($_POST["Nadpis"]) and isset($_POST["text"]) and isset($_POST["date"])){
@@ -85,17 +104,31 @@ if($_SESSION["login"]){
             //echo $text."<br>";
             fwrite($myfile, $text);
             fclose($myfile);
-            echo "<br>vše bylo uloženo";
+            echo '<div class="msg green">vše bylo uloženo</div>';
         }else{
-            echo "vyplň vše";
+            echo '<div class="msg red">vyplň vše</div>';
         }
     }
 }else{
-    echo '<form method="POST" action="">Jméno
-    <input type="username" name="usr">Heslo
-    <input type="password" name="pass">
-    <input type="submit" name="submit"  value="Přihlásit se">
-    </form>';
+    echo '<div class="login_container">
+    <div class="logo">
+    <img src="images/logo.png" alt="">
+    </div>
+    <form method="POST" action="">
+    <div class="username">
+        <input type="username" name="usr" placeholder="Jméno">
+    </div>
+
+    <div class="password">
+        <input type="password" name="pass" placeholder="Heslo">
+    </div>
+
+    <div class="submit">
+        <input type="submit" name="submit_login"  value="Přihlásit se">
+    </div>
+
+    </form>
+    </div>';
 }
 
 
