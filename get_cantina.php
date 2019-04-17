@@ -6,12 +6,12 @@
 </head>
 
 <body>
-<?php
-$configs = include('config.php');
-$auto_refresh = $configs["auto_refresh"];
-$sleep = 2 * 12 * 60 * 60;
+    <?php
+    $configs = include('config.php');
+    $auto_refresh = $configs["auto_refresh"];
+    $sleep = 2 * 12 * 60 * 60;
 
-    do{
+    do {
         $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
         $address = gethostbyname('www.strava.cz');
         $port = getservbyname('www', 'tcp');

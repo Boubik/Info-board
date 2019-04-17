@@ -26,10 +26,10 @@ do {
         $den = (date("w") - 1);
     }
 
-    if(isset($configs["tridy"]) and $configs["tridy"] != ""){
+    if (isset($configs["tridy"]) and $configs["tridy"] != "") {
         $stay = $configs["tridy"];
         $stay = explode(",", $stay);
-    }else{
+    } else {
         $stay = "all";
     }
 
@@ -75,7 +75,7 @@ do {
             $i++;
         }
         $rozvrh .= "</tr>";
-        
+
 
         //rozdělí na třídy
         foreach ($xml->Timetable as $Timetable) {
