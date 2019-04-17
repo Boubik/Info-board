@@ -109,6 +109,33 @@ if($_SESSION["login"]){
             echo '<div class="msg red">vyplň vše</div>';
         }
     }
+
+
+    echo "<div class=\"news\">";
+    $fileList = glob('aktuality/*.md');
+    foreach ($fileList as $file) {
+        $handle = fopen($file, "r");
+        $delete = true;
+        $date = fgets($handle);
+        echo "<div class=\"date\"".$date."</div>";
+
+        echo "<h1>" . substr(str_replace(".md", "", $file), 10) . "</h1>";
+        echo "<div class=\"date\"";
+        while (($line = fgets($handle)) !== false) {
+            $i = 0;
+            str_replace('**', "<b>", $line, $count);
+            while ($i != $count) {
+                $line = preg_replace('/\*\*/', "<b>", $line, 1);
+                $line = preg_replace('/\*\*/', "</b>", $line, 1);
+                $i += 2;
+            }
+            echo $line . "<br>";
+        }
+        echo "</div>";
+        fclose($handle);
+    }
+    echo "</div>";
+
 }else{
     echo '<div class="login_container">
     <div class="logo">
