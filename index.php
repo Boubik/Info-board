@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Tabbule</title>
-    <script src="jquery-3.3.1.min.js" type="text/javascript"></script>
-    <script src="jquery.anoslide.js" type="text/javascript"></script>
 </head>
 
 <body>
