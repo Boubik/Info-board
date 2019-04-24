@@ -65,6 +65,10 @@ do {
                 }
             }
         }
+        
+        /*if($max_hodin == 0){
+            $max_hodin = 9;
+        }*/
 
         $rozvrh = "<table class=\"table\" style=\"width:100%\"\">\n<tbody>\n<tr>";
         $th_width = (100 / ($max_hodin + 2)) + (1.5 / ($max_hodin + 2));
