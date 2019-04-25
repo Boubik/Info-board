@@ -6,7 +6,7 @@ info board for my school
 
 - [x] school news
 - [x] school schedule
-- [ ] school cantina menu 
+- [x] school cantina menu 
 
 ## **Changelog**
 
