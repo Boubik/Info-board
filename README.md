@@ -18,8 +18,11 @@ open index.php it will automatically change between school schedule and news wit
 ```
 php get_rozvrh.php
 ```
+with another terminal
+```
+php get_cantina.php
+```
 if enable it will automatically restart itself and check for new every 30 min by default
-
 ## **How to use News**
 
 form input in insert.php
