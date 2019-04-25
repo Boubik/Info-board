@@ -9,8 +9,8 @@ return array(
 
     //rozvrh
     'rozvrh_url' => 'https://marvdf.bakalari.cz:444/bakaweb',                   // address for baklaře
-    'username' => 'TEST',                                                       // user name
-    'password' => 'xE63CFFF5C0B4',                                              // password
+    'username' => '',                                                       // user name
+    'password' => '',                                              // password
 
     'auto_restart' => false,                                                    // auto restart
     'sleep_s' => 10,                                                            // time to wait for new refresh of school schedule (min)
