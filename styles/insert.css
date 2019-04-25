@@ -11,7 +11,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 body {
-    background-color: rgba(0,0,0,.1)
+    background-color: rgba(0, 0, 0, .1)
 }
 
 @font-face {
@@ -41,7 +41,7 @@ body {
     font-family: RobotoCondensed-Regular;
     text-align: center;
     border-radius: 5%;
-    border: 3px solid rgba(0,0,0,.3);
+    border: 3px solid rgba(0, 0, 0, .3);
     background-color: white;
 }
 
@@ -58,7 +58,7 @@ body {
     margin-top: 20px;
     height: 30px;
     border-radius: 5px;
-    border: 1px groove rgba(0,0,0,.3);
+    border: 1px groove rgba(0, 0, 0, .3);
     padding-left: 5px;
 }
 
@@ -71,7 +71,6 @@ header {
     height: 7%;
     background-color: white;
     border-bottom: rgba(0, 0, 0, .3) .5px solid;
-
 }
 
 .header_left {
@@ -119,12 +118,12 @@ header {
     margin: auto;
     left: 0;
     right: 0;
+    z-index: -1;
 }
 
-span{
+span {
     display: inline-block;
-    margin-right: 3px; 
-    
+    margin-right: 3px;
 }
 
 .datum, .nadpis {
@@ -132,9 +131,7 @@ span{
     margin-bottom: 10px;
 }
 
-.nadpis {
-
-}
+.nadpis {}
 
 .main {
     margin-left: 10%;
@@ -147,8 +144,6 @@ span{
     font-family: RobotoCondensed-Bold;
     border-radius: 5px;
     font-size: 1.1em;
-
-
 }
 
 .msg {
@@ -167,3 +162,15 @@ span{
     color: red;
 }
 
+.news {
+    margin-top: 55px;
+}
+
+.right {
+    float: right;
+}
+
+.left, .right {
+    width: 50%;
+    display: inline-block;
+}
