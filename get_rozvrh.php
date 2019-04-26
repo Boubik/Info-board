@@ -9,6 +9,8 @@ $url = $configs["rozvrh_url"];
 $sleep = $configs["sleep_s"] * 60;
 $max_hodin = 0;
 $auto_restart = $configs["auto_restart"];
+$log = $configs["log"];
+$delete_log = $configs["delete_log"] + 1;
 
 $tr = false;
 $th_width = 8.333333333;
@@ -157,7 +159,9 @@ do {
         save_to_file($rozvrh);
     }
 
-    echo date("H:i") . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n\n";
+    echo date("H:i") . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin. " Status code:" . $status_code . "\n\n";
+
+    save_to_log($log, $delete_log, $den, $max_hodin, $status_code);
 
     if ($auto_restart == true) {
         sleep($sleep);
@@ -178,4 +182,20 @@ function save_to_file($rozvrh)
     $fw = fopen("rozvrh.txt", "w");
     fwrite($fw, $rozvrh);
     fclose($fw);
+}
+
+function save_to_log($log, $delete_log, $den, $max_hodin, $status_code){
+    if($log){
+        $date = date("Y-m-d");
+        $fa = fopen("logs/rozvrh/".$date.".log", "a");
+        fwrite($fa, date("H:i") . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin. " Status code:" . $status_code . "\n");
+        fclose($fa);
+        $fileList = glob('logs/rozvrh/*.log');
+        foreach($fileList as $filename){
+            $date = substr($filename, 12, 10);
+            if(strtotime($date) < strtotime('-'.$delete_log.' days')) {
+                unlink($filename);
+            }
+        }
+    }
 }

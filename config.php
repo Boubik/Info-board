@@ -18,7 +18,10 @@ return array(
     'tridy' => "4ITE,4G,3ITE,3PGD,2IT,2G,1G,1IT",                               // class that will be showed ("4ITE,4G" separator is ",")
 
     //cantina
-    'cantina_url' => 'https://www.strava.cz/Strava/Stravnik/Jidelnicky?zarizeni=0595',  // address for cantina
-    'auto_refresh' => false,                                                            // auto restart
+    'auto_refresh' => false,                                                    // auto restart
+
+    //logs
+    'log' => true,                                                              // if true it will create logs in folder logs
+    'delete_log' => 7,                                                          // after x (default 7) day will delete logs (last log will be x days old)
 );
  
