@@ -8,6 +8,7 @@
 <body>
     <?php
     $configs = include('config.php');
+    include "functions.php";
     $auto_refresh = $configs["auto_refresh"];
     $sleep = 2 * 12 * 60 * 60;
 
@@ -31,9 +32,8 @@
         $data = str_replace('pomjidelnic_xmljidelnic', 'jidlo', preg_replace('~\s+~', ' ', $data));
         $data = str_replace('> <', '><', $data);
         $data = "<jidelnicek>" . trim($data) . "</jidelnicek>";
-        $fd = fopen("jidelnicek.xml", "w");
-        fwrite($fd, $data);
-        fclose($fd);
+
+        save_to_file("jidelnicek.xml", $data);
 
         if ($auto_refresh == true) {
             sleep($sleep);

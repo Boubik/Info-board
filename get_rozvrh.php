@@ -3,6 +3,7 @@
 ini_set('max_execution_time', 0);
 date_default_timezone_set("Europe/Prague");
 $configs = include('config.php');
+include "functions.php";
 $login = $configs["username"];
 $password = $configs["password"];
 $url = $configs["rozvrh_url"];
@@ -10,7 +11,7 @@ $sleep = $configs["sleep_s"] * 60;
 $max_hodin = 0;
 $auto_restart = $configs["auto_restart"];
 $log = $configs["log"];
-$delete_log = $configs["delete_log"] + 1;
+$delete_log = $configs["delete_log"];
 
 $tr = false;
 $th_width = 8.333333333;
@@ -156,12 +157,15 @@ do {
         }
         $rozvrh .= "</tbody>\n</table>";
 
-        save_to_file($rozvrh);
+        save_to_file("rozvrh.txt", $rozvrh);
     }
 
-    echo date("H:i") . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin. " Status code:" . $status_code . "\n\n";
+    echo date("H:i") . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code . "\n\n";
 
-    save_to_log($log, $delete_log, $den, $max_hodin, $status_code);
+    if($log){
+        $log_text_rozvrh = date("H:i") . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code;
+        save_to_log("rozvrh", $log_text_rozvrh, $delete_log);
+    }
 
     if ($auto_restart == true) {
         sleep($sleep);
@@ -175,27 +179,4 @@ function to_xml($result)
     $lmao = explode('</BakalariDataInterface>', $lmao[1]);
     $result = "<?xml version='1.0' encoding='UTF-8'?>" . $lmao[0];
     return $result;
-}
-
-function save_to_file($rozvrh)
-{
-    $fw = fopen("rozvrh.txt", "w");
-    fwrite($fw, $rozvrh);
-    fclose($fw);
-}
-
-function save_to_log($log, $delete_log, $den, $max_hodin, $status_code){
-    if($log){
-        $date = date("Y-m-d");
-        $fa = fopen("logs/rozvrh/".$date.".log", "a");
-        fwrite($fa, date("H:i") . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin. " Status code:" . $status_code . "\n");
-        fclose($fa);
-        $fileList = glob('logs/rozvrh/*.log');
-        foreach($fileList as $filename){
-            $date = substr($filename, 12, 10);
-            if(strtotime($date) < strtotime('-'.$delete_log.' days')) {
-                unlink($filename);
-            }
-        }
-    }
 }
