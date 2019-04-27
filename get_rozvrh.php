@@ -8,7 +8,6 @@ $login = $configs["username"];
 $password = $configs["password"];
 $url = $configs["rozvrh_url"];
 $sleep = $configs["sleep_s"] * 60;
-$max_hodin = 0;
 $auto_restart = $configs["auto_restart"];
 $log = $configs["log"];
 $delete_log = $configs["delete_log"];
@@ -53,6 +52,7 @@ do {
         $xml = new SimpleXMLElement($result);
 
         //rozdělí na třídy
+        $max_hodin = 0;
         foreach ($xml->Timetable as $Timetable) {
             $trida = $Timetable->Entity->Abbrev;
             if ((@in_array($trida, $stay)) or $stay == "all") {
