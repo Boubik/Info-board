@@ -14,7 +14,7 @@ $delete_log = $configs["delete_log"];
 
 $tr = false;
 $th_width = 8.333333333;
-$hodina_str = array("7:00 - 7:45", "8:05 - 8:50", "9:00 - 9:45", "10:05 - 10:50", "11:00 - 11:45", "11:55 - 12:40", "12:45 - 13:30", "13:35 - 14:20", "14:20 - 15:10", "15:15 - 16:00", "16:05 - 16:50");
+$hodina_str = $configs["hours"];
 $str_cislo = array("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "eighteen", "nineteen");
 $stay = array();
 $stay2 = array();
