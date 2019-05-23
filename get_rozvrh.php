@@ -158,13 +158,20 @@ do {
         $rozvrh .= "</tbody>\n</table>";
 
         save_to_file("rozvrh.txt", $rozvrh);
-    }
 
-    echo date("H:i") . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code . "\n\n";
-
-    if($log){
-        $log_text_rozvrh = date("H:i") . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code;
-        save_to_log("rozvrh", $log_text_rozvrh, $delete_log);
+        echo date("H:i") . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code . "\n\n";
+    
+        if($log){
+            $log_text_rozvrh = date("H:i") . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code;
+            save_to_log("rozvrh", $log_text_rozvrh, $delete_log);
+        }
+    }else{
+        echo date("H:i") . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n\n";
+    
+        if($log){
+            $log_text_rozvrh = date("H:i") . " Day:" . ($den + 1) . " Status code:" . $status_code;
+            save_to_log("rozvrh", $log_text_rozvrh, $delete_log);
+        }
     }
 
     if ($auto_restart == true) {
