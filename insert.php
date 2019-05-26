@@ -68,8 +68,7 @@
             
         </div>
     </header>
-    <div class = "container">
-    <form method="POST" class="left" action="">
+    <form method="POST" class="container" action="">
     <div class="main">
     <span class="datum_container">
         <p>Do kdy</p>
@@ -82,7 +81,7 @@
     </textarea>
     <input type="submit" name="submit" class="submit_insert"  value="save">
     </div>
-    </form></div>';
+    </form>';
 
         if (isset($_POST["submit"]) and isset($_POST["Nadpis"]) and isset($_POST["text"]) and isset($_POST["date"])) {
             $nadpis = $_POST["Nadpis"];
@@ -111,8 +110,7 @@
         }
 
 
-        echo '<div class= "right">
-            <div class="news">';
+        echo "<div class=\"news\">";
         $fileList = glob('aktuality/*.md');
         foreach ($fileList as $file) {
             $handle = fopen($file, "r");
@@ -135,7 +133,7 @@
             echo "</div>";
             fclose($handle);
         }
-        echo "</div></div>";
+        echo "</div>";
     } else {
         echo '<div class="login_container">
     <div class="logo">

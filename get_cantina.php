@@ -7,93 +7,53 @@
 
 <body>
     <?php
-
-    ini_set('max_execution_time', 0);
-    header('Content-Type: text/html; charset=utf-8');
-    date_default_timezone_set("Europe/Prague");
     $configs = include('config.php');
-    $url = $configs["cantina_url"];
-    $refresh = $configs["auto_refresh"];
-    $wait = false;
+    include "functions.php";
+    $auto_refresh = $configs["auto_refresh"];
+    $delete_log = $configs["delete_log"];
+    $log = $configs["log"];
+    $sleep = 2 * 12 * 60 * 60;
 
-
-    $dnes = date("w");
-    if ($wait == false) {
-        $result = get_cantina($url);
-        if ($result != "") {
-            /*$doc = new DOMDocument('1.0', 'utf-8');
-        @$doc->loadHTML($result);
-        $jidelnicek = $doc->getElementById("jidelnicky_jidelnicek_obalka");*/
-            //preg_match('/<div id=\"jidelnicky_jidelnicek_obalka\">(.*?)<\/div>/s', $result, $jidelnicek);
-            //echo $jidelnicek[0];
-            echo $result;
-            $wait == true;
+    do {
+        $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+        $address = gethostbyname('www.strava.cz');
+        $port = getservbyname('www', 'tcp');
+        $result = socket_connect($socket, $address, $port);
+        $buffer = "GET /foxisapi/foxisapi.dll/istravne.istravne.process?xmljidelnicky&zarizeni=0595 HTTP/1.1\r\nHost: www.strava.cz\r\nConnection: Close\r\n\r\n";
+        socket_write($socket, $buffer);
+        $data = '';
+        while ($out = socket_read($socket, 2048, PHP_BINARY_READ)) {
+            $data .= $out;
         }
-    }
-    if ($refresh == true) {
-        if ($dnes > 1 or $dnes == 0) {
-            //fail to load
-            if ($wait == false) {
-                //sleep(3600);
-                $dnes = 12;
+        socket_close($socket);
+        if (!$data) {
+            echo "Nejsou data ze strava.cz";
+
+            echo date("H:i") . " Status code: Fail" . "\n\n";
+        
+            if($log){
+                $log_text_rozvrh = "\n" . date("H:i") . " Status code: Fail" . "\n";
+                save_to_log("rozvrh", $log_text_rozvrh, $delete_log);
             }
-            //neděle
-            if ($dnes == 0) {
-                echo 3600;
-                //sleep(3600);
-                $wait = false;
+
+        }else{
+            $data = iconv('cp1250', 'utf-8', $data);
+            $data = strip_tags($data, '<pomjidelnic_xmljidelnic><datum><druh><nazev><popis>');
+            $data = str_replace('pomjidelnic_xmljidelnic', 'jidlo', preg_replace('~\s+~', ' ', $data));
+            $data = str_replace('> <', '><', $data);
+            $data = "<jidelnicek>" . trim($data) . "</jidelnicek>";
+
+            save_to_file("jidelnicek.xml", $data);
+
+            echo date("H:i") . " Status code: OK" . "\n\n";
+        
+            if($log){
+                $log_text_rozvrh = date("H:i") . " Status code: OK";
+                save_to_log("rozvrh", $log_text_rozvrh, $delete_log);
             }
-            //uterý
-            if ($dnes == 2) {
-                echo 432000;
-                //sleep(432000);
-            }
-            //středa
-            if ($dnes == 3) {
-                echo 345600;
-                //sleep(345600);
-            }
-            //čtvrtek
-            if ($dnes == 4) {
-                echo 259200;
-                //sleep(259200);
-            }
-            //pátek
-            if ($dnes == 5) {
-                echo 172800;
-                //sleep(172800);
-            }
-            //sobota
-            if ($dnes == 6) {
-                echo 86400;
-                //sleep(86400);
-            }
+
         }
-    }
-
-    function get_cantina($url)
-    {
-
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        $result = curl_exec($ch);
-        $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);   //get status code
-        curl_close($ch);
-        if ($status_code != 200) {
-            $result = "";
+        if ($auto_refresh == true) {
+            sleep($sleep);
         }
-
-        return $result;
-    }
-
-    function save_to_file($rozvrh, $den)
-    {
-        $fw = fopen("rozvrh.txt", "w");
-        fwrite($fw, $rozvrh);
-        fclose($fw);
-        echo date("H:i") . " day: " . ($den + 1) . "\n\n";
-    }
-    
+    } while ($auto_refresh == true);

@@ -3,21 +3,23 @@
 ini_set('max_execution_time', 0);
 date_default_timezone_set("Europe/Prague");
 $configs = include('config.php');
+include "functions.php";
 $login = $configs["username"];
 $password = $configs["password"];
 $url = $configs["rozvrh_url"];
 $sleep = $configs["sleep_s"] * 60;
-$max_hodin = 0;
 $auto_restart = $configs["auto_restart"];
+$log = $configs["log"];
+$delete_log = $configs["delete_log"];
 
 $tr = false;
 $th_width = 8.333333333;
-$hodina_str = array("7:00 - 7:45", "8:05 - 8:50", "9:00 - 9:45", "10:05 - 10:50", "11:00 - 11:45", "11:55 - 12:40", "12:45 - 13:30", "13:35 - 14:20", "14:20 - 15:10", "15:15 - 16:00", "16:05 - 16:50");
+$hodina_str = $configs["hours"];
 $str_cislo = array("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "eighteen", "nineteen");
 $stay = array();
+$stay2 = array();
 
 $url .= "/if/2/timetable/actual/classes";
-//echo $url . "<br>";
 
 do {
     $rozvrh = "";
@@ -27,10 +29,10 @@ do {
         $den = (date("w") - 1);
     }
 
-    if(isset($configs["tridy"]) and $configs["tridy"] != ""){
+    if (isset($configs["tridy"]) and $configs["tridy"] != "") {
         $stay = $configs["tridy"];
         $stay = explode(",", $stay);
-    }else{
+    } else {
         $stay = "all";
     }
 
@@ -50,22 +52,29 @@ do {
         $xml = new SimpleXMLElement($result);
 
         //rozdělí na třídy
+        $max_hodin = 0;
         foreach ($xml->Timetable as $Timetable) {
             $trida = $Timetable->Entity->Abbrev;
             if ((@in_array($trida, $stay)) or $stay == "all") {
-                if (!(isset($Timetable->Cells->TimetableCell->HourIndex)) and ($Timetable->Cells->TimetableCell->DayIndex == $den or !(isset($Timetable->Cells->TimetableCell->DayIndex)))) {
-                    $skip[] = $trida;
+                if (!(isset($Timetable->Cells->TimetableCell->HourIndex)) and (!($Timetable->Cells->TimetableCell->DayIndex == $den) or !(isset($Timetable->Cells->TimetableCell->DayIndex)))) {
+
                 } else {
                     foreach ($Timetable->Cells->TimetableCell as $TimetableCell) {
                         if ($TimetableCell->DayIndex == $den) {
                             if (($TimetableCell->HourIndex - 2) > $max_hodin) {
                                 $max_hodin = $TimetableCell->HourIndex - 2;
                             }
+                            $stay2[] = $trida;
                         }
                     }
                 }
             }
         }
+        $stay = $stay2;
+        
+        /*if($max_hodin == 0){
+            $max_hodin = 9;
+        }*/
 
         $rozvrh = "<table class=\"table\" style=\"width:100%\"\">\n<tbody>\n<tr>";
         $th_width = (100 / ($max_hodin + 2)) + (1.5 / ($max_hodin + 2));
@@ -76,7 +85,7 @@ do {
             $i++;
         }
         $rozvrh .= "</tr>";
-        
+
 
         //rozdělí na třídy
         foreach ($xml->Timetable as $Timetable) {
@@ -148,10 +157,22 @@ do {
         }
         $rozvrh .= "</tbody>\n</table>";
 
-        save_to_file($rozvrh);
-    }
+        save_to_file("rozvrh.txt", $rozvrh);
 
-    echo date("H:i") . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n\n";
+        echo date("H:i") . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code . "\n\n";
+    
+        if($log){
+            $log_text_rozvrh = date("H:i") . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code;
+            save_to_log("rozvrh", $log_text_rozvrh, $delete_log);
+        }
+    }else{
+        echo date("H:i") . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n\n";
+    
+        if($log){
+            $log_text_rozvrh = "\n" . date("H:i") . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n";
+            save_to_log("rozvrh", $log_text_rozvrh, $delete_log);
+        }
+    }
 
     if ($auto_restart == true) {
         sleep($sleep);
@@ -165,11 +186,4 @@ function to_xml($result)
     $lmao = explode('</BakalariDataInterface>', $lmao[1]);
     $result = "<?xml version='1.0' encoding='UTF-8'?>" . $lmao[0];
     return $result;
-}
-
-function save_to_file($rozvrh)
-{
-    $fw = fopen("rozvrh.txt", "w");
-    fwrite($fw, $rozvrh);
-    fclose($fw);
 }

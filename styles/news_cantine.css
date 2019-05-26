@@ -99,20 +99,35 @@ header {
     z-index: -1;
 }
 
-.cantina, .news {
+.cantina_container, .news_container {
     display: inline-block;
-    margin-top: 4.5%;
 }
 
-.cantina {
+.cantina_container {
     height: 92.5%;
 border-right: 1px solid rgba(0, 0, 0, .5);
 width: 45%;
 margin-left: 4.9%;
 }
 
-.news {
+.news_container {
     float: right;
     width: 45%;
     margin-left: 4.9%;
+}
+
+.news, .cantina {
+    margin-top: 20px;
+}
+
+.jidlo {
+    font-size: 1.7em;
+}
+
+.datum {
+    font-size: 2em;
+}
+
+.news , h1 {
+    font-size: 1.2em;
 }
