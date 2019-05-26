@@ -10,6 +10,8 @@
     $configs = include('config.php');
     include "functions.php";
     $auto_refresh = $configs["auto_refresh"];
+    $delete_log = $configs["delete_log"];
+    $log = $configs["log"];
     $sleep = 2 * 12 * 60 * 60;
 
     do {
@@ -25,16 +27,32 @@
         }
         socket_close($socket);
         if (!$data) {
-            die("Nejsou data ze strava.cz");
+            echo "Nejsou data ze strava.cz";
+
+            echo date("H:i") . " Status code: Fail" . "\n\n";
+        
+            if($log){
+                $log_text_rozvrh = "\n" . date("H:i") . " Status code: Fail" . "\n";
+                save_to_log("rozvrh", $log_text_rozvrh, $delete_log);
+            }
+
+        }else{
+            $data = iconv('cp1250', 'utf-8', $data);
+            $data = strip_tags($data, '<pomjidelnic_xmljidelnic><datum><druh><nazev><popis>');
+            $data = str_replace('pomjidelnic_xmljidelnic', 'jidlo', preg_replace('~\s+~', ' ', $data));
+            $data = str_replace('> <', '><', $data);
+            $data = "<jidelnicek>" . trim($data) . "</jidelnicek>";
+
+            save_to_file("jidelnicek.xml", $data);
+
+            echo date("H:i") . " Status code: OK" . "\n\n";
+        
+            if($log){
+                $log_text_rozvrh = date("H:i") . " Status code: OK";
+                save_to_log("rozvrh", $log_text_rozvrh, $delete_log);
+            }
+
         }
-        $data = iconv('cp1250', 'utf-8', $data);
-        $data = strip_tags($data, '<pomjidelnic_xmljidelnic><datum><druh><nazev><popis>');
-        $data = str_replace('pomjidelnic_xmljidelnic', 'jidlo', preg_replace('~\s+~', ' ', $data));
-        $data = str_replace('> <', '><', $data);
-        $data = "<jidelnicek>" . trim($data) . "</jidelnicek>";
-
-        save_to_file("jidelnicek.xml", $data);
-
         if ($auto_refresh == true) {
             sleep($sleep);
         }
