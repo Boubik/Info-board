@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <link href="styles/news_cantine.css" rel="stylesheet" type="text/css">
-    <link href="styles/cantina.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="images/logo.ico">
     <title>Info</title>
     <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=logspdcwzv4eydmuk9f8sxe6bjh4sfxny0uxkbr9btixvcxm"></script>
@@ -32,7 +31,7 @@
     {
         $xml = @simplexml_load_file("jidelnicek.xml");
         if (!$xml) {
-            die("Nejsou data z jidelnicek.xml");
+            echo "Nejsou data z jidelnicek.xml";
         }
         $jidelak = array();
         foreach ($xml->jidlo as $jidlo) {
