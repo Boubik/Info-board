@@ -169,7 +169,7 @@ do {
         echo date("H:i") . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n\n";
     
         if($log){
-            $log_text_rozvrh = date("H:i") . " Day:" . ($den + 1) . " Status code:" . $status_code;
+            $log_text_rozvrh = "\n" . date("H:i") . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n";
             save_to_log("rozvrh", $log_text_rozvrh, $delete_log);
         }
     }
