@@ -13,7 +13,7 @@ function save_to_log($folder, $log_text, $delete_log = null)
     fwrite($fa, $log_text . "\n");
     fclose($fa);
     if ($delete_log != null) {
-        $fileList = glob('logs/rozvrh/*.log');
+        $fileList = glob('logs/*.log');
         foreach ($fileList as $filename) {
             $date = substr($filename, 12, 10);
             if (strtotime($date) < strtotime('-' . ($delete_log + 1) . ' days')) {
