@@ -79,7 +79,12 @@ do {
         $rozvrh = "<table class=\"table\" style=\"width:100%\"\">\n<tbody>\n<tr>";
         $th_width = (100 / ($max_hodin + 2)) + (1.5 / ($max_hodin + 2));
         $i = 0;
-        $rozvrh .= "<th class=\"trida_main\"style=\"width:" . ($th_width / 1.5) . "%\";>\nTřída</th>\n";
+        if(date('W')%2==0){
+            $tiden = "Sudý";
+        }else{
+            $tiden = "Lichý";
+        }
+        $rozvrh .= "<th class=\"trida_main\"style=\"width:" . ($th_width / 1.5) . "%\";>\n". $tiden ."</th>\n";
         while ($i != $max_hodin + 1) {
             $rozvrh .= "<th class=\"hodina " . $str_cislo[$i] . "\" style=\"width:$th_width%\";>\n$i<div class=\"hodina_cislo\">" . $hodina_str[$i] . "</div></th>\n";
             $i++;
