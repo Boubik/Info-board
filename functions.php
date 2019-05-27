@@ -6,13 +6,13 @@
  * @param   String  $log_text   text that will be putet to log
  * @param   Int     $delete_log last log will be x days old (null will dostn delete anything)
  */
-function save_to_log($folder, $log_text, $delete_log = null)
+function save_to_log( $log_text, $delete_log = null)
 {
     $date = date("Y-m-d");
     $fa = fopen("logs/" . $folder . "/" . $date . ".log", "a");
     fwrite($fa, $log_text . "\n");
     fclose($fa);
-    
+
     if ($delete_log != null) {
         $fileList = glob('logs/*.log');
         foreach ($fileList as $filename) {

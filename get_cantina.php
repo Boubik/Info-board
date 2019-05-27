@@ -33,7 +33,7 @@
         
             if($log){
                 $log_text_rozvrh = "\n" . date("H:i") . " Status code: Fail" . "\n";
-                save_to_log("rozvrh", $log_text_rozvrh, $delete_log);
+                save_to_log($log_text_rozvrh, $delete_log);
             }
 
         }else{
@@ -49,7 +49,7 @@
         
             if($log){
                 $log_text_rozvrh = date("H:i") . " Status code: OK";
-                save_to_log("rozvrh", $log_text_rozvrh, $delete_log);
+                save_to_log($log_text_rozvrh, $delete_log);
             }
 
         }
