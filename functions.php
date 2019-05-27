@@ -12,6 +12,7 @@ function save_to_log($folder, $log_text, $delete_log = null)
     $fa = fopen("logs/" . $folder . "/" . $date . ".log", "a");
     fwrite($fa, $log_text . "\n");
     fclose($fa);
+    
     if ($delete_log != null) {
         $fileList = glob('logs/*.log');
         foreach ($fileList as $filename) {
