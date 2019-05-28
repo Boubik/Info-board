@@ -16,7 +16,7 @@ function save_to_log($log_text, $delete_log = null)
     if ($delete_log != null) {
         $fileList = glob('logs/*.log');
         foreach ($fileList as $filename) {
-            $date = substr($filename, 12, 10);
+            $date = substr($filename, 5, 10);
             if (strtotime($date) < strtotime('-' . ($delete_log + 1) . ' days')) {
                 unlink($filename);
             }

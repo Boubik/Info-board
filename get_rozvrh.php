@@ -164,17 +164,17 @@ do {
 
         save_to_file("rozvrh.txt", $rozvrh);
 
-        echo date("H:i") . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code . "\n\n";
+        echo date("H:i") . "get_cantina" . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code . "\n\n";
     
         if($log){
-            $log_text_rozvrh = date("H:i") . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code;
+            $log_text_rozvrh = date("H:i") . "get_cantina" . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code;
             save_to_log($log_text_rozvrh, $delete_log);
         }
     }else{
-        echo date("H:i") . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n\n";
+        echo date("H:i") . "get_cantina" . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n\n";
     
         if($log){
-            $log_text_rozvrh = "\n" . date("H:i") . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n";
+            $log_text_rozvrh = "\n" . date("H:i") . "get_cantina" . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n";
             save_to_log($log_text_rozvrh, $delete_log);
         }
     }
