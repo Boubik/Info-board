@@ -1,15 +1,133 @@
-body{
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    font-family: RobotoCondensed-Regular;
+    font-size: 16px;
+}
+
+@font-face {
+    font-family: RobotoCondensed-Regular;
+    src: url("../fonts/RobotoCondensed-Regular.ttf");
+}
+
+@font-face {
+    font-family: RobotoCondensed-Bold;
+    src: url("../fonts/RobotoCondensed-Bold.ttf");
+}
+
+body {
+    background-color: rgba(0, 0, 0, .1)
+}
+
+header {
+    width: 100%;
+    height: 7%;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+    background-color: white;
+}
+
+.header_left {
+    margin-left: 2%;
+    width: 40%;
+    height: 100%;
+    display: inline-block;
+}
+
+.logo img {
+    width: 60%;
+    margin-top: 10px;
+}
+
+.logo {
+    position: relative;
+    display: inline-block;
+    width: 10%;
+    height: 100%;
+    float: left;
+    margin-top: 6px;
+}
+
+.page_name {
+    display: inline-block;
+    position: relative;
+    width: ;
+    font-size: 2em;
+    font-family: RobotoCondensed-Bold;
+    float: left;
+    margin-top: 2%;
+}
+
+.header_right {
+    display: inline-block;
+    width: 55%;
+}
+
+#clock, #cur_date {
     
+    display: inline-block;
+    float: right;
+    height: 100%;
+    font-size: 2em;
+    font-family: RobotoCondensed-Bold;
 }
 
-.datum{
-    color: green;
+#cur_date {
+    float: left;
+    margin-left: 20px;
+    margin-top: 2%;
 }
 
-.jidlo{
-    color: purple;
+#clock {
+    margin-right: 20px;
+    margin-top: -4.5%;
 }
 
-.jidlo_popis{
-    color: blue;
+.container {
+    top: -1px;
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: -1;
 }
+
+.cantina_container, .news_container {
+    display: inline-block;
+}
+
+.cantina_container {
+    height: 92.5%;
+border-right: 1px solid rgba(0, 0, 0, .5);
+width: 45%;
+margin-left: 4.9%;
+}
+
+.news_container {
+    float: right;
+    width: 45%;
+    margin-left: 4.9%;
+}
+
+.news, .cantina {
+    margin-top: 20px;
+}
+
+.jidlo {
+    font-size: 1.7em;
+}
+
+.datum {
+    font-size: 2em;
+}
+
+.news , h1 {
+    font-size: 1.2em;

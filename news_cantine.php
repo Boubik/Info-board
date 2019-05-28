@@ -19,6 +19,20 @@
 
 <body>
 
+    <header>
+        <div class="header_left">
+            <div class="logo"><img src="images/logo.png" alt="logo"></div>
+            <div class="page_name">Jídelní lístek, Novinky</div>
+            <div id="cur_date">
+                <?php
+                    echo date("d.m. Y");
+                ?>
+            </div>
+        </div><div class="header_right">
+            <div id="clock"></div>
+        </div>
+    </header>
+
     <?php
 
     date_default_timezone_set("Europe/Prague");
@@ -38,7 +52,11 @@
             $jidelak[strval($jidlo->datum)][strval($jidlo->druh)] = strval($jidlo->nazev);
         }
 
+<<<<<<< HEAD
+        echo "<div class=\"cantina_container\"><div class=\"cantina\">";
+=======
         echo "<div class=\"cantina\">";
+>>>>>>> c214cd58dbbf8e3f037b7514da603718a51d7198
         foreach($jidelak as $den){
             $datum = array_search ($den, $jidelak);
             echo "<div class=\"den\"><div class=\"datum\">".$datum."</div>";
@@ -50,13 +68,17 @@
             }
             echo "</div><br>";
         }
+<<<<<<< HEAD
+        echo "</div></div>";
+=======
         echo "</div>";
+>>>>>>> c214cd58dbbf8e3f037b7514da603718a51d7198
     }
 
     function news()
     {
 
-        echo "<div class=\"news\">";
+        echo "<div class=\"news_container\"><div class=\"news\">";
         $fileList = glob('aktuality/*.md');
         foreach ($fileList as $file) {
             $handle = fopen($file, "r");
@@ -98,6 +120,6 @@
             }
             fclose($handle);
         }
-        echo "</div>";
+        echo "</div></div>";
     }
     
