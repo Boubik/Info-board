@@ -29,11 +29,11 @@
         if (!$data) {
             echo "Nejsou data ze strava.cz";
 
-            echo date("H:i") . " Status code: Fail" . "\n\n";
+            echo date("H:i") . "get_cantina" . " Status code: Fail" . "\n\n";
         
             if($log){
-                $log_text_rozvrh = "\n" . date("H:i") . " Status code: Fail" . "\n";
-                save_to_log("rozvrh", $log_text_rozvrh, $delete_log);
+                $log_text_rozvrh = "\n" . date("H:i") . "get_cantina" . " Status code: Fail" . "\n";
+                save_to_log($log_text_rozvrh, $delete_log);
             }
 
         }else{
@@ -45,11 +45,11 @@
 
             save_to_file("jidelnicek.xml", $data);
 
-            echo date("H:i") . " Status code: OK" . "\n\n";
+            echo date("H:i") . "get_cantina" . " Status code: OK" . "\n\n";
         
             if($log){
-                $log_text_rozvrh = date("H:i") . " Status code: OK";
-                save_to_log("rozvrh", $log_text_rozvrh, $delete_log);
+                $log_text_rozvrh = date("H:i") . "get_cantina" . " Status code: OK";
+                save_to_log($log_text_rozvrh, $delete_log);
             }
 
         }
