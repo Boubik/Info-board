@@ -29,7 +29,7 @@
         if (!$data) {
             echo "Nejsou data ze strava.cz";
 
-            echo date("H:i") . " Status code: Fail" . "\n\n";
+            echo date("H:i") . "get_cantina" . " Status code: Fail" . "\n\n";
         
             if($log){
                 $log_text_rozvrh = "\n" . date("H:i") . "get_cantina" . " Status code: Fail" . "\n";
