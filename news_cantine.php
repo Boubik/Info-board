@@ -52,11 +52,7 @@
             $jidelak[strval($jidlo->datum)][strval($jidlo->druh)] = strval($jidlo->nazev);
         }
 
-<<<<<<< HEAD
-        echo "<div class=\"cantina_container\"><div class=\"cantina\">";
-=======
         echo "<div class=\"cantina\">";
->>>>>>> c214cd58dbbf8e3f037b7514da603718a51d7198
         foreach($jidelak as $den){
             $datum = array_search ($den, $jidelak);
             echo "<div class=\"den\"><div class=\"datum\">".$datum."</div>";
@@ -68,11 +64,7 @@
             }
             echo "</div><br>";
         }
-<<<<<<< HEAD
-        echo "</div></div>";
-=======
         echo "</div>";
->>>>>>> c214cd58dbbf8e3f037b7514da603718a51d7198
     }
 
     function news()
