@@ -35,10 +35,11 @@
 
     <?php
 
+    echo "<div class=\"container\">";
     date_default_timezone_set("Europe/Prague");
     cantina();
     news();
-    //cantina();
+    echo "</div>";
 
 
     function cantina()
@@ -49,10 +50,12 @@
         }
         $jidelak = array();
         foreach ($xml->jidlo as $jidlo) {
-            $jidelak[strval($jidlo->datum)][strval($jidlo->druh)] = strval($jidlo->nazev);
+            if((String)$jidlo->datum == date("Y-m-d")){
+                $jidelak[strval($jidlo->datum)][strval($jidlo->druh)] = strval($jidlo->nazev);
+            }
         }
 
-        echo "<div class=\"cantina\">";
+        echo "<div class=\"cantina_container\"><div class=\"cantina\">";
         foreach($jidelak as $den){
             $datum = array_search ($den, $jidelak);
             echo "<div class=\"den\"><div class=\"datum\">".$datum."</div>";
@@ -64,7 +67,7 @@
             }
             echo "</div><br>";
         }
-        echo "</div>";
+        echo "</div></div>";
     }
 
     function news()

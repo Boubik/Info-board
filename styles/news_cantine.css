@@ -91,7 +91,7 @@ header {
 .container {
     top: -1px;
     position: absolute;
-    width: 80%;
+    width: 100%;
     height: 100%;
     margin: auto;
     left: 0;
@@ -102,32 +102,43 @@ header {
 
 .cantina_container, .news_container {
     display: inline-block;
+    margin-top: 5%;
+    margin-left: 4.5%;
 }
 
 .cantina_container {
     height: 92.5%;
-border-right: 1px solid rgba(0, 0, 0, .5);
-width: 45%;
-margin-left: 4.9%;
+    border-right: 1px solid rgba(0, 0, 0, .5);
+    width: 45%;
 }
 
 .news_container {
     float: right;
     width: 45%;
-    margin-left: 4.9%;
 }
 
 .news, .cantina {
-    margin-top: 20px;
+    margin-top: 25px;
+    display: inline-block;
+    width: 90%;
 }
 
 .jidlo {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.jidlo_popis {
     font-size: 1.7em;
 }
 
 .datum {
+    display: none;
+}
+
+.news h1 {
     font-size: 2em;
 }
 
-.news , h1 {
-    font-size: 1.2em;
+.news {
+}
