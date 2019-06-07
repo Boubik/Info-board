@@ -25,10 +25,11 @@
             <div class="page_name">Jídelní lístek, Novinky</div>
             <div id="cur_date">
                 <?php
-                    echo date("d.m. Y");
+                echo date("d.m. Y");
                 ?>
             </div>
-        </div><div class="header_right">
+        </div>
+        <div class="header_right">
             <div id="clock"></div>
         </div>
     </header>
@@ -50,19 +51,19 @@
         }
         $jidelak = array();
         foreach ($xml->jidlo as $jidlo) {
-            if((String)$jidlo->datum == date("Y-m-d")){
+            if ((String)$jidlo->datum == date("Y-m-d")) {
                 $jidelak[strval($jidlo->datum)][strval($jidlo->druh)] = strval($jidlo->nazev);
             }
         }
 
         echo "<div class=\"cantina_container\"><div class=\"cantina\">";
-        foreach($jidelak as $den){
-            $datum = array_search ($den, $jidelak);
-            echo "<div class=\"den\"><div class=\"datum\">".$datum."</div>";
-            foreach($den as $jidlo){
-                $key = array_search ($jidlo, $den);
-                if(substr($key,0,4) != "bal."){
-                    echo "<div class=\"jidlo\">".$key."</div> <div class=\"jidlo_popis\">".$jidlo."</div>";
+        foreach ($jidelak as $den) {
+            $datum = array_search($den, $jidelak);
+            echo "<div class=\"den\"><div class=\"datum\">" . $datum . "</div>";
+            foreach ($den as $jidlo) {
+                $key = array_search($jidlo, $den);
+                if (substr($key, 0, 4) != "bal.") {
+                    echo "<div class=\"jidlo\">" . $key . "</div> <div class=\"jidlo_popis\">" . $jidlo . "</div>";
                 }
             }
             echo "</div><br>";
@@ -71,6 +72,37 @@
     }
 
     function news()
+    {
+        $configs = include('config.php');
+        $url = $configs["news_url"];
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+        $result = curl_exec($ch);
+        $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);   //get status code
+        curl_close($ch);
+
+        if ($status_code == 200) {
+            $xml = new SimpleXMLElement($result);
+            echo "<div class=\"news_container\"><div class=\"news\">";
+            $x = 0;
+            foreach ($xml->channel->item as $item) { 
+                echo "<div class=\"new\">";
+                echo "<div class=\"title\">".$item->title."</div>";
+                echo "<div class=\"pubDate\">".substr((String)$item->pubDate, 0, 16)."</div>";
+                echo "<div>";
+                $x++;
+                if($x == 10){
+                    break;
+                }
+            }
+            echo "</div></div>";
+        }
+    }
+    function news2()
     {
 
         echo "<div class=\"news_container\"><div class=\"news\">";
@@ -117,4 +149,3 @@
         }
         echo "</div></div>";
     }
-    

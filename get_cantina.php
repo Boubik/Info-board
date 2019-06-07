@@ -12,6 +12,7 @@
     $auto_refresh = $configs["auto_refresh"];
     $delete_log = $configs["delete_log"];
     $log = $configs["log"];
+    $code = $configs["code"];
     $sleep = 2 * 12 * 60 * 60;
 
     do {
@@ -19,7 +20,7 @@
         $address = gethostbyname('www.strava.cz');
         $port = getservbyname('www', 'tcp');
         $result = socket_connect($socket, $address, $port);
-        $buffer = "GET /foxisapi/foxisapi.dll/istravne.istravne.process?xmljidelnicky&zarizeni=0595 HTTP/1.1\r\nHost: www.strava.cz\r\nConnection: Close\r\n\r\n";
+        $buffer = "GET /foxisapi/foxisapi.dll/istravne.istravne.process?xmljidelnicky&zarizeni=".$code." HTTP/1.1\r\nHost: www.strava.cz\r\nConnection: Close\r\n\r\n";
         socket_write($socket, $buffer);
         $data = '';
         while ($out = socket_read($socket, 2048, PHP_BINARY_READ)) {

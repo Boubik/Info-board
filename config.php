@@ -20,6 +20,10 @@ return array(
 
     //cantina
     'auto_refresh' => false,                                                    // auto restart
+    'code' => "0595",                                                           // code for cantina
+
+    //news
+    'news_url' => "http://www.skolavdf.cz/rss.xml",                             // news url
 
     //logs
     'log' => true,                                                              // if true it will create logs in folder logs
