@@ -9,8 +9,8 @@ return array(
 
     //rozvrh
     'rozvrh_url' => 'https://marvdf.bakalari.cz:444/bakaweb',                   // address for baklaře
-    'username' => '',                                                       // user name
-    'password' => '',                                              // password
+    'username' => 'TEST',                                                       // user name
+    'password' => 'xE63CFFF5C0B4',                                              // password
 
     "hours" => array("7:15 - 8:00", "8:05 - 8:50", "9:00 - 9:45", "10:05 - 10:50", "11:00 - 11:45", "11:55 - 12:40", "12:45 - 13:30", "13:35 - 14:20", "14:20 - 15:10", "15:15 - 16:00", "16:05 - 16:50"),      //that will be showed on top of rozvrh
     'auto_restart' => false,                                                    // auto restart
@@ -20,6 +20,10 @@ return array(
 
     //cantina
     'auto_refresh' => false,                                                    // auto restart
+    'code' => "0595",                                                           // code for cantina
+
+    //news
+    'news_url' => "http://www.skolavdf.cz/rss.xml",                             // news url
 
     //logs
     'log' => true,                                                              // if true it will create logs in folder logs

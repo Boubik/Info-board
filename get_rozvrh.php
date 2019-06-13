@@ -79,7 +79,12 @@ do {
         $rozvrh = "<table class=\"table\" style=\"width:100%\"\">\n<tbody>\n<tr>";
         $th_width = (100 / ($max_hodin + 2)) + (1.5 / ($max_hodin + 2));
         $i = 0;
-        $rozvrh .= "<th class=\"trida_main\"style=\"width:" . ($th_width / 1.5) . "%\";>\nTřída</th>\n";
+        if(date('W')%2==0){
+            $tiden = "Sudý";
+        }else{
+            $tiden = "Lichý";
+        }
+        $rozvrh .= "<th class=\"trida_main\"style=\"width:" . ($th_width / 1.5) . "%\";>\n". $tiden ."</th>\n";
         while ($i != $max_hodin + 1) {
             $rozvrh .= "<th class=\"hodina " . $str_cislo[$i] . "\" style=\"width:$th_width%\";>\n$i<div class=\"hodina_cislo\">" . $hodina_str[$i] . "</div></th>\n";
             $i++;
@@ -159,18 +164,18 @@ do {
 
         save_to_file("rozvrh.txt", $rozvrh);
 
-        echo date("H:i") . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code . "\n\n";
+        echo date("H:i") . " get_rozvrh" . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code . "\n\n";
     
         if($log){
-            $log_text_rozvrh = date("H:i") . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code;
-            save_to_log("rozvrh", $log_text_rozvrh, $delete_log);
+            $log_text_rozvrh = date("H:i") . " get_rozvrh" . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code;
+            save_to_log($log_text_rozvrh, $delete_log);
         }
     }else{
-        echo date("H:i") . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n\n";
+        echo date("H:i") . " get_rozvrh" . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n\n";
     
         if($log){
-            $log_text_rozvrh = "\n" . date("H:i") . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n";
-            save_to_log("rozvrh", $log_text_rozvrh, $delete_log);
+            $log_text_rozvrh = "\n" . date("H:i") . " get_rozvrh" . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n";
+            save_to_log($log_text_rozvrh, $delete_log);
         }
     }
 
@@ -178,12 +183,3 @@ do {
         sleep($sleep);
     }
 } while ($auto_restart == true);
-
-
-function to_xml($result)
-{
-    $lmao = explode('<TargetType>Classes</TargetType>', $result);
-    $lmao = explode('</BakalariDataInterface>', $lmao[1]);
-    $result = "<?xml version='1.0' encoding='UTF-8'?>" . $lmao[0];
-    return $result;
-}
