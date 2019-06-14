@@ -1,2 +1,1708 @@
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
-article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden],template{display:none;}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body{margin:0;}a{background:transparent;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;margin:.67em 0;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:bold;}dfn{font-style:italic;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em;}pre{white-space:pre-wrap;}q{quotes:"“" "”" "‘" "’";}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}figure{margin:0;}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em;}legend{border:0;padding:0;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,select{text-transform:none;}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;}button[disabled],html input[disabled]{cursor:default;}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}@font-face{font-family:Museo700;src:url(../fonty/MuseoSans_700.otf);}@font-face{font-family:Museo700;src:url(../fonty/MuseoSans_700Italic.otf);font-style:italic;}.ukazatel{cursor:pointer;}.schovane{visibility:hidden;}.skryte{display:none;}.cela-obrazovka{position:fixed;width:100%;height:100%;z-index:99999;}.bg-blue-gradient{background:#006dce;background:-moz-linear-gradient(top,#006dce 1%,#0053a1 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(1%,#006dce),color-stop(100%,#0053a1));background:-webkit-linear-gradient(top,#006dce 1%,#0053a1 100%);background:-o-linear-gradient(top,#006dce 1%,#0053a1 100%);background:-ms-linear-gradient(top,#006dce 1%,#0053a1 100%);background:linear-gradient(to bottom,#006dce 1%,#0053a1 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006dce',endColorstr='#0053a1',GradientType=0);box-shadow:1px 1px 1px 0 rgba(0,0,0,.75);}h1{font-size:20px;margin:0;}.informacniLista{margin-bottom:5px;padding:10px 35px;overflow:hidden;background-color:#00519e;color:#fff;font-weight:bold;}.informacniLista .informacniLista-jmeno{float:left;}.informacniLista .informacniLista-konto{float:right;}.rozbaleni{width:15px;height:15px;background:url("../obrazky/rozbaleni.png") 0 0 no-repeat;cursor:pointer;}.rozbaleni.rozbaleni-dolu{background-position:-15px 0;}.upozorneni{color:#f00;}.uspech{color:#00a800;}.pole1{padding:8px;background-color:#fff;border:1px solid #0e2a5f;border-radius:7px;box-shadow:inset 0 3px 6px 0 rgba(0,0,0,.5);text-align:left;font-size:18px;}.noscript{padding:8px;text-align:center;background-color:#000;color:#fff;}.noscript a{color:#fff;}.zmensenyOkraj{margin-right:0 !important;margin-left:10px !important;}.tabulka-hodnot{width:100%;}.tabulka-hodnot td{word-wrap:break-word;}.odkaz{text-decoration:none;}.odkaz:hover{text-decoration:underline;}.zaskrtavaciPolicko{display:inline;}.zaskrtavaciPolicko.zaskrtavaciPolicko-povolene{cursor:pointer;}.zaskrtavaciPolicko div,.zaskrtavaciPolicko span{display:inline-block;vertical-align:middle;}.responzivniVyska{height:50px;}@media screen and (min-height:500px){.responzivniVyska{height:90px;}}#reklama-vypln{height:50px;}@media screen and (min-height:500px){#reklama-vypln{height:90px;}}.tipy-obalka{position:absolute;left:290px;width:350px;z-index:999;}.tipy-obalka .tip-obalka{display:inline-block;padding:10px;background-color:#fff;border:2px solid rgba(51,147,219,.84);border-radius:11px;box-shadow:0 3px 6px 0 rgba(0,0,0,.5);}.tipy-obalka .tip-obalka .tip-nadpis{float:left;font-weight:bold;}.tipy-obalka .tip-obalka .tip-zavrit{float:right;cursor:pointer;}.tipy-obalka .tip-obalka .tip-zavrit:hover{text-decoration:underline;}.tipy-obalka .tip-obalka .tip-text{clear:left;float:left;}.jidelnaDetaily-obalka .jidelnaDetaily-udaje{padding:10px;background-color:#d5d5d5;color:#00519e;}.jidelnaDetaily-obalka .jidelnaDetaily-udaje a{color:#00519e;}.jidelnaDetaily-obalka .jidelnaDetaily-udaje>div{text-align:center;margin:5px 0;}.jidelnaDetaily-obalka .jidelnaDetaily-udaje .jidelnaDetaily-nazev{font-weight:bold;}.jidelnaDetaily-obalka .jidelnaDetaily-text{margin-top:15px;word-wrap:break-word;}#informacni-dialog{display:none;position:absolute;left:240px;z-index:999;width:500px;padding:10px;overflow:hidden;border:2px solid rgba(51,147,219,.84);border-radius:5px;background-color:#fff;box-sizing:border-box;}#informacni-dialog.mobilni{position:relative;width:100%;left:auto;padding-top:3em;}#informacni-dialog.mobilni .zavrit{top:4px;right:4px;}#informacni-dialog.mobilni .informacni-zaznam .popis{width:auto;}#informacni-dialog.mobilni .informacni-zaznam .hodnota{float:right;}#informacni-dialog .zavrit{position:absolute;right:10px;top:10px;cursor:pointer;}#informacni-dialog .informacni-zaznam{overflow:hidden;font-size:14px;line-height:1.5;}#informacni-dialog .informacni-zaznam .popis{float:left;width:200px;font-weight:bold;}#informacni-dialog .informacni-zaznam .hodnota{float:left;margin-left:10px;}.upozorneni{margin-bottom:8px;}.uspech{margin-bottom:8px;}.obsah{min-height:250px;padding:20px 15px;border-radius:0 10px 10px 10px;box-shadow:0 0 6px 0 rgba(50,50,50,.5);background-color:#fff;}body{font-family:Arial;}#stranka-obalka{background:url("../obrazky/stranka_pozadi.png") #fff center 138px no-repeat;}#obsah-obalka{position:relative;width:980px;margin:0 auto 25px auto;}#obsah-obalka .reklama-bocni{position:absolute;top:0;left:987px;}#paticka-obalka{max-width:2400px;min-height:130px;margin:0 auto;background-color:#fff;}#paticka-obalka #paticka{width:980px;margin:0 auto;position:relative;overflow:hidden;}#paticka-obalka #paticka .paticka-rychleOdkazy{display:inline-block;vertical-align:top;}#paticka-obalka #paticka .paticka-rychleOdkazy #copyright{margin-top:10px;font-family:Arial;color:#00519e;font-size:12px;}#paticka-obalka #paticka .paticka-rychleOdkazy #vis-kontakt{font-family:Arial;color:#00519e;font-size:12px;}#paticka-obalka #paticka .paticka-rychleOdkazy #vis-kontakt a{color:#00519e;}#paticka-obalka #paticka .paticka-rychleOdkazy #zapomenuteHeslo{font-family:Arial;color:#00519e;font-size:12px;}#paticka-obalka #paticka .paticka-rychleOdkazy #zapomenuteHeslo a{color:#00519e;}#paticka-obalka #paticka .paticka-rychleOdkazy #zabezpecenyPristup{font-family:Arial;color:#00519e;font-size:12px;}#paticka-obalka #paticka .paticka-rychleOdkazy #zabezpecenyPristup a{color:#00519e;}#paticka-obalka #paticka .paticka-rychleOdkazy #prepinacZobrazeni{margin-top:45px;text-decoration:underline;font-family:Arial;color:#00519e;font-size:12px;}#paticka-obalka #paticka .paticka-rychleOdkazy #prepinacZobrazeni a{color:#00519e;}#paticka-obalka #paticka .paticka-rychleOdkazy #prepinacZobrazeni a:hover{text-decoration:underline;}#paticka-obalka #paticka .paticka-reklama{display:inline-block;margin:10px 0 0 55px;}#menu-obalka{background:url("../obrazky/menu_pozadi.png") #fff center 100px repeat-x;height:138px;max-width:2400px;margin:0 auto;}#menu-top{width:980px;height:100px;margin:0 auto;position:relative;}#menu-top .stravacz-logo{position:absolute;left:0;top:32px;}#menu-top .stravacz-logo img{width:169px;height:41px;}#menu-top .banner{position:absolute;left:180px;top:5px;}#menu-top .vis-logo img{position:absolute;top:18px;right:-35px;width:95px;height:62px;}#menu-lista{width:980px;height:38px;margin:0 auto;}#menu-lista #menu-tlacitka{height:100%;}#menu-lista #menu-tlacitka a{color:#fff;text-decoration:none;}#menu-lista #menu-tlacitka .menu-vyberJazyku{float:left;height:100%;margin-left:10px;padding:5px;line-height:28px;color:#fff;}#menu-lista #menu-tlacitka .menu-vyberJazyku a{font-size:13px;font-family:Museo700;margin-right:5px;}#menu-lista #menu-tlacitka .menu-vyberJazyku a:hover{text-decoration:underline;}#menu-lista #menu-tlacitka .menu-tlacitko{height:100%;min-width:90px;float:left;padding:5px;font-size:13px;text-align:center;line-height:28px;color:#fff;font-family:Museo700;cursor:pointer;text-decoration:none !important;}#menu-lista #menu-tlacitka .menu-tlacitko:hover{background:url("../obrazky/menu_tlacitko_pozadi.png") 0 0 repeat-x;}#menu-lista #menu-tlacitka .menu-rozdelovac{width:2px;height:26px;float:left;position:relative;top:6px;}#menu-lista #menu-tlacitka .menu-tlacitko-aktivni{background:url("../obrazky/menu_tlacitko_pozadi.png") 0 0 repeat-x;}#podmenu-obalka{position:relative;width:100%;height:60px;margin:25px auto 0 auto;}#podmenu-obalka #podmenu-nadpis{position:absolute;left:0;bottom:0;padding:23px 14px 13px 14px;border-radius:9px 9px 0 0;background-color:#fff;color:#00519e;font-family:Museo700;font-size:20px;}#podmenu-obalka #podmenu-nadpis h1{float:left;}#podmenu-obalka #podmenu-nadpis img{float:left;height:24px;margin:0 0 0 10px;visibility:hidden;}#podmenu-obalka #podmenu-tlacitka{position:absolute;top:0;right:0;}#podmenu-obalka #podmenu-tlacitka>*{float:right;margin-left:15px;cursor:pointer;}#zalozky{position:relative;width:600px;margin:25px auto 0 auto;overflow:hidden;}#zalozky .zalozka{float:left;margin-left:5px;width:106px;min-height:19px;padding:15px 5px 5px 5px;border-radius:11px 11px 0 0;background:url("../obrazky/zalozka_pozadi.png") #fff;text-align:center;font-family:Arial;font-size:12px;color:#000;word-wrap:break-word;cursor:pointer;}#zalozky .zalozka:first-child{margin-left:0;}#zalozky .zalozka.zalozka_aktivni{background:#fff;color:#00519e;}#zalozky .zalozka.zalozka_pridat{width:35px;font-weight:bold;font-size:15px;color:#fff;}#zalozky .zalozka .zalozka_pole{width:80%;}.prihlaseni_box{position:relative;margin:0 auto;width:600px;height:318px;border-radius:0 11px 11px 11px;background:url("../obrazky/prihlaseni_box_logo.png") #fff no-repeat 45% 0;}.prihlaseni_box #zalozky_ovladani{position:absolute;top:5px;right:10px;}.prihlaseni_box #zalozky_ovladani img{margin-left:5px;cursor:pointer;}.prihlaseni_box #zalozky_ovladani img #zalozky_upravit{width:19px;height:19px;}.prihlaseni_box #zalozky_ovladani img #zalozky_smazat{width:19px;height:20px;}.prihlaseni_box .prihlaseni_text{color:#00519e;font-family:Arial;}.prihlaseni_box #prihlaseni_jidelna_popis{position:absolute;top:37px;left:40px;color:#00519e;font-family:Arial;}.prihlaseni_box #prihlaseni_jidelna{position:absolute;top:60px;left:40px;width:65px;height:25px;padding:8px;background-color:#fff;border:1px solid #0e2a5f;border-radius:7px;box-shadow:inset 0 3px 6px 0 rgba(0,0,0,.5);text-align:left;font-size:18px;}.prihlaseni_box #prihlaseni_uzivatel_popis{position:absolute;top:38px;left:300px;color:#00519e;font-family:Arial;}.prihlaseni_box #prihlaseni_uzivatel{position:absolute;top:59px;right:40px;width:250px;height:25px;padding:8px;background-color:#fff;border:1px solid #0e2a5f;border-radius:7px;box-shadow:inset 0 3px 6px 0 rgba(0,0,0,.5);text-align:left;font-size:18px;}.prihlaseni_box #prihlaseni_heslo_popis{position:absolute;top:119px;left:300px;color:#00519e;font-family:Arial;}.prihlaseni_box #prihlaseni_heslo{position:absolute;top:140px;right:40px;width:250px;height:25px;padding:8px;background-color:#fff;border:1px solid #0e2a5f;border-radius:7px;box-shadow:inset 0 3px 6px 0 rgba(0,0,0,.5);text-align:left;font-size:18px;}.prihlaseni_box #prihlaseni_vyhledat_zarizeni{position:absolute;top:139px;left:40px;}.prihlaseni_box #prihlaseni_zapamatovat{position:absolute;top:195px;right:40px;}.prihlaseni_box #prihlaseni_zapamatovat span{color:#00519e;font-family:Arial;}.prihlaseni_box .prihlaseni-prihlasit{position:absolute;top:230px;right:40px;}.prihlaseni_box #prihlaseni_neuspech{position:absolute;bottom:10px;left:10px;color:#f00;margin-bottom:8px;}.prihlaseni_box.prihlaseni_prihlaseno{height:auto;min-height:318px;margin-top:60px;border-radius:11px;}#vazba-obsah .upozorneni{barva:#f00;}#vazba-obsah .sekce{margin-bottom:10px;}#vazba-obsah .popis{display:block;}#vazba-obsah .prihlaseni-pole{font-family:Arial;padding:8px;background-color:#fff;border:1px solid #0e2a5f;border-radius:7px;box-shadow:inset 0 3px 6px 0 rgba(0,0,0,.5);text-align:left;font-size:18px;}#zarizeni-obalka{width:980px;margin:0 auto;}#zarizeni-obalka #zarizeni-obsah a{text-decoration:none;}#zarizeni-obalka #zarizeni-obsah .zarizeni-vyberMest{overflow:hidden;margin-bottom:15px;}#zarizeni-obalka #zarizeni-obsah .zarizeni-vyberMest div{font-size:1.1em;color:#00519e;}#zarizeni-obalka #zarizeni-obsah .zarizeni-vyberMest .zarizeni-vyberMest-popis{float:left;margin-right:10px;}#zarizeni-obalka #zarizeni-obsah .zarizeni-vyberMest .zarizeni-vyberMest-pismeno{float:left;margin-right:10px;}#zarizeni-obalka #zarizeni-obsah .zarizeni-vyberMest .zarizeni-vyberMest-pismeno.zarizeni-vyberMest-pismeno-aktivni{cursor:pointer;}#zarizeni-obalka #zarizeni-obsah .zarizeni-vyberMest .zarizeni-vyberMest-pismeno.zarizeni-vyberMest-pismeno-aktivni:hover{text-decoration:underline;}#zarizeni-obalka #zarizeni-obsah .zarizeni-mesto-obalka{padding:7px 0;overflow:hidden;color:#000;background-color:#fff;border-bottom:1px solid rgba(0,0,0,.3);cursor:pointer;}#zarizeni-obalka #zarizeni-obsah .zarizeni-mesto-obalka a{color:#000;}#zarizeni-obalka #zarizeni-obsah .zarizeni-mesto-obalka .zarizeni-mesto-nazev{float:left;font-weight:bold;}#zarizeni-obalka #zarizeni-obsah .zarizeni-mesto-obalka .rozbaleni{float:right;margin:3px 10px 0 0;}#zarizeni-obalka #zarizeni-obsah .zarizeni-jidelna-obalka{display:none;clear:left;}#zarizeni-obalka #zarizeni-obsah .zarizeni-jidelna-obalka div{display:inline-block;margin-right:20px;vertical-align:middle;}#zarizeni-obalka #zarizeni-obsah .zarizeni-jidelna-obalka:hover .zarizeni-jidelna-id{text-decoration:underline;}#objednavky-obalka{width:980px;margin:0 auto;}#objednavky-obalka #objednavky-obsah{font-size:16px;}#objednavky-obalka #objednavky-obsah .objednavky_zprava{display:none;padding:10px;background-color:#f00;color:#fff;cursor:pointer;}#objednavky-obalka #objednavky-obsah .objednavky_zprava.objednavky_zprava_fixni{position:fixed;left:50%;top:0;word-wrap:break-word;}#objednavky-obalka #objednavky-obsah .objednavky_zprava.uspech{background-color:#07af07;}#objednavky-obalka #objednavky-obsah #seznam_objednavek_obalka{margin-top:15px;}.objednavka-obalka{margin-top:5px;padding-bottom:6px;}.objednavka-obalka .objednavka-jidlo-detaily{margin-top:10px;}.objednavka-obalka .objednavka-den-obalka{padding:3px 35px 3px 12px;background-color:#e0e0e0;border-top:1px solid #ebebeb;border-bottom:1px solid rgba(0,0,0,.2);color:#00519e;font-weight:bold;}.objednavka-obalka .objednavka-den-obalka.objednavka-den-hromadna{cursor:pointer;}.objednavka-obalka .objednavka-den-obalka .objednavka-den-datum{display:inline-block;vertical-align:middle;}.objednavka-obalka .objednavka-den-obalka .objednavka-den-datum:first-child{margin-left:25px;}.objednavka-obalka .objednavka-jidlo-obalka{clear:left;padding:4px 12px;overflow:hidden;cursor:pointer;}.objednavka-obalka .objednavka-jidlo-obalka.objednavka-jidlo-polevka{cursor:auto;}.objednavka-obalka .objednavka-jidlo-obalka>div{float:left;}.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-zmena{width:25px;}.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-zmena.objednavka-jidlo-mnohonasobne{width:120px;cursor:auto;}.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-zmena.objednavka-jidlo-mnohonasobne .objednavka-jidlo-puvodniPocet{float:left;margin-top:2px;}.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-zmena.objednavka-jidlo-mnohonasobne input{float:right;width:45px;height:15px;margin-right:10px;padding:1px;}.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-zmena.objednavka-jidlo-mnohonasobne input.objednavka-jidlo-pole-cervena{border:1px solid #f00;}.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-zmena.objednavka-jidlo-mnohonasobne input.objednavka-jidlo-pole-modra{border:1px solid #00519e;}.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-zmena.objednavka-jidlo-mnohonasobne input.objednavka-jidlo-pole-zelena{border:1px solid #0f0;}.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-popis{width:100px;}.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-nazev{word-wrap:break-word;max-width:660px;}.objednavka-obalka .objednavka-jidlo-obalka .rozbaleni{float:right;cursor:pointer;margin-top:2px;}.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-detaily{display:none;width:100%;padding:5px;clear:both;border:1px solid #000;border-radius:5px;font-size:15px;font-style:italic;}.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-detaily .objednavka-jidlo-detail-popis{font-family:Courier New,Courier,monospace;}.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-detaily .objednavka-jidlo-detail-popis .popis{font-family:Arial;}.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-alergeny-ikona{float:right;width:20px;margin:1px 5px 0 0;cursor:pointer;}.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-alergeny-udaje{display:none;width:100%;clear:both;margin:10px 0 0 0;padding:5px;border:1px solid #000;border-radius:5px;font-size:15px;font-style:italic;}.objednavka-obalka .objednavka-jidlo-sude{background-color:#fff;}.objednavka-obalka .objednavka-jidlo-liche{background-color:#fff;}.objednavka-obalka .objednavka-jidlo-objednane{background-image:linear-gradient(90deg,#d1e7ff 0%,#eaf4ff 100%);background-image:-webkit-linear-gradient(90deg,#d1e7ff 0%,#eaf4ff 100%);background-image:-moz-linear-gradient(90deg,#d1e7ff 0%,#eaf4ff 100%);background-image:-oz-linear-gradient(90deg,#d1e7ff 0%,#eaf4ff 100%);background-image:-ms-linear-gradient(90deg,#d1e7ff 0%,#eaf4ff 100%);}.objednavka-obalka .objednavka-jidlo-objednane .objednavka-jidlo-popis,.objednavka-obalka .objednavka-jidlo-objednane .objednavka-jidlo-nazev{font-weight:bold;}#vydej-obalka{width:980px;margin:0 auto;}#vydej-obalka #vydej-obsah .vydej-tabulka td{padding:8px 0;}#vydej-obalka #vydej-obsah .vydej-tabulka tr{border-bottom:1px solid rgba(0,0,0,.3);}#vydej-obalka #vydej-obsah .vydej-den-nadpis{font-weight:bold;}#vydej-obalka #vydej-obsah .vydej-den-vyzvednuti{width:15px;height:16px;margin:3px 10px 0 0;background:url("../obrazky/vydej_vyzvednuti.png?x=1") 0 0 no-repeat;float:left;}#vydej-obalka #vydej-obsah .vydej-den-vyzvednuti.vydej-den-nevyzvednuto{background-position:-15px 0;}#vydej-obalka #vydej-obsah .vydej-den-vyzvednuti.vydej-den-stravenka{background-position:-30px 0;}#vydej-obalka #vydej-obsah .vydej-den-vyzvednuti.vydej-den-nenikdispozici{width:16px;background:url("../obrazky/vydej_neniKDispozici.png") 0 0 no-repeat !important;}#platby-obalka{width:980px;margin:0 auto;}#platby-obalka #platby-obsah .platby-tabulka td{padding:8px 0;}#platby-obalka #platby-obsah .platby-tabulka tr{border-bottom:1px solid rgba(0,0,0,.3);}#platby-obalka #platby-obsah .platby-tabulka .platby-platba-nadpis{font-weight:bold;}#platby-obalka #platby-obsah .platby-tabulka .platby-platba-typ{width:15px;height:15px;margin:2px 10px 0 0;background:url("../obrazky/platby_platba.png") 0 0 no-repeat;float:left;}#platby-obalka #platby-obsah .platby-tabulka .platby-platba-typ.platby-platba-vydej{background-position:-15px 0;}#platby-obalka #platby-obsah .platby-tabulka .platby-platba-popis{overflow:hidden;}#nastaveni-obalka{width:980px;margin:0 auto;}#nastaveni-obalka #nastaveni-udaje{float:left;overflow:hidden;}#nastaveni-obalka #nastaveni-udaje label{color:#00519e;font-family:Arial;}#nastaveni-obalka #nastaveni-udaje input[type=password],#nastaveni-obalka #nastaveni-udaje input[type=email]{margin:5px 0 15px 0;padding:8px;background-color:#fff;border:1px solid #0e2a5f;border-radius:7px;box-shadow:inset 0 3px 6px 0 rgba(0,0,0,.5);font-size:18px;font-size:16px;padding:6px;width:200px;text-align:left;}#nastaveni-obalka #nastaveni-zpravy-obalka{float:left;overflow:hidden;margin-left:50px;}#nastaveni-obalka #nastaveni-zpravy-obalka label{color:#00519e;font-family:Arial;}#nastaveni-obalka #nastaveni-zpravy-obalka #nastaveni-uzivatel-zpravy{overflow:hidden;}#nastaveni-obalka #nastaveni-zpravy-obalka .nastaveni-uzivatel-zprava{display:inline-block;float:left;clear:left;margin:5px 0;}#nastaveni-obalka #nastaveni-uzivatel-ulozit-obalka{display:block;clear:both;margin:20px 0;}#zpravy-obalka{width:980px;margin:0 auto;}#zpravy-obalka #zpravy-obsah #zpravy-filtr-obalka{margin:10px 0;overflow:hidden;}#zpravy-obalka #zpravy-obsah #zpravy-filtr-obalka img{float:left;margin-right:30px;cursor:pointer;}#zpravy-obalka #zpravy-obsah .zpravy-zprava-obalka{padding:8px 0;clear:left;overflow:hidden;border-bottom:1px solid rgba(0,0,0,.3);}#zpravy-obalka #zpravy-obsah .zpravy-zprava-obalka .zpravy-zprava-informace{overflow:hidden;cursor:pointer;}#zpravy-obalka #zpravy-obsah .zpravy-zprava-obalka .zpravy-zprava-informace.zpravy-zprava-nadpis{font-weight:bold;cursor:auto;}#zpravy-obalka #zpravy-obsah .zpravy-zprava-obalka .zpravy-zprava-informace>div{float:left;}#zpravy-obalka #zpravy-obsah .zpravy-zprava-obalka .zpravy-zprava-informace .zpravy-zprava-predmet{width:350px;}#zpravy-obalka #zpravy-obsah .zpravy-zprava-obalka .zpravy-zprava-informace .zpravy-zprava-datum{width:250px;}#zpravy-obalka #zpravy-obsah .zpravy-zprava-obalka .zpravy-zprava-informace .rozbaleni{float:right;}#zpravy-obalka #zpravy-obsah .zpravy-zprava-obalka .zpravy-zprava-obsah{display:none;margin-top:10px;}#zpravy-obalka #zpravy-obsah #zpravy-prazdne{margin-top:15px;cursor:auto;}#napoveda-obalka{width:980px;margin:0 auto;}#napoveda-obalka .napoveda-napoveda-obalka{margin-top:15px;padding-bottom:5px;clear:left;overflow:hidden;border-bottom:1px solid rgba(0,0,0,.3);}#napoveda-obalka .napoveda-napoveda-obalka .napoveda-napoveda-nadpis-obalka{overflow:hidden;cursor:pointer;}#napoveda-obalka .napoveda-napoveda-obalka .napoveda-napoveda-nadpis-obalka .napoveda-napoveda-nadpis{float:left;font-weight:bold;}#napoveda-obalka .napoveda-napoveda-obalka .napoveda-napoveda-nadpis-obalka .napoveda-napoveda-nadpis:hover{text-decoration:underline;}#napoveda-obalka .napoveda-napoveda-obalka .napoveda-napoveda-nadpis-obalka .rozbaleni{float:right;}#napoveda-obalka .napoveda-napoveda-obalka .napoveda-napoveda-obsah{display:none;clear:both;margin-top:10px;padding-bottom:10px;}#napoveda-obalka .napoveda-napoveda-obalka .napoveda-napoveda-obsah.napoveda-napoveda-vybrana{display:block;}#demo-obalka{width:980px;margin:0 auto;}#demo-obalka .demo-udaje-obalka label{color:#00519e;font-family:Arial;}#demo-obalka .demo-udaje-obalka input[type=text],#demo-obalka .demo-udaje-obalka input[type=password],#demo-obalka .demo-udaje-obalka input[type=email]{padding:8px;background-color:#fff;border:1px solid #0e2a5f;border-radius:7px;box-shadow:inset 0 3px 6px 0 rgba(0,0,0,.5);font-size:18px;width:200px;margin:5px 0 15px 0;padding:6px;font-size:16px;text-align:left;}#demo-obalka .demo-udaje-obalka #demo-udaje-ulozit{margin-top:20px;}#jidelnicky-obalka{width:980px;margin:0 auto;}#jidelnicky-obalka .jidelnicky-sekce{padding-bottom:5px;border-bottom:1px solid rgba(0,0,0,.3);}#jidelnicky-obalka .jidelnicky-sekce>div{display:none;}#jidelnicky-obalka .jidelnicky-sekce .jidelnicky-nadpis-obalka{overflow:hidden;display:block;cursor:pointer;}#jidelnicky-obalka .jidelnicky-sekce .jidelnicky-nadpis-obalka .jidelnicky-nadpis{float:left;font-weight:bold;}#jidelnicky-obalka .jidelnicky-sekce .jidelnicky-nadpis-obalka .rozbaleni{float:right;}#jidelnicky-obalka .jidelnicky-vyberJidelny-obalka .jidelnicky-vyberJidelny-jidelna-obalka{margin-top:10px;}#jidelnicky-obalka .jidelnicky-vyberJidelny-obalka .jidelnicky-vyberJidelny-jidelna-vyber{overflow:hidden;}#jidelnicky-obalka .jidelnicky-vyberJidelny-obalka .jidelnicky-vyberJidelny-jidelna-vyber>input,#jidelnicky-obalka .jidelnicky-vyberJidelny-obalka .jidelnicky-vyberJidelny-jidelna-vyber a{float:left;}#jidelnicky-obalka .jidelnicky-vyberJidelny-obalka .jidelnicky-vyberJidelny-jidelna-vyber .jidelnicky-vyberJidelny-vyhledatZarizeni{margin:10px;}#jidelnicky-obalka .jidelnicky-vyberJidelny-obalka .jidelnicky-vyberJidelny-jidelna-vyber #jidelnicky_zapamatovat{display:block;float:left;clear:left;margin-bottom:10px;}#jidelnicky-obalka .jidelnicky-vyberJidelny-obalka label{color:#00519e;font-family:Arial;}#jidelnicky-obalka .jidelnicky-vyberJidelny-obalka input[type=text]{padding:8px;background-color:#fff;border:1px solid #0e2a5f;border-radius:7px;box-shadow:inset 0 3px 6px 0 rgba(0,0,0,.5);text-align:left;font-size:18px;width:65px;margin:10px 0;}#jidelnicky-obalka .jidelnaDetaily-obalka{margin-top:10px;padding:0 0 5px 0;}#jidelnicky-obalka .jidelnaDetaily-obalka .jidelnaDetaily-udaje{margin-top:10px;}#jidelnicky-obalka .historie-obalka{overflow:hidden;padding:10px 0 10px 0;}#jidelnicky-obalka .historie-obalka .kalendar-obalka{margin-right:10px;float:left;}#jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-inline{background:none;border:none;padding:0;}#jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-header{background:none;background:#006dce;background:-moz-linear-gradient(top,#006dce 1%,#0053a1 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(1%,#006dce),color-stop(100%,#0053a1));background:-webkit-linear-gradient(top,#006dce 1%,#0053a1 100%);background:-o-linear-gradient(top,#006dce 1%,#0053a1 100%);background:-ms-linear-gradient(top,#006dce 1%,#0053a1 100%);background:linear-gradient(to bottom,#006dce 1%,#0053a1 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006dce',endColorstr='#0053a1',GradientType=0);box-shadow:1px 1px 1px 0 rgba(0,0,0,.75);border:1px solid #006dce;}#jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-prev span,#jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-next span{top:55%;}#jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-prev-hover,#jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-next-hover{border:1px solid #fff;background:rgba(51,147,219,.84);}#jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-prev-hover span,#jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-next-hover span{background-image:url("images/ui-icons_ffffff_256x240.png");}#jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-calendar{display:none;}#jidelnicky-obalka .historie-obalka .kalendar-aktualni{float:left;padding:10px;width:150px;height:20px;background:#006dce;background:-moz-linear-gradient(top,#006dce 1%,#0053a1 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(1%,#006dce),color-stop(100%,#0053a1));background:-webkit-linear-gradient(top,#006dce 1%,#0053a1 100%);background:-o-linear-gradient(top,#006dce 1%,#0053a1 100%);background:-ms-linear-gradient(top,#006dce 1%,#0053a1 100%);background:linear-gradient(to bottom,#006dce 1%,#0053a1 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006dce',endColorstr='#0053a1',GradientType=0);box-shadow:1px 1px 1px 0 rgba(0,0,0,.75);color:#fff;border-radius:5px;text-align:center;cursor:pointer;}#jidelnicky-obalka #jidelnicky_jidelnicek_obalka{margin-top:20px;}#jidelnicky-obalka #jidelnicky_jidelnicek_obalka .objednavka-den-obalka{padding-left:12px;}#jidelnicky-obalka #jidelnicky_jidelnicek_obalka .objednavka-jidlo-obalka .objednavka-jidlo-zmena{display:none;}#jidelnicky-obalka #jidelnicky_jidelnicek_obalka .objednavka-jidlo-obalka .objednavka-jidlo-detail-popis{left:0;}#kontakt-obalka{width:980px;margin:0 auto;}#kontakt-obalka .kontakt-poznamka{margin:10px 0 10px 0;font-style:italic;}#kontakt-obalka .kontakt-formular{margin-top:20px;}#kontakt-obalka .kontakt-formular .kontakt-vyhledatZarizeni{display:inline-block;vertical-align:middle;margin-left:10px;}#kontakt-obalka .kontakt-formular label{color:#00519e;font-family:Arial;}#kontakt-obalka .kontakt-formular input[type=text],#kontakt-obalka .kontakt-formular input[type=email]{padding:8px;background-color:#fff;border:1px solid #0e2a5f;border-radius:7px;box-shadow:inset 0 3px 6px 0 rgba(0,0,0,.5);font-size:18px;width:200px;margin:5px 0 15px 0;padding:6px;font-size:16px;text-align:left;}#kontakt-obalka .kontakt-formular textarea{padding:8px;background-color:#fff;border:1px solid #0e2a5f;border-radius:7px;box-shadow:inset 0 3px 6px 0 rgba(0,0,0,.5);text-align:left;font-size:18px;width:930px;height:120px;margin:5px 0 15px 0;resize:none;}#zapomenuteHeslo-obalka{width:980px;margin:0 auto;}#zapomenuteHeslo-obalka .zapomenuteHeslo-formular label{color:#00519e;font-family:Arial;}#zapomenuteHeslo-obalka .zapomenuteHeslo-formular .zapomenuteHeslo-jidelna-obalka .zapomenuteHeslo-jidelna{display:inline-block;vertical-align:top;}#zapomenuteHeslo-obalka .zapomenuteHeslo-formular .zapomenuteHeslo-jidelna-obalka .zapomenuteHeslo-vyhledatZarizeni{display:inline-block;vertical-align:middle;margin-left:10px;}#zapomenuteHeslo-obalka .zapomenuteHeslo-formular input[type=text]{padding:8px;background-color:#fff;border:1px solid #0e2a5f;border-radius:7px;box-shadow:inset 0 3px 6px 0 rgba(0,0,0,.5);font-size:18px;width:200px;margin:5px 0 15px 0;padding:6px;font-size:16px;text-align:left;}#resetHesla-obalka{width:980px;margin:0 auto;}#resetHesla-obalka .resetHesla-formular label{color:#00519e;font-family:Arial;}#resetHesla-obalka .resetHesla-formular input[type=password]{padding:8px;background-color:#fff;border:1px solid #0e2a5f;border-radius:7px;box-shadow:inset 0 3px 6px 0 rgba(0,0,0,.5);font-size:18px;width:200px;margin:5px 0 15px 0;padding:6px;font-size:16px;text-align:left;}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+
+audio, canvas, video {
+    display: inline-block;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden], template {
+    display: none;
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    background: transparent;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+a:active, a:hover {
+    outline: 0;
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+dfn {
+    font-style: italic;
+}
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+code, kbd, pre, samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+q {
+    quotes: "“" "”" "‘" "’";
+}
+
+small {
+    font-size: 80%;
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -.5em;
+}
+
+sub {
+    bottom: -.25em;
+}
+
+img {
+    border: 0;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+figure {
+    margin: 0;
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: .35em .625em .75em;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+}
+
+button, input {
+    line-height: normal;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled], html input[disabled] {
+    cursor: default;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+@font-face {
+    font-family: Museo700;
+    src: url(../fonty/MuseoSans_700.otf);
+}
+
+@font-face {
+    font-family: Museo700;
+    src: url(../fonty/MuseoSans_700Italic.otf);
+    font-style: italic;
+}
+
+.ukazatel {
+    cursor: pointer;
+}
+
+.schovane {
+    visibility: hidden;
+}
+
+.skryte {
+    display: none;
+}
+
+.cela-obrazovka {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+}
+
+.bg-blue-gradient {
+    background: #006dce;
+    background: -moz-linear-gradient(top, #006dce 1%, #0053a1 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #006dce), color-stop(100%, #0053a1));
+    background: -webkit-linear-gradient(top, #006dce 1%, #0053a1 100%);
+    background: -o-linear-gradient(top, #006dce 1%, #0053a1 100%);
+    background: -ms-linear-gradient(top, #006dce 1%, #0053a1 100%);
+    background: linear-gradient(to bottom, #006dce 1%, #0053a1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#006dce', endColorstr='#0053a1', GradientType=0);
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .75);
+}
+
+h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.informacniLista {
+    margin-bottom: 5px;
+    padding: 10px 35px;
+    overflow: hidden;
+    background-color: #00519e;
+    color: #fff;
+    font-weight: bold;
+}
+
+.informacniLista .informacniLista-jmeno {
+    float: left;
+}
+
+.informacniLista .informacniLista-konto {
+    float: right;
+}
+
+.rozbaleni {
+    width: 15px;
+    height: 15px;
+    background: url("../obrazky/rozbaleni.png") 0 0 no-repeat;
+    cursor: pointer;
+}
+
+.rozbaleni.rozbaleni-dolu {
+    background-position: -15px 0;
+}
+
+.upozorneni {
+    color: #f00;
+}
+
+.uspech {
+    color: #00a800;
+}
+
+.pole1 {
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #0e2a5f;
+    border-radius: 7px;
+    box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, .5);
+    text-align: left;
+    font-size: 18px;
+}
+
+.noscript {
+    padding: 8px;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+}
+
+.noscript a {
+    color: #fff;
+}
+
+.zmensenyOkraj {
+    margin-right: 0 !important;
+    margin-left: 10px !important;
+}
+
+.tabulka-hodnot {
+    width: 100%;
+}
+
+.tabulka-hodnot td {
+    word-wrap: break-word;
+}
+
+.odkaz {
+    text-decoration: none;
+}
+
+.odkaz:hover {
+    text-decoration: underline;
+}
+
+.zaskrtavaciPolicko {
+    display: inline;
+}
+
+.zaskrtavaciPolicko.zaskrtavaciPolicko-povolene {
+    cursor: pointer;
+}
+
+.zaskrtavaciPolicko div, .zaskrtavaciPolicko span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.responzivniVyska {
+    height: 50px;
+}
+
+@media screen and (min-height:500px) {
+    .responzivniVyska {
+        height: 90px;
+    }
+}
+
+#reklama-vypln {
+    height: 50px;
+}
+
+@media screen and (min-height:500px) {
+    #reklama-vypln {
+        height: 90px;
+    }
+}
+
+.tipy-obalka {
+    position: absolute;
+    left: 290px;
+    width: 350px;
+    z-index: 999;
+}
+
+.tipy-obalka .tip-obalka {
+    display: inline-block;
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid rgba(51, 147, 219, .84);
+    border-radius: 11px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .5);
+}
+
+.tipy-obalka .tip-obalka .tip-nadpis {
+    float: left;
+    font-weight: bold;
+}
+
+.tipy-obalka .tip-obalka .tip-zavrit {
+    float: right;
+    cursor: pointer;
+}
+
+.tipy-obalka .tip-obalka .tip-zavrit:hover {
+    text-decoration: underline;
+}
+
+.tipy-obalka .tip-obalka .tip-text {
+    clear: left;
+    float: left;
+}
+
+.jidelnaDetaily-obalka .jidelnaDetaily-udaje {
+    padding: 10px;
+    background-color: #d5d5d5;
+    color: #00519e;
+}
+
+.jidelnaDetaily-obalka .jidelnaDetaily-udaje a {
+    color: #00519e;
+}
+
+.jidelnaDetaily-obalka .jidelnaDetaily-udaje>div {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.jidelnaDetaily-obalka .jidelnaDetaily-udaje .jidelnaDetaily-nazev {
+    font-weight: bold;
+}
+
+.jidelnaDetaily-obalka .jidelnaDetaily-text {
+    margin-top: 15px;
+    word-wrap: break-word;
+}
+
+#informacni-dialog {
+    display: none;
+    position: absolute;
+    left: 240px;
+    z-index: 999;
+    width: 500px;
+    padding: 10px;
+    overflow: hidden;
+    border: 2px solid rgba(51, 147, 219, .84);
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+#informacni-dialog.mobilni {
+    position: relative;
+    width: 100%;
+    left: auto;
+    padding-top: 3em;
+}
+
+#informacni-dialog.mobilni .zavrit {
+    top: 4px;
+    right: 4px;
+}
+
+#informacni-dialog.mobilni .informacni-zaznam .popis {
+    width: auto;
+}
+
+#informacni-dialog.mobilni .informacni-zaznam .hodnota {
+    float: right;
+}
+
+#informacni-dialog .zavrit {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+#informacni-dialog .informacni-zaznam {
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#informacni-dialog .informacni-zaznam .popis {
+    float: left;
+    width: 200px;
+    font-weight: bold;
+}
+
+#informacni-dialog .informacni-zaznam .hodnota {
+    float: left;
+    margin-left: 10px;
+}
+
+.upozorneni {
+    margin-bottom: 8px;
+}
+
+.uspech {
+    margin-bottom: 8px;
+}
+
+.obsah {
+    min-height: 250px;
+    padding: 20px 15px;
+    border-radius: 0 10px 10px 10px;
+    box-shadow: 0 0 6px 0 rgba(50, 50, 50, .5);
+    background-color: #fff;
+}
+
+body {
+    font-family: Arial;
+}
+
+#stranka-obalka {
+    background: url("../obrazky/stranka_pozadi.png") #fff center 138px no-repeat;
+}
+
+#obsah-obalka {
+    position: relative;
+    width: 980px;
+    margin: 0 auto 25px auto;
+}
+
+#obsah-obalka .reklama-bocni {
+    position: absolute;
+    top: 0;
+    left: 987px;
+}
+
+#paticka-obalka {
+    max-width: 2400px;
+    min-height: 130px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+#paticka-obalka #paticka {
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#paticka-obalka #paticka .paticka-rychleOdkazy {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#paticka-obalka #paticka .paticka-rychleOdkazy #copyright {
+    margin-top: 10px;
+    font-family: Arial;
+    color: #00519e;
+    font-size: 12px;
+}
+
+#paticka-obalka #paticka .paticka-rychleOdkazy #vis-kontakt {
+    font-family: Arial;
+    color: #00519e;
+    font-size: 12px;
+}
+
+#paticka-obalka #paticka .paticka-rychleOdkazy #vis-kontakt a {
+    color: #00519e;
+}
+
+#paticka-obalka #paticka .paticka-rychleOdkazy #zapomenuteHeslo {
+    font-family: Arial;
+    color: #00519e;
+    font-size: 12px;
+}
+
+#paticka-obalka #paticka .paticka-rychleOdkazy #zapomenuteHeslo a {
+    color: #00519e;
+}
+
+#paticka-obalka #paticka .paticka-rychleOdkazy #zabezpecenyPristup {
+    font-family: Arial;
+    color: #00519e;
+    font-size: 12px;
+}
+
+#paticka-obalka #paticka .paticka-rychleOdkazy #zabezpecenyPristup a {
+    color: #00519e;
+}
+
+#paticka-obalka #paticka .paticka-rychleOdkazy #prepinacZobrazeni {
+    margin-top: 45px;
+    text-decoration: underline;
+    font-family: Arial;
+    color: #00519e;
+    font-size: 12px;
+}
+
+#paticka-obalka #paticka .paticka-rychleOdkazy #prepinacZobrazeni a {
+    color: #00519e;
+}
+
+#paticka-obalka #paticka .paticka-rychleOdkazy #prepinacZobrazeni a:hover {
+    text-decoration: underline;
+}
+
+#paticka-obalka #paticka .paticka-reklama {
+    display: inline-block;
+    margin: 10px 0 0 55px;
+}
+
+#menu-obalka {
+    background: url("../obrazky/menu_pozadi.png") #fff center 100px repeat-x;
+    height: 138px;
+    max-width: 2400px;
+    margin: 0 auto;
+}
+
+#menu-top {
+    width: 980px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#menu-top .stravacz-logo {
+    position: absolute;
+    left: 0;
+    top: 32px;
+}
+
+#menu-top .stravacz-logo img {
+    width: 169px;
+    height: 41px;
+}
+
+#menu-top .banner {
+    position: absolute;
+    left: 180px;
+    top: 5px;
+}
+
+#menu-top .vis-logo img {
+    position: absolute;
+    top: 18px;
+    right: -35px;
+    width: 95px;
+    height: 62px;
+}
+
+#menu-lista {
+    width: 980px;
+    height: 38px;
+    margin: 0 auto;
+}
+
+#menu-lista #menu-tlacitka {
+    height: 100%;
+}
+
+#menu-lista #menu-tlacitka a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#menu-lista #menu-tlacitka .menu-vyberJazyku {
+    float: left;
+    height: 100%;
+    margin-left: 10px;
+    padding: 5px;
+    line-height: 28px;
+    color: #fff;
+}
+
+#menu-lista #menu-tlacitka .menu-vyberJazyku a {
+    font-size: 13px;
+    font-family: Museo700;
+    margin-right: 5px;
+}
+
+#menu-lista #menu-tlacitka .menu-vyberJazyku a:hover {
+    text-decoration: underline;
+}
+
+#menu-lista #menu-tlacitka .menu-tlacitko {
+    height: 100%;
+    min-width: 90px;
+    float: left;
+    padding: 5px;
+    font-size: 13px;
+    text-align: center;
+    line-height: 28px;
+    color: #fff;
+    font-family: Museo700;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+#menu-lista #menu-tlacitka .menu-tlacitko:hover {
+    background: url("../obrazky/menu_tlacitko_pozadi.png") 0 0 repeat-x;
+}
+
+#menu-lista #menu-tlacitka .menu-rozdelovac {
+    width: 2px;
+    height: 26px;
+    float: left;
+    position: relative;
+    top: 6px;
+}
+
+#menu-lista #menu-tlacitka .menu-tlacitko-aktivni {
+    background: url("../obrazky/menu_tlacitko_pozadi.png") 0 0 repeat-x;
+}
+
+#podmenu-obalka {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    margin: 25px auto 0 auto;
+}
+
+#podmenu-obalka #podmenu-nadpis {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 23px 14px 13px 14px;
+    border-radius: 9px 9px 0 0;
+    background-color: #fff;
+    color: #00519e;
+    font-family: Museo700;
+    font-size: 20px;
+}
+
+#podmenu-obalka #podmenu-nadpis h1 {
+    float: left;
+}
+
+#podmenu-obalka #podmenu-nadpis img {
+    float: left;
+    height: 24px;
+    margin: 0 0 0 10px;
+    visibility: hidden;
+}
+
+#podmenu-obalka #podmenu-tlacitka {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#podmenu-obalka #podmenu-tlacitka>* {
+    float: right;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+#zalozky {
+    position: relative;
+    width: 600px;
+    margin: 25px auto 0 auto;
+    overflow: hidden;
+}
+
+#zalozky .zalozka {
+    float: left;
+    margin-left: 5px;
+    width: 106px;
+    min-height: 19px;
+    padding: 15px 5px 5px 5px;
+    border-radius: 11px 11px 0 0;
+    background: url("../obrazky/zalozka_pozadi.png") #fff;
+    text-align: center;
+    font-family: Arial;
+    font-size: 12px;
+    color: #000;
+    word-wrap: break-word;
+    cursor: pointer;
+}
+
+#zalozky .zalozka:first-child {
+    margin-left: 0;
+}
+
+#zalozky .zalozka.zalozka_aktivni {
+    background: #fff;
+    color: #00519e;
+}
+
+#zalozky .zalozka.zalozka_pridat {
+    width: 35px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+}
+
+#zalozky .zalozka .zalozka_pole {
+    width: 80%;
+}
+
+.prihlaseni_box {
+    position: relative;
+    margin: 0 auto;
+    width: 600px;
+    height: 318px;
+    border-radius: 0 11px 11px 11px;
+    background: url("../obrazky/prihlaseni_box_logo.png") #fff no-repeat 45% 0;
+}
+
+.prihlaseni_box #zalozky_ovladani {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.prihlaseni_box #zalozky_ovladani img {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.prihlaseni_box #zalozky_ovladani img #zalozky_upravit {
+    width: 19px;
+    height: 19px;
+}
+
+.prihlaseni_box #zalozky_ovladani img #zalozky_smazat {
+    width: 19px;
+    height: 20px;
+}
+
+.prihlaseni_box .prihlaseni_text {
+    color: #00519e;
+    font-family: Arial;
+}
+
+.prihlaseni_box #prihlaseni_jidelna_popis {
+    position: absolute;
+    top: 37px;
+    left: 40px;
+    color: #00519e;
+    font-family: Arial;
+}
+
+.prihlaseni_box #prihlaseni_jidelna {
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    width: 65px;
+    height: 25px;
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #0e2a5f;
+    border-radius: 7px;
+    box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, .5);
+    text-align: left;
+    font-size: 18px;
+}
+
+.prihlaseni_box #prihlaseni_uzivatel_popis {
+    position: absolute;
+    top: 38px;
+    left: 300px;
+    color: #00519e;
+    font-family: Arial;
+}
+
+.prihlaseni_box #prihlaseni_uzivatel {
+    position: absolute;
+    top: 59px;
+    right: 40px;
+    width: 250px;
+    height: 25px;
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #0e2a5f;
+    border-radius: 7px;
+    box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, .5);
+    text-align: left;
+    font-size: 18px;
+}
+
+.prihlaseni_box #prihlaseni_heslo_popis {
+    position: absolute;
+    top: 119px;
+    left: 300px;
+    color: #00519e;
+    font-family: Arial;
+}
+
+.prihlaseni_box #prihlaseni_heslo {
+    position: absolute;
+    top: 140px;
+    right: 40px;
+    width: 250px;
+    height: 25px;
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #0e2a5f;
+    border-radius: 7px;
+    box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, .5);
+    text-align: left;
+    font-size: 18px;
+}
+
+.prihlaseni_box #prihlaseni_vyhledat_zarizeni {
+    position: absolute;
+    top: 139px;
+    left: 40px;
+}
+
+.prihlaseni_box #prihlaseni_zapamatovat {
+    position: absolute;
+    top: 195px;
+    right: 40px;
+}
+
+.prihlaseni_box #prihlaseni_zapamatovat span {
+    color: #00519e;
+    font-family: Arial;
+}
+
+.prihlaseni_box .prihlaseni-prihlasit {
+    position: absolute;
+    top: 230px;
+    right: 40px;
+}
+
+.prihlaseni_box #prihlaseni_neuspech {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #f00;
+    margin-bottom: 8px;
+}
+
+.prihlaseni_box.prihlaseni_prihlaseno {
+    height: auto;
+    min-height: 318px;
+    margin-top: 60px;
+    border-radius: 11px;
+}
+
+#vazba-obsah .upozorneni {
+    barva: #f00;
+}
+
+#vazba-obsah .sekce {
+    margin-bottom: 10px;
+}
+
+#vazba-obsah .popis {
+    display: block;
+}
+
+#vazba-obsah .prihlaseni-pole {
+    font-family: Arial;
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #0e2a5f;
+    border-radius: 7px;
+    box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, .5);
+    text-align: left;
+    font-size: 18px;
+}
+
+#zarizeni-obalka {
+    width: 980px;
+    margin: 0 auto;
+}
+
+#zarizeni-obalka #zarizeni-obsah a {
+    text-decoration: none;
+}
+
+#zarizeni-obalka #zarizeni-obsah .zarizeni-vyberMest {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+#zarizeni-obalka #zarizeni-obsah .zarizeni-vyberMest div {
+    font-size: 1.1em;
+    color: #00519e;
+}
+
+#zarizeni-obalka #zarizeni-obsah .zarizeni-vyberMest .zarizeni-vyberMest-popis {
+    float: left;
+    margin-right: 10px;
+}
+
+#zarizeni-obalka #zarizeni-obsah .zarizeni-vyberMest .zarizeni-vyberMest-pismeno {
+    float: left;
+    margin-right: 10px;
+}
+
+#zarizeni-obalka #zarizeni-obsah .zarizeni-vyberMest .zarizeni-vyberMest-pismeno.zarizeni-vyberMest-pismeno-aktivni {
+    cursor: pointer;
+}
+
+#zarizeni-obalka #zarizeni-obsah .zarizeni-vyberMest .zarizeni-vyberMest-pismeno.zarizeni-vyberMest-pismeno-aktivni:hover {
+    text-decoration: underline;
+}
+
+#zarizeni-obalka #zarizeni-obsah .zarizeni-mesto-obalka {
+    padding: 7px 0;
+    overflow: hidden;
+    color: #000;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+    cursor: pointer;
+}
+
+#zarizeni-obalka #zarizeni-obsah .zarizeni-mesto-obalka a {
+    color: #000;
+}
+
+#zarizeni-obalka #zarizeni-obsah .zarizeni-mesto-obalka .zarizeni-mesto-nazev {
+    float: left;
+    font-weight: bold;
+}
+
+#zarizeni-obalka #zarizeni-obsah .zarizeni-mesto-obalka .rozbaleni {
+    float: right;
+    margin: 3px 10px 0 0;
+}
+
+#zarizeni-obalka #zarizeni-obsah .zarizeni-jidelna-obalka {
+    display: none;
+    clear: left;
+}
+
+#zarizeni-obalka #zarizeni-obsah .zarizeni-jidelna-obalka div {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+#zarizeni-obalka #zarizeni-obsah .zarizeni-jidelna-obalka:hover .zarizeni-jidelna-id {
+    text-decoration: underline;
+}
+
+#objednavky-obalka {
+    width: 980px;
+    margin: 0 auto;
+}
+
+#objednavky-obalka #objednavky-obsah {
+    font-size: 16px;
+}
+
+#objednavky-obalka #objednavky-obsah .objednavky_zprava {
+    display: none;
+    padding: 10px;
+    background-color: #f00;
+    color: #fff;
+    cursor: pointer;
+}
+
+#objednavky-obalka #objednavky-obsah .objednavky_zprava.objednavky_zprava_fixni {
+    position: fixed;
+    left: 50%;
+    top: 0;
+    word-wrap: break-word;
+}
+
+#objednavky-obalka #objednavky-obsah .objednavky_zprava.uspech {
+    background-color: #07af07;
+}
+
+#objednavky-obalka #objednavky-obsah #seznam_objednavek_obalka {
+    margin-top: 15px;
+}
+
+.objednavka-obalka {
+    margin-top: 5px;
+    padding-bottom: 6px;
+}
+
+.objednavka-obalka .objednavka-jidlo-detaily {
+    margin-top: 10px;
+}
+
+.objednavka-obalka .objednavka-den-obalka {
+    padding: 3px 35px 3px 12px;
+    background-color: #e0e0e0;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    color: #00519e;
+    font-weight: bold;
+}
+
+.objednavka-obalka .objednavka-den-obalka.objednavka-den-hromadna {
+    cursor: pointer;
+}
+
+.objednavka-obalka .objednavka-den-obalka .objednavka-den-datum {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.objednavka-obalka .objednavka-den-obalka .objednavka-den-datum:first-child {
+    margin-left: 25px;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka {
+    clear: left;
+    padding: 4px 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka.objednavka-jidlo-polevka {
+    cursor: auto;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka>div {
+    float: left;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-zmena {
+    width: 25px;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-zmena.objednavka-jidlo-mnohonasobne {
+    width: 120px;
+    cursor: auto;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-zmena.objednavka-jidlo-mnohonasobne .objednavka-jidlo-puvodniPocet {
+    float: left;
+    margin-top: 2px;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-zmena.objednavka-jidlo-mnohonasobne input {
+    float: right;
+    width: 45px;
+    height: 15px;
+    margin-right: 10px;
+    padding: 1px;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-zmena.objednavka-jidlo-mnohonasobne input.objednavka-jidlo-pole-cervena {
+    border: 1px solid #f00;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-zmena.objednavka-jidlo-mnohonasobne input.objednavka-jidlo-pole-modra {
+    border: 1px solid #00519e;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-zmena.objednavka-jidlo-mnohonasobne input.objednavka-jidlo-pole-zelena {
+    border: 1px solid #0f0;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-popis {
+    width: 100px;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-nazev {
+    word-wrap: break-word;
+    max-width: 660px;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka .rozbaleni {
+    float: right;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-detaily {
+    display: none;
+    width: 100%;
+    padding: 5px;
+    clear: both;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-detaily .objednavka-jidlo-detail-popis {
+    font-family: Courier New, Courier, monospace;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-detaily .objednavka-jidlo-detail-popis .popis {
+    font-family: Arial;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-alergeny-ikona {
+    float: right;
+    width: 20px;
+    margin: 1px 5px 0 0;
+    cursor: pointer;
+}
+
+.objednavka-obalka .objednavka-jidlo-obalka .objednavka-jidlo-alergeny-udaje {
+    display: none;
+    width: 100%;
+    clear: both;
+    margin: 10px 0 0 0;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.objednavka-obalka .objednavka-jidlo-sude {
+    background-color: #fff;
+}
+
+.objednavka-obalka .objednavka-jidlo-liche {
+    background-color: #fff;
+}
+
+.objednavka-obalka .objednavka-jidlo-objednane {
+    background-image: linear-gradient(90deg, #d1e7ff 0%, #eaf4ff 100%);
+    background-image: -webkit-linear-gradient(90deg, #d1e7ff 0%, #eaf4ff 100%);
+    background-image: -moz-linear-gradient(90deg, #d1e7ff 0%, #eaf4ff 100%);
+    background-image: -oz-linear-gradient(90deg, #d1e7ff 0%, #eaf4ff 100%);
+    background-image: -ms-linear-gradient(90deg, #d1e7ff 0%, #eaf4ff 100%);
+}
+
+.objednavka-obalka .objednavka-jidlo-objednane .objednavka-jidlo-popis, .objednavka-obalka .objednavka-jidlo-objednane .objednavka-jidlo-nazev {
+    font-weight: bold;
+}
+
+#vydej-obalka {
+    width: 980px;
+    margin: 0 auto;
+}
+
+#vydej-obalka #vydej-obsah .vydej-tabulka td {
+    padding: 8px 0;
+}
+
+#vydej-obalka #vydej-obsah .vydej-tabulka tr {
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+#vydej-obalka #vydej-obsah .vydej-den-nadpis {
+    font-weight: bold;
+}
+
+#vydej-obalka #vydej-obsah .vydej-den-vyzvednuti {
+    width: 15px;
+    height: 16px;
+    margin: 3px 10px 0 0;
+    background: url("../obrazky/vydej_vyzvednuti.png?x=1") 0 0 no-repeat;
+    float: left;
+}
+
+#vydej-obalka #vydej-obsah .vydej-den-vyzvednuti.vydej-den-nevyzvednuto {
+    background-position: -15px 0;
+}
+
+#vydej-obalka #vydej-obsah .vydej-den-vyzvednuti.vydej-den-stravenka {
+    background-position: -30px 0;
+}
+
+#vydej-obalka #vydej-obsah .vydej-den-vyzvednuti.vydej-den-nenikdispozici {
+    width: 16px;
+    background: url("../obrazky/vydej_neniKDispozici.png") 0 0 no-repeat !important;
+}
+
+#platby-obalka {
+    width: 980px;
+    margin: 0 auto;
+}
+
+#platby-obalka #platby-obsah .platby-tabulka td {
+    padding: 8px 0;
+}
+
+#platby-obalka #platby-obsah .platby-tabulka tr {
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+#platby-obalka #platby-obsah .platby-tabulka .platby-platba-nadpis {
+    font-weight: bold;
+}
+
+#platby-obalka #platby-obsah .platby-tabulka .platby-platba-typ {
+    width: 15px;
+    height: 15px;
+    margin: 2px 10px 0 0;
+    background: url("../obrazky/platby_platba.png") 0 0 no-repeat;
+    float: left;
+}
+
+#platby-obalka #platby-obsah .platby-tabulka .platby-platba-typ.platby-platba-vydej {
+    background-position: -15px 0;
+}
+
+#platby-obalka #platby-obsah .platby-tabulka .platby-platba-popis {
+    overflow: hidden;
+}
+
+#nastaveni-obalka {
+    width: 980px;
+    margin: 0 auto;
+}
+
+#nastaveni-obalka #nastaveni-udaje {
+    float: left;
+    overflow: hidden;
+}
+
+#nastaveni-obalka #nastaveni-udaje label {
+    color: #00519e;
+    font-family: Arial;
+}
+
+#nastaveni-obalka #nastaveni-udaje input[type=password], #nastaveni-obalka #nastaveni-udaje input[type=email] {
+    margin: 5px 0 15px 0;
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #0e2a5f;
+    border-radius: 7px;
+    box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, .5);
+    font-size: 18px;
+    font-size: 16px;
+    padding: 6px;
+    width: 200px;
+    text-align: left;
+}
+
+#nastaveni-obalka #nastaveni-zpravy-obalka {
+    float: left;
+    overflow: hidden;
+    margin-left: 50px;
+}
+
+#nastaveni-obalka #nastaveni-zpravy-obalka label {
+    color: #00519e;
+    font-family: Arial;
+}
+
+#nastaveni-obalka #nastaveni-zpravy-obalka #nastaveni-uzivatel-zpravy {
+    overflow: hidden;
+}
+
+#nastaveni-obalka #nastaveni-zpravy-obalka .nastaveni-uzivatel-zprava {
+    display: inline-block;
+    float: left;
+    clear: left;
+    margin: 5px 0;
+}
+
+#nastaveni-obalka #nastaveni-uzivatel-ulozit-obalka {
+    display: block;
+    clear: both;
+    margin: 20px 0;
+}
+
+#zpravy-obalka {
+    width: 980px;
+    margin: 0 auto;
+}
+
+#zpravy-obalka #zpravy-obsah #zpravy-filtr-obalka {
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+#zpravy-obalka #zpravy-obsah #zpravy-filtr-obalka img {
+    float: left;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+#zpravy-obalka #zpravy-obsah .zpravy-zprava-obalka {
+    padding: 8px 0;
+    clear: left;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+#zpravy-obalka #zpravy-obsah .zpravy-zprava-obalka .zpravy-zprava-informace {
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#zpravy-obalka #zpravy-obsah .zpravy-zprava-obalka .zpravy-zprava-informace.zpravy-zprava-nadpis {
+    font-weight: bold;
+    cursor: auto;
+}
+
+#zpravy-obalka #zpravy-obsah .zpravy-zprava-obalka .zpravy-zprava-informace>div {
+    float: left;
+}
+
+#zpravy-obalka #zpravy-obsah .zpravy-zprava-obalka .zpravy-zprava-informace .zpravy-zprava-predmet {
+    width: 350px;
+}
+
+#zpravy-obalka #zpravy-obsah .zpravy-zprava-obalka .zpravy-zprava-informace .zpravy-zprava-datum {
+    width: 250px;
+}
+
+#zpravy-obalka #zpravy-obsah .zpravy-zprava-obalka .zpravy-zprava-informace .rozbaleni {
+    float: right;
+}
+
+#zpravy-obalka #zpravy-obsah .zpravy-zprava-obalka .zpravy-zprava-obsah {
+    display: none;
+    margin-top: 10px;
+}
+
+#zpravy-obalka #zpravy-obsah #zpravy-prazdne {
+    margin-top: 15px;
+    cursor: auto;
+}
+
+#napoveda-obalka {
+    width: 980px;
+    margin: 0 auto;
+}
+
+#napoveda-obalka .napoveda-napoveda-obalka {
+    margin-top: 15px;
+    padding-bottom: 5px;
+    clear: left;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+#napoveda-obalka .napoveda-napoveda-obalka .napoveda-napoveda-nadpis-obalka {
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#napoveda-obalka .napoveda-napoveda-obalka .napoveda-napoveda-nadpis-obalka .napoveda-napoveda-nadpis {
+    float: left;
+    font-weight: bold;
+}
+
+#napoveda-obalka .napoveda-napoveda-obalka .napoveda-napoveda-nadpis-obalka .napoveda-napoveda-nadpis:hover {
+    text-decoration: underline;
+}
+
+#napoveda-obalka .napoveda-napoveda-obalka .napoveda-napoveda-nadpis-obalka .rozbaleni {
+    float: right;
+}
+
+#napoveda-obalka .napoveda-napoveda-obalka .napoveda-napoveda-obsah {
+    display: none;
+    clear: both;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+#napoveda-obalka .napoveda-napoveda-obalka .napoveda-napoveda-obsah.napoveda-napoveda-vybrana {
+    display: block;
+}
+
+#demo-obalka {
+    width: 980px;
+    margin: 0 auto;
+}
+
+#demo-obalka .demo-udaje-obalka label {
+    color: #00519e;
+    font-family: Arial;
+}
+
+#demo-obalka .demo-udaje-obalka input[type=text], #demo-obalka .demo-udaje-obalka input[type=password], #demo-obalka .demo-udaje-obalka input[type=email] {
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #0e2a5f;
+    border-radius: 7px;
+    box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, .5);
+    font-size: 18px;
+    width: 200px;
+    margin: 5px 0 15px 0;
+    padding: 6px;
+    font-size: 16px;
+    text-align: left;
+}
+
+#demo-obalka .demo-udaje-obalka #demo-udaje-ulozit {
+    margin-top: 20px;
+}
+
+#jidelnicky-obalka {
+    width: 980px;
+    margin: 0 auto;
+}
+
+#jidelnicky-obalka .jidelnicky-sekce {
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+#jidelnicky-obalka .jidelnicky-sekce>div {
+    display: none;
+}
+
+#jidelnicky-obalka .jidelnicky-sekce .jidelnicky-nadpis-obalka {
+    overflow: hidden;
+    display: block;
+    cursor: pointer;
+}
+
+#jidelnicky-obalka .jidelnicky-sekce .jidelnicky-nadpis-obalka .jidelnicky-nadpis {
+    float: left;
+    font-weight: bold;
+}
+
+#jidelnicky-obalka .jidelnicky-sekce .jidelnicky-nadpis-obalka .rozbaleni {
+    float: right;
+}
+
+#jidelnicky-obalka .jidelnicky-vyberJidelny-obalka .jidelnicky-vyberJidelny-jidelna-obalka {
+    margin-top: 10px;
+}
+
+#jidelnicky-obalka .jidelnicky-vyberJidelny-obalka .jidelnicky-vyberJidelny-jidelna-vyber {
+    overflow: hidden;
+}
+
+#jidelnicky-obalka .jidelnicky-vyberJidelny-obalka .jidelnicky-vyberJidelny-jidelna-vyber>input, #jidelnicky-obalka .jidelnicky-vyberJidelny-obalka .jidelnicky-vyberJidelny-jidelna-vyber a {
+    float: left;
+}
+
+#jidelnicky-obalka .jidelnicky-vyberJidelny-obalka .jidelnicky-vyberJidelny-jidelna-vyber .jidelnicky-vyberJidelny-vyhledatZarizeni {
+    margin: 10px;
+}
+
+#jidelnicky-obalka .jidelnicky-vyberJidelny-obalka .jidelnicky-vyberJidelny-jidelna-vyber #jidelnicky_zapamatovat {
+    display: block;
+    float: left;
+    clear: left;
+    margin-bottom: 10px;
+}
+
+#jidelnicky-obalka .jidelnicky-vyberJidelny-obalka label {
+    color: #00519e;
+    font-family: Arial;
+}
+
+#jidelnicky-obalka .jidelnicky-vyberJidelny-obalka input[type=text] {
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #0e2a5f;
+    border-radius: 7px;
+    box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, .5);
+    text-align: left;
+    font-size: 18px;
+    width: 65px;
+    margin: 10px 0;
+}
+
+#jidelnicky-obalka .jidelnaDetaily-obalka {
+    margin-top: 10px;
+    padding: 0 0 5px 0;
+}
+
+#jidelnicky-obalka .jidelnaDetaily-obalka .jidelnaDetaily-udaje {
+    margin-top: 10px;
+}
+
+#jidelnicky-obalka .historie-obalka {
+    overflow: hidden;
+    padding: 10px 0 10px 0;
+}
+
+#jidelnicky-obalka .historie-obalka .kalendar-obalka {
+    margin-right: 10px;
+    float: left;
+}
+
+#jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-inline {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+#jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-header {
+    background: none;
+    background: #006dce;
+    background: -moz-linear-gradient(top, #006dce 1%, #0053a1 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #006dce), color-stop(100%, #0053a1));
+    background: -webkit-linear-gradient(top, #006dce 1%, #0053a1 100%);
+    background: -o-linear-gradient(top, #006dce 1%, #0053a1 100%);
+    background: -ms-linear-gradient(top, #006dce 1%, #0053a1 100%);
+    background: linear-gradient(to bottom, #006dce 1%, #0053a1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#006dce', endColorstr='#0053a1', GradientType=0);
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .75);
+    border: 1px solid #006dce;
+}
+
+#jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-prev span, #jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-next span {
+    top: 55%;
+}
+
+#jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-prev-hover, #jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-next-hover {
+    border: 1px solid #fff;
+    background: rgba(51, 147, 219, .84);
+}
+
+#jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-prev-hover span, #jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-next-hover span {
+    background-image: url("images/ui-icons_ffffff_256x240.png");
+}
+
+#jidelnicky-obalka .historie-obalka .kalendar-obalka .ui-datepicker-calendar {
+    display: none;
+}
+
+#jidelnicky-obalka .historie-obalka .kalendar-aktualni {
+    float: left;
+    padding: 10px;
+    width: 150px;
+    height: 20px;
+    background: #006dce;
+    background: -moz-linear-gradient(top, #006dce 1%, #0053a1 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #006dce), color-stop(100%, #0053a1));
+    background: -webkit-linear-gradient(top, #006dce 1%, #0053a1 100%);
+    background: -o-linear-gradient(top, #006dce 1%, #0053a1 100%);
+    background: -ms-linear-gradient(top, #006dce 1%, #0053a1 100%);
+    background: linear-gradient(to bottom, #006dce 1%, #0053a1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#006dce', endColorstr='#0053a1', GradientType=0);
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .75);
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#jidelnicky-obalka #jidelnicky_jidelnicek_obalka {
+    margin-top: 20px;
+}
+
+#jidelnicky-obalka #jidelnicky_jidelnicek_obalka .objednavka-den-obalka {
+    padding-left: 12px;
+}
+
+#jidelnicky-obalka #jidelnicky_jidelnicek_obalka .objednavka-jidlo-obalka .objednavka-jidlo-zmena {
+    display: none;
+}
+
+#jidelnicky-obalka #jidelnicky_jidelnicek_obalka .objednavka-jidlo-obalka .objednavka-jidlo-detail-popis {
+    left: 0;
+}
+
+#kontakt-obalka {
+    width: 980px;
+    margin: 0 auto;
+}
+
+#kontakt-obalka .kontakt-poznamka {
+    margin: 10px 0 10px 0;
+    font-style: italic;
+}
+
+#kontakt-obalka .kontakt-formular {
+    margin-top: 20px;
+}
+
+#kontakt-obalka .kontakt-formular .kontakt-vyhledatZarizeni {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+#kontakt-obalka .kontakt-formular label {
+    color: #00519e;
+    font-family: Arial;
+}
+
+#kontakt-obalka .kontakt-formular input[type=text], #kontakt-obalka .kontakt-formular input[type=email] {
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #0e2a5f;
+    border-radius: 7px;
+    box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, .5);
+    font-size: 18px;
+    width: 200px;
+    margin: 5px 0 15px 0;
+    padding: 6px;
+    font-size: 16px;
+    text-align: left;
+}
+
+#kontakt-obalka .kontakt-formular textarea {
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #0e2a5f;
+    border-radius: 7px;
+    box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, .5);
+    text-align: left;
+    font-size: 18px;
+    width: 930px;
+    height: 120px;
+    margin: 5px 0 15px 0;
+    resize: none;
+}
+
+#zapomenuteHeslo-obalka {
+    width: 980px;
+    margin: 0 auto;
+}
+
+#zapomenuteHeslo-obalka .zapomenuteHeslo-formular label {
+    color: #00519e;
+    font-family: Arial;
+}
+
+#zapomenuteHeslo-obalka .zapomenuteHeslo-formular .zapomenuteHeslo-jidelna-obalka .zapomenuteHeslo-jidelna {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#zapomenuteHeslo-obalka .zapomenuteHeslo-formular .zapomenuteHeslo-jidelna-obalka .zapomenuteHeslo-vyhledatZarizeni {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+#zapomenuteHeslo-obalka .zapomenuteHeslo-formular input[type=text] {
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #0e2a5f;
+    border-radius: 7px;
+    box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, .5);
+    font-size: 18px;
+    width: 200px;
+    margin: 5px 0 15px 0;
+    padding: 6px;
+    font-size: 16px;
+    text-align: left;
+}
+
+#resetHesla-obalka {
+    width: 980px;
+    margin: 0 auto;
+}
+
+#resetHesla-obalka .resetHesla-formular label {
+    color: #00519e;
+    font-family: Arial;
+}
+
+#resetHesla-obalka .resetHesla-formular input[type=password] {
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #0e2a5f;
+    border-radius: 7px;
+    box-shadow: inset 0 3px 6px 0 rgba(0, 0, 0, .5);
+    font-size: 18px;
+    width: 200px;
+    margin: 5px 0 15px 0;
+    padding: 6px;
+    font-size: 16px;
+    text-align: left;
+}
