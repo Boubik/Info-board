@@ -14,7 +14,8 @@ info board for my school
 
 ## **How to use**
 
-open index.php it will automatically change between school schedule and news with school cantina menu run at in terminal
+"get_cantina.php" and "get_rozvrh.php" run it in terminal.
+open index.php it will automatically change between school schedule.
 ```
 php get_rozvrh.php
 ```
@@ -22,13 +23,4 @@ with another terminal
 ```
 php get_cantina.php
 ```
-if enable it will automatically restart itself and check for new every 30 min by default
-## **How to use News**
-
-form input in insert.php
-
-will create file in aktuality (.md)
-
-name of file will be used as head line (1)
-
-\*\***for bold text**\*\*
+if enable it will automatically restart itself and check for new every 30 min by default.
