@@ -202,5 +202,9 @@ function news()
             }
         }
         echo "</div></div>";
+    }else{
+        echo "<div class=\"news_container\"><div class=\"news\">";
+        echo "novinky nejdou načíst";
+        echo "</div></div>";
     }
 }
