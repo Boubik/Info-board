@@ -8,6 +8,9 @@
  */
 function save_to_log($log_text, $delete_log = null)
 {
+    if (!file_exists('logs')) {
+        mkdir('logs', 0777, true);
+    }
     $date = date("Y-m-d");
     $fa = fopen("logs/" . $date . ".log", "a");
     fwrite($fa, $log_text . "\n");
@@ -189,51 +192,4 @@ function news()
         }
         echo "</div></div>";
     }
-}
-function news2()
-{
-
-    echo "<div class=\"news_container\"><div class=\"news\">";
-    $fileList = glob('aktuality/*.md');
-    foreach ($fileList as $file) {
-        $handle = fopen($file, "r");
-        $delete = true;
-        $line = fgets($handle);
-        $date = explode("-", $line);
-        $year = $date[0];
-        $mounth = $date[1];
-        $day = $date[2];
-        if ($year > date('Y', time())) {
-            $delete = false;
-        } else {
-            if ($year = date('Y', time())) {
-                if ($mounth > date('m', time())) {
-                    $delete = false;
-                }
-                if ($mounth = date('m', time())) {
-                    if ($day >= date('d', time())) {
-                        $delete = false;
-                    }
-                }
-            }
-        }
-
-        if ($delete == true) {
-            unlink($file);
-        } else {
-            echo "<h1>" . substr(str_replace(".md", "", $file), 10) . "</h1>";
-            while (($line = fgets($handle)) !== false) {
-                $i = 0;
-                str_replace('**', "<b>", $line, $count);
-                while ($i != $count) {
-                    $line = preg_replace('/\*\*/', "<b>", $line, 1);
-                    $line = preg_replace('/\*\*/', "</b>", $line, 1);
-                    $i += 2;
-                }
-                echo $line . "<br>";
-            }
-        }
-        fclose($handle);
-    }
-    echo "</div></div>";
 }
