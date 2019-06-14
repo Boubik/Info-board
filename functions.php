@@ -58,7 +58,11 @@ function load_file($filename, $mode = "r")
 }
 
 
-
+/**
+ * remove thinks from text and add xml tags
+ * @param   String $result text to transform
+ * @return  String $result with xml tags
+ */
 function to_xml($result)
 {
     $lmao = explode('<TargetType>Classes</TargetType>', $result);
@@ -67,7 +71,10 @@ function to_xml($result)
     return $result;
 }
 
-
+/**
+ * return schedule from url in config
+ * @return  array   schedule
+ */
 function full_rozvrh(){
     ini_set('max_execution_time', 0);
     date_default_timezone_set("Europe/Prague");
@@ -75,8 +82,6 @@ function full_rozvrh(){
     $login = $configs["username"];
     $password = $configs["password"];
     $url = $configs["rozvrh_url"];
-    $log = $configs["log"];
-    $delete_log = $configs["delete_log"];
     $stay = array();
 
     if ((date("w")) > 5 or (date("w")) == 0) {
@@ -134,6 +139,9 @@ function full_rozvrh(){
     return $rozvrh;
 }
 
+/**
+ * render cantina from url in config
+ */
 function cantina()
 {
     $xml = @simplexml_load_file("jidelnicek.xml");
@@ -162,6 +170,9 @@ function cantina()
     echo "</div></div>";
 }
 
+/**
+ * render news from rss feed
+ */
 function news()
 {
     $configs = include('config.php');
