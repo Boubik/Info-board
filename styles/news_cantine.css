@@ -125,7 +125,9 @@ header {
 
 .jidlo {
     font-size: 1.6em;
+    font-size: 2em;
     font-weight: bold;
+    margin-top: 5%;
 }
 
 .jidlo_popis {
@@ -136,9 +138,14 @@ header {
     display: none;
 }
 
-.news h1 {
+.title {
     font-size: 2em;
+    font-weight: bold;
 }
 
-.news {
+.pubDate {
+    font-size: 1em;
+}
+.new {
+    margin-top: 5%;
 }
