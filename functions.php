@@ -209,6 +209,9 @@ function news()
     }
 }
 
+/**
+ * render rozvrh if it is old it will print error
+ */
 function read_rozvrh(){
     $fr = @fopen("rozvrh.txt", "r") or die("Rozvrh nelze načíst");
     if(substr(fgets($fr), 0, 10) == date("Y-m-d")){
