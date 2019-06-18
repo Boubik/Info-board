@@ -208,3 +208,14 @@ function news()
         echo "</div></div>";
     }
 }
+
+function read_rozvrh(){
+    $fr = @fopen("rozvrh.txt", "r") or die("Rozvrh nelze načíst");
+    if(substr(fgets($fr), 0, 10) == date("Y-m-d")){
+        while (($line = fgets($fr)) !== false) {
+            echo $line;
+        }
+    }else{
+        echo "rozvrh nenaktuální";
+    }
+}

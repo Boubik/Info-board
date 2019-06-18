@@ -32,7 +32,7 @@
 <?php
     include "functions.php";
     date_default_timezone_set("Europe/Prague");
-    echo load_file("rozvrh.txt");
+    read_rozvrh();
     echo '</div><div id="cantine">';
 
     echo "<div class=\"container\">";
