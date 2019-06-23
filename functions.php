@@ -8,6 +8,9 @@
  */
 function save_to_log($log_text, $delete_log = null)
 {
+    if (!file_exists('logs')) {
+        mkdir('logs', 0777, true);
+    }
     $date = date("Y-m-d");
     $fa = fopen("logs/" . $date . ".log", "a");
     fwrite($fa, $log_text . "\n");
@@ -55,7 +58,11 @@ function load_file($filename, $mode = "r")
 }
 
 
-
+/**
+ * remove thinks from text and add xml tags
+ * @param   String $result text to transform
+ * @return  String $result with xml tags
+ */
 function to_xml($result)
 {
     $lmao = explode('<TargetType>Classes</TargetType>', $result);
@@ -64,7 +71,10 @@ function to_xml($result)
     return $result;
 }
 
-
+/**
+ * return schedule from url in config
+ * @return  array   schedule
+ */
 function full_rozvrh(){
     ini_set('max_execution_time', 0);
     date_default_timezone_set("Europe/Prague");
@@ -72,8 +82,6 @@ function full_rozvrh(){
     $login = $configs["username"];
     $password = $configs["password"];
     $url = $configs["rozvrh_url"];
-    $log = $configs["log"];
-    $delete_log = $configs["delete_log"];
     $stay = array();
 
     if ((date("w")) > 5 or (date("w")) == 0) {
@@ -129,4 +137,88 @@ function full_rozvrh(){
         }
     }
     return $rozvrh;
+}
+
+/**
+ * render cantina from url in config
+ */
+function cantina()
+{
+    $xml = @simplexml_load_file("jidelnicek.xml");
+    if (!$xml) {
+        echo "Nejsou data z jidelnicek.xml";
+    }
+    $jidelak = array();
+    foreach ($xml->jidlo as $jidlo) {
+        if ((String)$jidlo->datum == date("Y-m-d")) {
+            $jidelak[strval($jidlo->datum)][strval($jidlo->druh)] = strval($jidlo->nazev);
+        }
+    }
+
+    echo "<div class=\"cantina_container\"><div class=\"cantina\">";
+    foreach ($jidelak as $den) {
+        $datum = array_search($den, $jidelak);
+        echo "<div class=\"den\"><div class=\"datum\">" . $datum . "</div>";
+        foreach ($den as $jidlo) {
+            $key = array_search($jidlo, $den);
+            if (substr($key, 0, 4) != "bal.") {
+                echo "<div class=\"jidlo\">" . $key . "</div> <div class=\"jidlo_popis\">" . $jidlo . "</div>";
+            }
+        }
+        echo "</div><br>";
+    }
+    echo "</div></div>";
+}
+
+/**
+ * render news from rss feed
+ */
+function news()
+{
+    $configs = include('config.php');
+    $url = $configs["news_url"];
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLINFO_HEADER_OUT, true);
+    $result = curl_exec($ch);
+    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);   //get status code
+    curl_close($ch);
+
+    if ($status_code == 200) {
+        $xml = new SimpleXMLElement($result);
+        echo "<div class=\"news_container\"><div class=\"news\">";
+        $x = 0;
+        foreach ($xml->channel->item as $item) { 
+            echo "<div class=\"new\">";
+            echo "<div class=\"title\">".$item->title."</div>";
+            echo "<div class=\"pubDate\">".substr((String)$item->pubDate, 0, 16)."</div>";
+            echo "</div>";
+            $x++;
+            if($x == 5){
+                break;
+            }
+        }
+        echo "</div></div>";
+    }else{
+        echo "<div class=\"news_container\"><div class=\"news\">";
+        echo "novinky nejdou načíst";
+        echo "</div></div>";
+    }
+}
+
+/**
+ * render rozvrh if it is old it will print error
+ */
+function read_rozvrh(){
+    $fr = @fopen("rozvrh.txt", "r") or die("Rozvrh nelze načíst");
+    if(substr(fgets($fr), 0, 10) == date("Y-m-d")){
+        while (($line = fgets($fr)) !== false) {
+            echo $line;
+        }
+    }else{
+        echo "rozvrh nenaktuální";
+    }
 }

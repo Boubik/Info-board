@@ -1,7 +1,8 @@
+2019-06-23
 <table class="table" style="width:100%"">
 <tbody>
 <tr><th class="trida_main"style="width:6.1515151515152%";>
-Sudý</th>
+Lichý</th>
 <th class="hodina zero" style="width:9.2272727272727%";>
 0<div class="hodina_cislo">7:15 - 8:00</div></th>
 <th class="hodina one" style="width:9.2272727272727%";>
@@ -29,42 +30,38 @@ Sudý</th>
 </td>
 <td>
 <div class="cell one">
-<div class="ucebna">14</div
-<br><div class="predmet">CJ</div
-<br><div class="ucitel">MAK</div
+<div class="ucebna">TEV</div
+<br><div class="predmet">TEV</div
+<br><div class="ucitel">BAR</div
 <br></div>
 </td>
 <td>
 <div class="cell two">
-<div class="incell0">
-<div class="ucebna">13</div
-<br><div class="skupina">IT</div
-<br><div class="predmet">PGR</div
-<br><div class="ucitel">PTO</div
+<div class="ucebna">TEV</div
+<br><div class="predmet">TEV</div
+<br><div class="ucitel">BAR</div
 <br></div>
-<div class="incell1">
-<div class="ucebna">14</div
-<br><div class="skupina">EL</div
-<br><div class="predmet">ELM</div
-<br><div class="ucitel">PIT</div
-<br></div>
-</div>
 </td>
 <td>
 <div class="cell three">
 <div class="ucebna">14</div
-<br><div class="predmet">ZPD</div
+<br><div class="predmet">MAT</div
 <br><div class="ucitel">HNA</div
 <br></div>
 </td>
 <td>
 <div class="cell four">
 <div class="ucebna">14</div
-<br><div class="predmet">MAT</div
+<br><div class="predmet">ZPD</div
 <br><div class="ucitel">HNA</div
 <br></div>
 </td>
-<td class="prazdnej five">
+<td>
+<div class="cell five">
+<div class="ucebna">14</div
+<br><div class="predmet">ZSV</div
+<br><div class="ucitel">VIT</div
+<br></div>
 </td>
 <td>
 <div class="cell six">
@@ -95,82 +92,64 @@ Sudý</th>
 <td>
 <div class="cell one">
 <div class="incell0">
-<div class="ucebna">28</div
-<br><div class="skupina">PRX2</div
-<br><div class="predmet">PRX</div
-<br><div class="ucitel">HON</div
+<div class="ucebna">23</div
+<br><div class="skupina">PD</div
+<br><div class="predmet">NAV</div
+<br><div class="ucitel">CVD</div
 <br></div>
 <div class="incell1">
-<div class="ucebna">19</div
-<br><div class="skupina">PRX1</div
-<br><div class="predmet">PRX</div
-<br><div class="ucitel">WIK</div
+<div class="ucebna">VOŠ2</div
+<br><div class="skupina">GD</div
+<br><div class="predmet">NAV</div
+<br><div class="ucitel">HRD</div
 <br></div>
 </div>
 </td>
 <td>
 <div class="cell two">
 <div class="incell0">
-<div class="ucebna">28</div
-<br><div class="skupina">PRX2</div
-<br><div class="predmet">PRX</div
-<br><div class="ucitel">HON</div
+<div class="ucebna">23</div
+<br><div class="skupina">PD</div
+<br><div class="predmet">NAV</div
+<br><div class="ucitel">CVD</div
 <br></div>
 <div class="incell1">
-<div class="ucebna">19</div
-<br><div class="skupina">PRX1</div
-<br><div class="predmet">PRX</div
-<br><div class="ucitel">WIK</div
+<div class="ucebna">VOŠ2</div
+<br><div class="skupina">GD</div
+<br><div class="predmet">NAV</div
+<br><div class="ucitel">HRD</div
 <br></div>
 </div>
 </td>
 <td>
 <div class="cell three">
 <div class="incell0">
-<div class="ucebna">28</div
-<br><div class="skupina">PRX2</div
-<br><div class="predmet">PRX</div
-<br><div class="ucitel">HON</div
+<div class="ucebna">23</div
+<br><div class="skupina">PD</div
+<br><div class="predmet">NAV</div
+<br><div class="ucitel">CVD</div
 <br></div>
 <div class="incell1">
-<div class="ucebna">19</div
-<br><div class="skupina">PRX1</div
-<br><div class="predmet">PRX</div
-<br><div class="ucitel">WIK</div
+<div class="ucebna">VOŠ2</div
+<br><div class="skupina">GD</div
+<br><div class="predmet">NAV</div
+<br><div class="ucitel">HRD</div
 <br></div>
 </div>
 </td>
 <td>
 <div class="cell four">
-<div class="incell0">
-<div class="ucebna">28</div
-<br><div class="skupina">PRX2</div
-<br><div class="predmet">PRX</div
-<br><div class="ucitel">HON</div
+<div class="ucebna">15</div
+<br><div class="predmet">TECH</div
+<br><div class="ucitel">HO3</div
 <br></div>
-<div class="incell1">
-<div class="ucebna">19</div
-<br><div class="skupina">PRX1</div
-<br><div class="predmet">PRX</div
-<br><div class="ucitel">WIK</div
-<br></div>
-</div>
 </td>
 <td>
 <div class="cell five">
-<div class="incell0">
-<div class="ucebna">28</div
-<br><div class="skupina">PD</div
-<br><div class="predmet">MOD</div
-<br><div class="ucitel">HON</div
-<br></div>
-<div class="incell1">
-<div class="ucebna">VOŠ2</div
-<br><div class="skupina">GD</div
-<br><div class="predmet">PGR</div
+<div class="ucebna">22</div
+<br><div class="predmet">PF</div
 <br><div class="ucitel">ULR</div
 <br></div>
-</div>
 </td>
 <td>
 <div class="cell six">
@@ -223,45 +202,35 @@ Sudý</th>
 </td>
 <td>
 <div class="cell two">
-<div class="ucebna">27</div
-<br><div class="predmet">MAT</div
-<br><div class="ucitel">HNA</div
+<div class="ucebna">22</div
+<br><div class="predmet">PRG</div
+<br><div class="ucitel">BUB</div
 <br></div>
 </td>
 <td>
 <div class="cell three">
-<div class="ucebna">27</div
-<br><div class="predmet">LU</div
-<br><div class="ucitel">VIT</div
+<div class="ucebna">22</div
+<br><div class="predmet">PRG</div
+<br><div class="ucitel">BUB</div
 <br></div>
 </td>
 <td>
 <div class="cell four">
-<div class="ucebna">27</div
-<br><div class="predmet">POS</div
+<div class="ucebna">13</div
+<br><div class="predmet">DBS</div
 <br><div class="ucitel">BUB</div
 <br></div>
 </td>
 <td>
 <div class="cell five">
-<div class="ucebna">22</div
-<br><div class="predmet">PRX</div
-<br><div class="ucitel">PKO</div
+<div class="ucebna">13</div
+<br><div class="predmet">DBS</div
+<br><div class="ucitel">BUB</div
 <br></div>
 </td>
-<td>
-<div class="cell six">
-<div class="ucebna">22</div
-<br><div class="predmet">PRX</div
-<br><div class="ucitel">PKO</div
-<br></div>
+<td class="prazdnej six">
 </td>
-<td>
-<div class="cell seven">
-<div class="ucebna">22</div
-<br><div class="predmet">PRX</div
-<br><div class="ucitel">PKO</div
-<br></div>
+<td class="prazdnej seven">
 </td>
 <td class="prazdnej eight">
 </td>
@@ -275,52 +244,47 @@ Sudý</th>
 </td>
 <td>
 <div class="cell one">
-<div class="ucebna">VOŠ2</div
-<br><div class="predmet">PGR</div
+<div class="ucebna">TVks</div
+<br><div class="predmet">TEV</div
 <br><div class="ucitel">ULR</div
 <br></div>
 </td>
 <td>
 <div class="cell two">
-<div class="ucebna">VOŠ2</div
-<br><div class="predmet">PGR</div
+<div class="ucebna">TVks</div
+<br><div class="predmet">TEV</div
 <br><div class="ucitel">ULR</div
 <br></div>
 </td>
 <td>
 <div class="cell three">
-<div class="ucebna">23</div
-<br><div class="predmet">VYP</div
-<br><div class="ucitel">PET</div
+<div class="ucebna">11</div
+<br><div class="predmet">EKO</div
+<br><div class="ucitel">SKA</div
 <br></div>
 </td>
 <td>
 <div class="cell four">
-<div class="ucebna">23</div
-<br><div class="predmet">VYP</div
-<br><div class="ucitel">PET</div
+<div class="ucebna">11</div
+<br><div class="predmet">DVK</div
+<br><div class="ucitel">KUB</div
 <br></div>
 </td>
 <td>
 <div class="cell five">
-<div class="ucebna">23</div
-<br><div class="predmet">VYP</div
-<br><div class="ucitel">PET</div
+<div class="ucebna">11</div
+<br><div class="predmet">DVK</div
+<br><div class="ucitel">KUB</div
 <br></div>
 </td>
 <td>
 <div class="cell six">
-<div class="ucebna">16</div
-<br><div class="predmet">LU</div
+<div class="ucebna">11</div
+<br><div class="predmet">CJ</div
 <br><div class="ucitel">VIT</div
 <br></div>
 </td>
-<td>
-<div class="cell seven">
-<div class="ucebna">13</div
-<br><div class="predmet">PIS</div
-<br><div class="ucitel">HO3</div
-<br></div>
+<td class="prazdnej seven">
 </td>
 <td class="prazdnej eight">
 </td>
@@ -334,78 +298,96 @@ Sudý</th>
 </td>
 <td>
 <div class="cell one">
-<div class="incell0">
-<div class="ucebna">JAZ2</div
-<br><div class="skupina">ANG</div
-<br><div class="predmet">ANG</div
-<br><div class="ucitel">PET</div
+<div class="ucebna">16</div
+<br><div class="predmet">DVK</div
+<br><div class="ucitel">KUB</div
 <br></div>
-<div class="incell1">
-<div class="ucebna">26</div
-<br><div class="skupina">NEM</div
-<br><div class="predmet">NEM</div
-<br><div class="ucitel">BEN</div
-<br></div>
-</div>
 </td>
 <td>
 <div class="cell two">
+<div class="ucebna">16</div
+<br><div class="predmet">DVK</div
+<br><div class="ucitel">KUB</div
+<br></div>
+</td>
+<td>
+<div class="cell three">
 <div class="incell0">
-<div class="ucebna">JAZ2</div
-<br><div class="skupina">ANG</div
-<br><div class="predmet">ANG</div
-<br><div class="ucitel">PET</div
+<div class="ucebna">06</div
+<br><div class="skupina">PRX1</div
+<br><div class="predmet">PRX</div
+<br><div class="ucitel">RUV</div
 <br></div>
 <div class="incell1">
-<div class="ucebna">26</div
-<br><div class="skupina">NEM</div
-<br><div class="predmet">NEM</div
-<br><div class="ucitel">BEN</div
+<div class="ucebna">L2</div
+<br><div class="skupina">PRX2</div
+<br><div class="predmet">PRX</div
+<br><div class="ucitel">WIK</div
 <br></div>
 </div>
 </td>
 <td>
-<div class="cell three">
-<div class="ucebna">16</div
-<br><div class="predmet">MAT</div
-<br><div class="ucitel">PTO</div
+<div class="cell four">
+<div class="incell0">
+<div class="ucebna">06</div
+<br><div class="skupina">PRX1</div
+<br><div class="predmet">PRX</div
+<br><div class="ucitel">RUV</div
 <br></div>
+<div class="incell1">
+<div class="ucebna">L2</div
+<br><div class="skupina">PRX2</div
+<br><div class="predmet">PRX</div
+<br><div class="ucitel">WIK</div
+<br></div>
+</div>
 </td>
 <td>
-<div class="cell four">
-<div class="ucebna">16</div
-<br><div class="predmet">CJ</div
-<br><div class="ucitel">VIT</div
+<div class="cell five">
+<div class="incell0">
+<div class="ucebna">06</div
+<br><div class="skupina">PRX1</div
+<br><div class="predmet">PRX</div
+<br><div class="ucitel">RUV</div
 <br></div>
-</td>
-<td class="prazdnej five">
+<div class="incell1">
+<div class="ucebna">L2</div
+<br><div class="skupina">PRX2</div
+<br><div class="predmet">PRX</div
+<br><div class="ucitel">WIK</div
+<br></div>
+</div>
 </td>
 <td>
 <div class="cell six">
-<div class="ucebna">TEV</div
-<br><div class="predmet">TEV</div
-<br><div class="ucitel">BAR</div
+<div class="incell0">
+<div class="ucebna">06</div
+<br><div class="skupina">PRX1</div
+<br><div class="predmet">PRX</div
+<br><div class="ucitel">RUV</div
 <br></div>
+<div class="incell1">
+<div class="ucebna">L2</div
+<br><div class="skupina">PRX2</div
+<br><div class="predmet">PRX</div
+<br><div class="ucitel">WIK</div
+<br></div>
+</div>
 </td>
-<td>
-<div class="cell seven">
-<div class="ucebna">TEV</div
-<br><div class="predmet">TEV</div
-<br><div class="ucitel">BAR</div
-<br></div>
+<td class="prazdnej seven">
 </td>
 <td>
 <div class="cell eight">
-<div class="ucebna">22</div
-<br><div class="predmet">ICT</div
-<br><div class="ucitel">PKO</div
+<div class="ucebna">VOŠ2</div
+<br><div class="predmet">NAV</div
+<br><div class="ucitel">HRD</div
 <br></div>
 </td>
 <td>
 <div class="cell nine">
-<div class="ucebna">16</div
-<br><div class="predmet">EKO</div
-<br><div class="ucitel">PTO</div
+<div class="ucebna">VOŠ2</div
+<br><div class="predmet">NAV</div
+<br><div class="ucitel">HRD</div
 <br></div>
 </td>
 </tr>
@@ -416,58 +398,45 @@ Sudý</th>
 </td>
 <td>
 <div class="cell one">
-<div class="incell0">
-<div class="ucebna">26</div
-<br><div class="skupina">NEM</div
-<br><div class="predmet">NEM</div
-<br><div class="ucitel">BEN</div
+<div class="ucebna">13</div
+<br><div class="predmet">PRG</div
+<br><div class="ucitel">BUB</div
 <br></div>
-<div class="incell1">
-<div class="ucebna">22</div
-<br><div class="skupina">ANG</div
-<br><div class="predmet">ANG</div
-<br><div class="ucitel">SKA</div
-<br></div>
-</div>
 </td>
 <td>
 <div class="cell two">
-<div class="incell0">
-<div class="ucebna">26</div
-<br><div class="skupina">NEM</div
-<br><div class="predmet">NEM</div
-<br><div class="ucitel">BEN</div
+<div class="ucebna">13</div
+<br><div class="predmet">OSY</div
+<br><div class="ucitel">PTO</div
 <br></div>
-<div class="incell1">
-<div class="ucebna">22</div
-<br><div class="skupina">ANG</div
-<br><div class="predmet">ANG</div
-<br><div class="ucitel">SKA</div
-<br></div>
-</div>
 </td>
 <td>
 <div class="cell three">
 <div class="ucebna">13</div
-<br><div class="predmet">ICT</div
-<br><div class="ucitel">PKO</div
+<br><div class="predmet">OSY</div
+<br><div class="ucitel">PTO</div
 <br></div>
 </td>
 <td>
 <div class="cell four">
 <div class="ucebna">12</div
-<br><div class="predmet">MAT</div
-<br><div class="ucitel">PTO</div
+<br><div class="predmet">CJ</div
+<br><div class="ucitel">VIT</div
 <br></div>
 </td>
 <td>
 <div class="cell five">
-<div class="ucebna">12</div
-<br><div class="predmet">LU</div
-<br><div class="ucitel">VIT</div
+<div class="ucebna">TVks</div
+<br><div class="predmet">TEV</div
+<br><div class="ucitel">BAR</div
 <br></div>
 </td>
-<td class="prazdnej six">
+<td>
+<div class="cell six">
+<div class="ucebna">TVks</div
+<br><div class="predmet">TEV</div
+<br><div class="ucitel">BAR</div
+<br></div>
 </td>
 <td class="prazdnej seven">
 </td>

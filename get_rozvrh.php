@@ -162,6 +162,7 @@ do {
         }
         $rozvrh .= "</tbody>\n</table>";
 
+        $rozvrh = date("Y-m-d")."\n".$rozvrh;
         save_to_file("rozvrh.txt", $rozvrh);
 
         echo date("H:i") . " get_rozvrh" . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code . "\n\n";

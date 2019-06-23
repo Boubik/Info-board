@@ -28,11 +28,8 @@
     </header>
 
 <?php
-$fr = @fopen("rozvrh.txt", "r") or die("Rozvrh nelze načíst");
-
-while (($line = fgets($fr)) !== false) {
-    echo $line;
-}
+include "functions.php";
+read_rozvrh();
 ?>
 
 <script src="jquery.js"></script>
