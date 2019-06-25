@@ -8,10 +8,6 @@ info board for my school
 - [x] school schedule
 - [x] school cantina menu 
 
-## **Changelog**
-
-- [changelog.md](changelog.md)
-
 ## **How to use**
 
 "get_cantina.php" and "get_rozvrh.php" run it in terminal.
