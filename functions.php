@@ -146,7 +146,8 @@ function cantina()
 {
     $xml = @simplexml_load_file("jidelnicek.xml");
     if (!$xml) {
-        echo "Nejsou data z jidelnicek.xml";
+        echo "<div class=\"cantina_container\"><div class=\"cantina\"><div class=\"error_center_rozvrh\">Nejsou data z jidelnicek.xml</div></div></div>";
+        return;
     }
     $jidelak = array();
     foreach ($xml->jidlo as $jidlo) {
@@ -204,7 +205,7 @@ function news()
         echo "</div></div>";
     }else{
         echo "<div class=\"news_container\"><div class=\"news\">";
-        echo "novinky nejdou načíst";
+        echo "<div class=\"error_center_rozvrh\">novinky nejdou načíst</div>";
         echo "</div></div>";
     }
 }
@@ -213,7 +214,11 @@ function news()
  * render rozvrh if it is old it will print error
  */
 function read_rozvrh(){
-    $fr = @fopen("rozvrh.txt", "r") or die("Rozvrh nelze načíst");
+    $fr = @fopen("rozvrh.txt", "r");
+    if(!$fr){
+        echo("<div class=\"error_center_rozvrh\">Rozvrh nelze načíst</div>");
+        return;
+    }
     $den = substr(fgets($fr), 0, 10);
     if($den == date("Y-m-d")){
         //fgets($fr);
