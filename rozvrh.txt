@@ -1,2 +1,0 @@
-2019-06-25
- <div class="error_center_rozvrh">něco je špatně načetlo se 0 hodin</div>
