@@ -9,7 +9,7 @@
     <link rel="icon" href="images/logo.ico">
     <title>Tabule</title>
     <script>
-        setTimeout(function(){document.location='index.php';}, 600000);
+        setTimeout(function(){document.location='index.php';}, 60000);
     </script>
 </head>
 
@@ -28,11 +28,12 @@
             <div id="clock"></div>
         </div>
     </header>
+    <div class="auto_slider">
     <div id="rozvrh">
 <?php
     include "functions.php";
     date_default_timezone_set("Europe/Prague");
-    echo load_file("rozvrh.txt");
+    read_rozvrh();
     echo '</div><div id="cantine">';
 
     echo "<div class=\"container\">";
@@ -143,5 +144,6 @@ function getTime() {
     
 
 </script>
+</div>
 
 </body>

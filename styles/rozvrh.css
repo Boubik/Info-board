@@ -235,3 +235,10 @@ table {
 .incell1 .ucebna {
     font-size: .7em;
 }
+
+.error_center_rozvrh{
+    margin-top: 21%;
+    right: 0;
+    text-align: center;
+    font-size: 3em;
+}

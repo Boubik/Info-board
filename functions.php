@@ -208,3 +208,20 @@ function news()
         echo "</div></div>";
     }
 }
+
+/**
+ * render rozvrh if it is old it will print error
+ */
+function read_rozvrh(){
+    $fr = @fopen("rozvrh.txt", "r") or die("Rozvrh nelze načíst");
+    $den = substr(fgets($fr), 0, 10);
+    if($den == date("Y-m-d")){
+        //fgets($fr);
+        while (($line = fgets($fr)) !== false) {
+            echo $line;
+        }
+    }else{
+        echo "<div class=\"error_center_rozvrh\">rozvrh není aktuální<div>";
+        echo date("Y-m-d") . " " . $den;
+    }
+}
