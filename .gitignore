@@ -1,0 +1,12 @@
+fix!!!
+test.php
+test2.php
+test3.php
+*.txt
+*.xml
+jidelnicek.xml
+*.log
+/logs
+rozvrh.txt
+
+/ignore
