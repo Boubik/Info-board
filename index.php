@@ -9,7 +9,7 @@
     <link rel="icon" href="images/logo.ico">
     <title>Tabule</title>
     <script>
-        setTimeout(function(){document.location='index.php';}, 600000);
+        setTimeout(function(){document.location='index.php';}, 60000);
     </script>
 </head>
 
