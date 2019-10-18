@@ -180,6 +180,9 @@ do {
                 save_to_log($log_text_rozvrh, $delete_log);
             }
         }
+        unset($rozvrh);
+        unset($stay);
+        unset($stay2);
     } else {
         echo date("H:i") . " get_rozvrh" . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n\n";
 
