@@ -40,6 +40,8 @@ do {
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
     curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLINFO_HEADER_OUT, true);
@@ -56,9 +58,7 @@ do {
         foreach ($xml->Timetable as $Timetable) {
             $trida = $Timetable->Entity->Abbrev;
             if ((@in_array($trida, $stay)) or $stay == "all") {
-                if (!(isset($Timetable->Cells->TimetableCell->HourIndex)) and (!($Timetable->Cells->TimetableCell->DayIndex == $den) or !(isset($Timetable->Cells->TimetableCell->DayIndex)))) {
-
-                } else {
+                if (!(isset($Timetable->Cells->TimetableCell->HourIndex)) and (!($Timetable->Cells->TimetableCell->DayIndex == $den) or !(isset($Timetable->Cells->TimetableCell->DayIndex)))) { } else {
                     foreach ($Timetable->Cells->TimetableCell as $TimetableCell) {
                         if ($TimetableCell->DayIndex == $den) {
                             if (($TimetableCell->HourIndex - 2) > $max_hodin) {
@@ -71,28 +71,28 @@ do {
             }
         }
         $stay = $stay2;
-        
-        if($max_hodin == 0){
-            echo date("H:i") . " get_rozvrh" . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code . " něco je špatně načetlo se ".$max_hodin." hodin\n\n";
-            $rozvrh = "<div class=\"error_center_rozvrh\">něco je špatně načetlo se ".$max_hodin." hodin</div>";
-            $rozvrh = date("Y-m-d")."\n".$rozvrh;
+
+        if ($max_hodin == 0) {
+            echo date("H:i") . " get_rozvrh" . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code . " něco je špatně načetlo se " . $max_hodin . " hodin\n\n";
+            $rozvrh = "<div class=\"error_center_rozvrh\">něco je špatně načetlo se " . $max_hodin . " hodin</div>";
+            $rozvrh = date("Y-m-d") . "\n" . $rozvrh;
             save_to_file("rozvrh.txt", $rozvrh);
-        
-            if($log){
-                $log_text_rozvrh = date("H:i") . " get_rozvrh" . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code . " něco je špatně načetlo se ".$max_hodin." hoďin\n\n";
+
+            if ($log) {
+                $log_text_rozvrh = date("H:i") . " get_rozvrh" . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code . " něco je špatně načetlo se " . $max_hodin . " hoďin\n\n";
                 save_to_log($log_text_rozvrh, $delete_log);
             }
             break;
-        }else{
+        } else {
             $rozvrh = "<table class=\"table\" style=\"width:100%\"\">\n<tbody>\n<tr>";
             $th_width = (100 / ($max_hodin + 2)) + (1.5 / ($max_hodin + 2));
             $i = 0;
-            if(date('W')%2==0){
+            if (date('W') % 2 == 0) {
                 $tiden = "Sudý";
-            }else{
+            } else {
                 $tiden = "Lichý";
             }
-            $rozvrh .= "<th class=\"trida_main\"style=\"width:" . ($th_width / 1.5) . "%\";>\n". $tiden ."</th>\n";
+            $rozvrh .= "<th class=\"trida_main\"style=\"width:" . ($th_width / 1.5) . "%\";>\n" . $tiden . "</th>\n";
             while ($i != $max_hodin + 1) {
                 $rozvrh .= "<th class=\"hodina " . $str_cislo[$i] . "\" style=\"width:$th_width%\";>\n$i<div class=\"hodina_cislo\">" . $hodina_str[$i] . "</div></th>\n";
                 $i++;
@@ -170,20 +170,20 @@ do {
             }
             $rozvrh .= "</tbody>\n</table>";
 
-            $rozvrh = date("Y-m-d")."\n".$rozvrh;
+            $rozvrh = date("Y-m-d") . "\n" . $rozvrh;
             save_to_file("rozvrh.txt", $rozvrh);
 
             echo date("H:i") . " get_rozvrh" . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code . "\n\n";
-        
-            if($log){
+
+            if ($log) {
                 $log_text_rozvrh = date("H:i") . " get_rozvrh" . " Day:" . ($den + 1) . " Max hodin:" . $max_hodin . " Status code:" . $status_code;
                 save_to_log($log_text_rozvrh, $delete_log);
             }
         }
-    }else{
+    } else {
         echo date("H:i") . " get_rozvrh" . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n\n";
-    
-        if($log){
+
+        if ($log) {
             $log_text_rozvrh = "\n" . date("H:i") . " get_rozvrh" . " Day:" . ($den + 1) . " Status code:" . $status_code . "\n";
             save_to_log($log_text_rozvrh, $delete_log);
         }
