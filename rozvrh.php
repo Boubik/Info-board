@@ -59,6 +59,17 @@ function getTime() {
         var mm = String(today.getMonth() + 1).padStart(2, '0');
         var yyyy = today.getFullYear();
         if(mm == 12){mm = "Dec";}
+        if(mm == 11){mm = "Nov";}
+        if(mm == 10){mm = "Oct";}
+        if(mm == 9){mm = "Sep";}
+        if(mm == 8){mm = "Aug";}
+        if(mm == 7){mm = "Jul";}
+        if(mm == 6){mm = "Jun";}
+        if(mm == 5){mm = "May";}
+        if(mm == 4){mm = "Apr";}
+        if(mm == 3){mm = "Mar";}
+        if(mm == 2){mm = "Feb";}
+        if(mm == 1){mm = "Jan";}
 
         
 
