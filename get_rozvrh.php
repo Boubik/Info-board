@@ -11,6 +11,7 @@ $sleep = $configs["sleep_s"] * 60;
 $auto_restart = $configs["auto_restart"];
 $log = $configs["log"];
 $delete_log = $configs["delete_log"];
+$counting_start = $configs["counting_start"];
 
 $tr = false;
 $th_width = 8.333333333;
@@ -94,7 +95,7 @@ do {
             }
             $rozvrh .= "<th class=\"trida_main\"style=\"width:" . ($th_width / 1.5) . "%\";>\n" . $tiden . "</th>\n";
             while ($i != $max_hodin + 1) {
-                $rozvrh .= "<th class=\"hodina " . $str_cislo[$i] . "\" style=\"width:$th_width%\";>\n$i<div class=\"hodina_cislo\">" . $hodina_str[$i] . "</div></th>\n";
+                $rozvrh .= "<th class=\"hodina " . $str_cislo[$i] . "\" style=\"width:$th_width%\";>\n" . ($i + $counting_start) . "<div class=\"hodina_cislo\">" . $hodina_str[$i] . "</div></th>\n";
                 $i++;
             }
             $rozvrh .= "</tr>";
