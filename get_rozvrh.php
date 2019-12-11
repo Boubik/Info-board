@@ -29,6 +29,7 @@ do {
     } else {
         $den = (date("w") - 1);
     }
+    $den = 0;
 
     if (isset($configs["tridy"]) and $configs["tridy"] != "") {
         $stay = $configs["tridy"];
@@ -62,8 +63,8 @@ do {
                 if (!(isset($Timetable->Cells->TimetableCell->HourIndex)) and (!($Timetable->Cells->TimetableCell->DayIndex == $den) or !(isset($Timetable->Cells->TimetableCell->DayIndex)))) { } else {
                     foreach ($Timetable->Cells->TimetableCell as $TimetableCell) {
                         if ($TimetableCell->DayIndex == $den) {
-                            if (($TimetableCell->HourIndex - 2) > $max_hodin) {
-                                $max_hodin = $TimetableCell->HourIndex - 2;
+                            if (($TimetableCell->HourIndex - (2 + $counting_start)) > $max_hodin) {
+                                $max_hodin = $TimetableCell->HourIndex - (2 + $counting_start);
                             }
                             $stay2[] = $trida;
                         }
@@ -112,7 +113,7 @@ do {
                     //vypsání jedné třídy
                     foreach ($Timetable->Cells->TimetableCell as $TimetableCell) {
                         if ($TimetableCell->DayIndex == $den) {
-                            while (($TimetableCell->HourIndex - 2) != $i and $i < $max_hodin + 1) {
+                            while (($TimetableCell->HourIndex - (2 + $counting_start)) != $i and $i < $max_hodin + 1) {
                                 $rozvrh .= "<td class=\"prazdnej " . $str_cislo[$i] . "\">\n</td>\n";
                                 $i++;
                             }
