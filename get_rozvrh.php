@@ -29,7 +29,6 @@ do {
     } else {
         $den = (date("w") - 1);
     }
-    $den = 0;
 
     if (isset($configs["tridy"]) and $configs["tridy"] != "") {
         $stay = $configs["tridy"];
